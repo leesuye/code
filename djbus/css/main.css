@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR);
+body, section, p, div, ul, li, h1, h2, h3, h4, h5, h6, nav { /*body, section 등의 모든 태그에 모든 여백 삭제.동일한 스타일 적용(다중 선택자 , 가 필수)*/
+    padding: 0;
+    margin: 0;
+}
+ul, li {
+    list-style: none;
+}
+body {
+    color: #3d3d3d;
+    line-height: 1.5;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+}
+a {
+    color: #3d3d3d;
+    text-decoration: none;
+}
+.wrapper { /*클래스명일떄만 앞에 . 붙이기*/
+    width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    height: 100PX;
+}
+header h1 {
+    float: left;
+    margin: 22px 0 0 0;
+}
+header nav {
+    float: right;
+    margin: 16px 0 0 0;
+}
+header nav ul li {
+    float: left;
+}
+header nav ul li a {
+    display: block; /* a가 인라인 요소라서 padding을 적용하기 위해서 */
+    padding: 20px;
+    color: #1d1d1d;
+    font-size: 20px;
+}
+
+.visual {
+    background-image: url(../images/visual_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 750PX;
+}
+.visual strong {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+}
+.visual p {
+    color: #ffffff;
+    line-height: 1.2;
+    font-size: 40px;
+    font-weight: 400;
+
+}
