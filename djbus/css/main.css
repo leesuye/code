@@ -68,6 +68,9 @@ header nav ul li a {
     background-repeat: no-repeat;
     height: 750PX;
 }
+.visual h2 {
+    display: none;/*해당 태그를 사용하지 않은 것처럼 숨김-공간을 차지하지않음*/
+}
 .visual strong {
     display: block;/*strong이 인라인태그라 마진이 적용되지 않아 블럭요소로 변경*/
     padding: 152px 0 25px 0;
