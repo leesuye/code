@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&display=swap');/*본고딕 폰트 스타일 삽입*/
+
+/*삭제*/
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, li, address, strong, span, em, p {/*모든 태그에 브라우저에서 주는 여백 삭제*/
+    padding: 0;
+    margin: 0;
+} 
+a {/*a 태그에 브라우저가 주는 기본 속성 초기화*/
+    color: inherit;/*기본으로 주는 파란색 컬러 제거*/
+    text-decoration: none;/*기본으로 주는 밑줄 제거*/
+}
+em, address {/*브라우저에서 기울임을 주는 것을 초기화. 삭제*/
+    font-style: normal;
+}
+ul, li {/*항목 앞에 동그라미 삭제*/
+    list-style: none;
+}
+
+/*지정*/
+html, body {/*고정적이고 기본적인거 주기*/
+    color: #3d3d3d;
+    line-height: 1.5;/*행간*/
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 400;/*글자두께 - 보통*/
+    letter-spacing: -0.05em;/*자간*/
+    word-break: keep-all;/*글자를 단어별로 떨어트려 나타남*/
+}
+.wrapper {/*콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치*/
+    width: 1280px;
+    margin: 0 auto;
+}
+.clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;} /*가상선택자*/

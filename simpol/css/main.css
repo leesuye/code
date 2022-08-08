@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+KR);/*본명조쓰기 위해*/
+@import url(default.css);/*main.css에 default.css 삽입-호출*/
+
+header {
+    height: 100px;
+    padding: 0 40px;
+}
+header h1 {/*float는 옆으로 나란히 명백하게 오른쪽 왼쪽이 나뉘어져 있지 않을 경우 그냥 float left로 주기*/
+    float: left;
+    margin: 29px 0 0 6px;
+}
+header nav {
+    float: right;
+}
+header nav ul {
+    float: left;
+    margin: 0 8px 0 24px;
+}
+header nav ul li {
+    float: left;
+}
+header nav ul li a {
+    display: block;
+    padding: 36px 17px 0 60px;
+    color: #1d1d1d;
+    font-size: 22px;
+    font-weight: 700;
+}
+header nav .market {
+    float: left;
+    display: block;
+    padding: 5px 24px 5px 44px;
+    margin: 33px 13px 0 75px;
+    border: 1px solid #13A94F;
+    border-radius: 30px;
+    background-image: url(../images/market_ico.png);
+    background-position: left 22px top 10px;
+    background-repeat: no-repeat;
+    color: #13A94F;
+    font-size: 18px;
+    font-weight: 700;
+}
+.visual {/*여백주기*/
+    padding: 0 40px;
+    color: #ffffff;
+    font-family: 'Noto Serif KR', serif; /*본명조*/
+    text-align: center;/*감싸는 태그한테 주는 것*/
+    text-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.visual .inner {/*배경주기*/
+    background-image: url(../images/visual_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 700px;
+    background size: cover;
+}
+.visual strong {
+    display: block;
+    padding: 246px 0 0 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.visual h2 {
+    margin: 0 0 9px 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+.category .tit {
+    color: #1d1d1d;
+}
+.category .tit strong {
+    display: block;
+    font-weight: 700;
+    margin: 180px 0 0 0;
+}
+.category .tit h2 {
+    margin: 0 0 49px 0;
+    line-height: 1.1;/*strong과 h2 사이의 행간 때문에 발생한 여백 삭제*/
+    font-size: 40px;
+    font-weight: 300;
+}
