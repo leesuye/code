@@ -5,7 +5,7 @@ header {
     height: 100px;
     padding: 0 40px;
 }
-header h1 {/*float는 옆으로 나란히 명백하게 오른쪽 왼쪽이 나뉘어져 있지 않을 경우 그냥 float left로 주기*/
+header h1 {/*float는 옆으로 나란히 명백하게 오른쪽 왼쪽이 나뉘어져 있지 않을 경우,나란히 들어가는 경우 그냥 float left로 주기*/
     float: left;
     margin: 29px 0 0 6px;
 }
@@ -52,7 +52,7 @@ header nav .market {
     background-position: center center;
     background-repeat: no-repeat;
     height: 700px;
-    background size: cover;
+    background-size: cover;
 }
 .visual strong {
     display: block;
@@ -78,4 +78,243 @@ header nav .market {
     line-height: 1.1;/*strong과 h2 사이의 행간 때문에 발생한 여백 삭제*/
     font-size: 40px;
     font-weight: 300;
+}
+.category ul li {
+    float: left;
+    width: 240px;
+    margin: 0 20px 0 0;
+}
+.category ul li:last-child {/*ul에는 li만 들어갈 수 있고 마지막 li가 last child, li에 붙여서 : 써주기*/
+    margin-right: 0; /*오른쪽 여백은 0*/
+}
+.category ul li a {
+    display: block;
+}
+/*
+.category ul li a {  이미지에 보더를 줄떄 선이 이미지 밖으로 조금 삐져나올 경우
+    width : 100%
+    display: block;
+    box sizing : boderbox
+}
+*/
+.category ul li a strong {
+    display: block;
+    margin: 5px 0 0 0;
+}
+.network {
+    height: 730px;
+    margin: 210px 0 0 0;
+    background-image: url(../images/network_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /*배경영역 가득 채워서 표시*/
+    color: #ffffff;
+    font-family: 'Noto Serif KR', serif;
+}
+.network h2 {
+    padding: 216px 0 0 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+.network p {
+    margin: 16px 0 40px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.network a {/*a는 무조건 display block을 먼저 주고 크기가 크면 inline block으로 바꾸기, float가 들어가면 inline block 안들어가도 됨*/
+    display:block;
+    float: left;/*a사이의 여백 없이 나란히 배치*/
+    padding: 13px 14px;
+    margin: 0 19px 0 0;
+    border: 1px solid rgba(255,255,255,0.8); /*흰색에 투명도 조절로 색상을 줬을 경우 :흰색의 rgba는 255,255,255,0.8-0.8은 투명도*/
+}
+.community .tit {
+    color: #1d1d1d;
+}
+.community .tit strong {
+    display: block;
+    font-weight: 700;
+    margin: 180px 0 0 0;
+}
+.community .tit h2 {
+    margin: 0 0 49px 0;
+    line-height: 1.1;/*strong과 h2 사이의 행간 때문에 발생한 여백 삭제*/
+    font-size: 40px;
+    font-weight: 300;
+}
+.community .list .colgroup1 {
+    float: left;
+    width: 630px;
+    margin: 0 20px 0 0;
+}
+.community .list .colgroup2 {
+    float: left;
+    width: 630px;
+}
+.community .list ul li {
+    float: left;
+}
+.community .list ul li a {
+    display: block;
+    width: 305px;
+    height: 221px;
+    padding: 30px 30px 0 30px;
+    background-color: #f4f4f4;
+}
+.community .list ul li a em {
+    display: block;
+}
+.community .list ul li a strong {
+    display: block;
+    margin: 0 0 55px 0;
+    font-size: 20px;
+    font-weight: 700;
+    /*제목이 길때 2줄로 고정하는 스타일 ↓  글자가 너무 짧아도 공간은 2줄 공간을 차지*/
+    line-height: 1.5;
+    height: 3em; /*행간 곱하기 줄 수 - 단위는 em*/
+    overflow: hidden;
+}
+.community .list ul li a .date {
+    display: block;
+    color: #666666;
+}
+.community .list ul li a .date .write { /*writedhk 애프터 부분의 코딩이 내용 사이에 그어준(막대기) 밑줄 생성*/
+    position: relative;
+    padding: 0 10px 0 0;
+}
+.community .list ul li a .date .write::after {/*after는 write 뒤에 가상요소(막대기)가 위치하게함*/
+    position: absolute; /*막대기의 위치를 내 마음대로 조정 -위아래 오른쪽왼쪽의 값을 줘야함*/
+    right: 1px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: #999999;
+    content: "";/*가상선택자-컨텐트를 줘야 막대기가 생성됨*/
+}
+.community .list ul li.green a {
+    margin: 0 20px 0 0;
+    background-color: #13A94F;
+    color: #ffffff;
+}
+.community .list ul li.blue a {
+    margin: 0 20px 0 0;
+    background-color: #005BAE;
+    color: #ffffff;
+}
+.community .list ul li.img01 a {
+    width: 630px;
+    height: 379px;
+    margin: 20px 0 0 0;
+    background-image: url(../images/community01.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /*배경영역 가득 채워서 표시*/
+    color: #ffffff;
+}
+.community .list ul li.img02 a {
+    width: 630px;
+    height: 379px;
+    margin: 0 0 20px 0;
+    background-image: url(../images/community02.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /*배경영역 가득 채워서 표시*/
+    color: #ffffff;
+}
+.community .list ul li.date_w a .date {
+    color: rgba(255,255,255,0.8);
+}
+.community .list ul li.date_w a .date .write::after {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.community .list ul li.img01 a em,
+.community .list ul li.img02 a em {
+    margin: 222px 0 0 0;
+}
+.community .list ul li.img01 a strong,
+.community .list ul li.img02 a strong {
+    margin: 0 0 24px 0;
+    height: auto;/*제목을 2줄로 주느라(높이고정) 고정해놨던 것을 해제*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+footer {
+    margin: 226px 0 0 0;
+    color: rgba(255,255,255,0.8);
+}
+footer .f_head {
+    height: 65px;
+    background-color: #1A1A1A;
+}
+footer .f_head ul {
+    float: left;
+    margin: 9PX 0 0 0;
+}
+footer .f_head ul li {
+    float: left;
+}
+footer .f_head ul li.privacy {
+    font-weight: 700;
+}
+footer .f_head ul li a {
+    display: block;
+    position: relative;/*after에 준 absolute의 정력의 기준*/
+    padding: 14px;
+}
+footer .f_head ul li a::after {
+    display: block;
+    /*after를 감싸는 요소 a에 position 속성이 있기 때문에 a를 기준으로 right 오른쪽 top 상단으로 정렬*/
+    position: absolute;
+    right: 0;
+    top: 19px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.3);
+    content: "";
+}
+footer .f_head ul li:first-child a {
+    padding-left: 0;
+}
+footer .f_head ul li:last-child a::after {
+    display: none;/*숨김*/
+}
+footer .f_head .quest {
+    display: block;
+    float: right;
+    padding: 6px 17px;
+    margin: 14px 0 0 0;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+footer .f_body {
+    background-color: #0A0A0A;
+}
+footer .f_body .info {
+    padding: 40px 0 47px 0;
+}
+footer .f_body .info ul {
+    margin: 0 0 10px 0;
+}
+footer .f_body .info ul li {
+    position: relative;
+    float: left;
+    margin: 0 34px 0 0;
+}
+footer .f_body .info ul li::after {
+    display: block;
+    position: absolute;
+    right: -18px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.3);
+    content: "";
+}
+footer .f_body .info ul li:last-child::after { /*li:last-child::after는 li 중에 마지막 li의 after 가상요소*/
+    display: none;
+}
+footer .f_body .coptright {
+    padding: 0 0 60px 0;
+    color: rgba(255,255,255,0.6);
 }
