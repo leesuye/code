@@ -1,0 +1,113 @@
+
+@import url(default.css);/*main.css에 default.css 삽입-호출*/
+
+
+.category .tit {
+    color: #1d1d1d;
+}
+.category .tit strong {
+    display: block;
+    font-weight: 700;
+    margin: 180px 0 0 0;
+}
+.category .tit h2 {
+    margin: 0 0 49px 0;
+    line-height: 1.1;/*strong과 h2 사이의 행간 때문에 발생한 여백 삭제*/
+    font-size: 40px;
+    font-weight: 300;
+}
+.category ul li {
+    float: left;
+    width: 240px;
+    margin: 0 20px 0 0;
+}
+.category ul li:last-child {/*ul에는 li만 들어갈 수 있고 마지막 li가 last child, li에 붙여서 : 써주기*/
+    margin-right: 0; /*오른쪽 여백은 0*/
+}
+.category ul li a {
+    display: block;
+}
+/*
+.category ul li a {  이미지에 보더를 줄떄 선이 이미지 밖으로 조금 삐져나올 경우
+    width : 100%
+    display: block;
+    box sizing : boderbox
+}
+*/
+.category ul li a strong {
+    display: block;
+    margin: 5px 0 0 0;
+}
+@media screen and (max-width:450px){
+    .category .tit strong {
+        margin: 61px 0 0 0;
+    }
+    .category .tit h2 {
+        margin: 0 0 41px 0;
+        font-size: 30px;
+    }
+    .category ul li {
+        width: 48%;
+        margin: 0 4% 0 0;
+    }
+    .category ul li:nth-child(2), .category ul li:nth-child(4) {
+        margin-right: 0;
+    }
+    .category ul li:last-child {
+        display: none;
+    }
+    .category ul li a img {
+        width: 100%;
+    }
+    .category ul li a strong {
+        display: block;
+        margin: 10px 0 15px 0;
+    }
+}/*media 종료*/
+
+.network {
+    height: 730px;
+    margin: 210px 0 0 0;
+    background-image: url(../images/network_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /*배경영역 가득 채워서 표시*/
+    color: #ffffff;
+    font-family: 'Noto Serif KR', serif;
+}
+.network h2 {
+    padding: 216px 0 0 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+.network p {
+    margin: 16px 0 40px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.network a {/*a는 무조건 display block을 먼저 주고 크기가 크면 inline block으로 바꾸기, float가 들어가면 inline block 안들어가도 됨*/
+    display:block;
+    float: left;/*a사이의 여백 없이 나란히 배치*/
+    padding: 13px 14px;
+    margin: 0 19px 0 0;
+    border: 1px solid rgba(255,255,255,0.8); /*흰색에 투명도 조절로 색상을 줬을 경우 :흰색의 rgba는 255,255,255,0.8-0.8은 투명도*/
+}
+@media screen and (max-width:450px){
+    .network {
+        height: auto;
+        padding: 0 0 97px 0;
+        margin: 69px 0 0 0;
+    }
+    .network h2 {
+        padding: 82px 0 0 0;
+        font-size: 20px;
+    }
+    .network p {
+        margin: 24px 0 38px 0;
+        font-size: 13px;
+    }
+    .network a {
+        padding: 10px 10px;
+        margin: 0 12px 0 0;
+    }
+}/*media 종료*/
