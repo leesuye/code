@@ -1,8 +1,6 @@
 @import url(default.css);
 
-.business {
-    height: 688px;
-}
+
 .business h2 {
     display: block;
     margin: 80px 0 20px 0;
@@ -37,17 +35,20 @@
 }
 .innovation h2 {
     display: block;
-    margin: 80px 0 20px 0;
+    padding: 80px 0 20px 0;
     font-weight: 700;
     font-size: 45px;
     text-align: center;
+}
+.innovation ul {
+    
 }
 .innovation ul p {
     padding: 80px 0 0 0;
 }
 .innovation ul li {
     float: left;
-    margin: 35px 0 0 0;
+    padding: 166px 0 0 0;
 }
 .innovation ul li.innovation01 {
     padding: 0 40px 0 0;
