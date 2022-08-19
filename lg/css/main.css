@@ -53,6 +53,17 @@ header .tnb button span {
     display: none;
 }
 
+header.fixed {/*헤더가 고정했을때 jquery사 class를 추가*/
+    position: fixed;
+    background-color: #fff;
+}
+header.fixed .gnb ul li a {
+    color: #1d1d1d;
+}
+header.fixed .tnb button i {
+    color: #1d1d1d;
+}
+
 /*헤더부분 모바일 시작*/
 @media screen and (max-width:640px){
     header {
@@ -84,6 +95,9 @@ header .tnb button span {
     }
     header .tnb {
         display: none;
+    }
+    header.fixed .gnb button i {
+        color: #1d1d1d;
     }
 }
 /*헤더부분 모바일 종료*/
@@ -268,7 +282,7 @@ header .tnb button span {
         width: 471px;
     }
     .biz .rowgroup2 .link ul {
-        width: 290px;
+        width: px;
     }
     .biz .rowgroup3 .link ul {
         width: 345px;
@@ -278,3 +292,69 @@ header .tnb button span {
 
 }/*비즈 모바일 종료*/
 
+.purpose {
+    height: 424PX;
+    background-image: url(../images/purpose_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+.purpose h2 {
+    padding: 91px 0 41px 0;
+    font-size: 30px;
+}
+.purpose h2 strong {
+    position: relative;
+}
+.purpose h2 strong::before {
+    left: -58px;
+    top: -8px;
+    background: url(../images/prop_quot_left.png) no-repeat center center;
+    content: '';
+}
+.purpose h2 strong::after {
+    right: -58px;
+    bottom: 11px;
+    background: url(../images/prop_quot_right.png) no-repeat center center;
+    content: '';
+}
+.purpose h2 strong::before, .purpose h2 strong::after {
+    position: absolute;
+    width: 35px;
+    height: 31px;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(255,255,255,0.8);
+}
+
+
+
+/*purpose 미디어시작*/
+@media screen and (max-width:640px){
+    .purpose {
+        height: auto;
+        padding: 0 0 41px 0;
+    }
+    .purpose h2 {
+        padding: 68px 0 46px 0;
+        font-size: 25px;
+    }
+    .purpose h2 strong::before {
+        left: -19px;
+        top: -37px;
+        background-size: 24px auto; /*넓이는 24px로 묶고 높이는 비율에 맞게 알아서*/
+        content: '';
+    }
+    .purpose h2 strong::after {
+        right: 68px;
+        bottom: -42px;
+        background-size: 24px auto;
+    }
+    .purpose h2 span {
+        display: block;/*줄바꿈*/
+    }
+}
+/*purpose 미디어 종료*/
