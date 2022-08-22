@@ -12,6 +12,7 @@ header {
     height: 100px;
     border-bottom: 1px solid rgba(255,255,255,0.4);
 }
+
 header h1 {
     float: left;
     margin: 24px 301px 0 0;
@@ -21,6 +22,9 @@ header h1 {
 }
 header h1 a {
     display: block;
+    width: 119px;
+    height: 56px;
+    background: url(../images/logo.svg) no-repeat center center / 100%;
 }
 header .gnb {
     float: left;
@@ -53,9 +57,12 @@ header .tnb button span {
     display: none;
 }
 
-header.fixed {/*헤더가 고정했을때 jquery사 class를 추가*/
+header.fixed {/*헤더가 고정했을때 jquery사 class를 추가*/  /*로고가 스크롤을 내리면 색상과 메뉴 구성이 바뀜*/
     position: fixed;
     background-color: #fff;
+}
+header.fixed h1 a {
+    background-image: url(../images/logo_b.svg);/*스크롤 내리면 로고가 바뀜*/
 }
 header.fixed .gnb ul li a {
     color: #1d1d1d;
@@ -72,8 +79,9 @@ header.fixed .tnb button i {
     header h1 {
         margin: 13px 0 0 0;
     }
-    header h1 a img {
-        width: 47px;/*모바일에서는 로고 사이즈가 바뀜*/
+    header h1 a {/*모바일에서는 로고 사이즈가 바뀜*/
+        width: 47px;
+        height: 22PX;
     }
     header .gnb {
         float: right;
@@ -358,3 +366,168 @@ header.fixed .tnb button i {
     }
 }
 /*purpose 미디어 종료*/
+
+.news {
+    margin: 120px 0;
+}
+.news h2 {
+    display: none;/*웹표준 상 section은 반드시 heading 태그를 포함해야하기 때문에 h2를 주고 숨김처리*/
+}
+.news ul li{
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.news ul li:last-child{
+    margin-right: 0;
+}
+.news ul li a {
+    display: block;
+}
+.news ul li a img {
+    width: 100%;
+}
+.news ul li a .cate {
+    display: block;
+    margin: 20px 20px 9px 20px;
+    font-weight: 700;
+}
+.news ul li a .tit {
+    display: block;
+    margin: 0 20px;
+    font-weight: 400;
+    /* ↓ 2줄로 고정하기*/
+    line-height: 1.5;
+    height: 3em; /*행간*줄수 - 단위 em*/
+    overflow: hidden;
+}
+.news ul li a .date {
+    display: block;
+    margin: 26px 20px 24px 20px;
+    font-weight: 400;
+}
+
+/*뉴스부분 미디어 시작*/
+@media screen and (max-width:640px){
+    .news {
+        margin: 44px 0 40px 0;
+    }
+    .news ul li {
+        display: none;
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    .news ul li:first-child {
+        display: block;/*한개의 li이만 나오도록 하기 위해서 모든 li를 숨기고(.news ul li에는 display: none;를 줌)
+        첫번째 li이만 남도록*/
+    }
+    .news ul li a .cate {
+        margin: 20px 19px 8px 19px;
+        font-size: 13px;
+    }
+    .news ul li a .tit {
+        font-size: 13px;
+        height: auto; /*두줄 고정 해제*/
+        overflow: auto;
+    }
+    .news ul li a .date {
+        margin: 0 ;
+        padding: 42px 20px 27px 20px;
+        font-size: 13px;
+    }
+}
+/*뉴스부분 미디어 종료*/
+
+footer {
+    background-color: #2f2f2f;
+    padding: 72px 0 90px 0;
+    color: rgba(255,255,255,0.8);
+}
+footer .family {
+    float: right;
+}
+footer .family button {/*button태그는 높이를 주면 글자가 위아래 가운데 세로정렬을 함.
+    a였다면 padding이나 line-height로 세로정렬값을 별로도 줘야함*/
+    width: 157px;
+    height: 45px;
+    padding: 0 7px 0 13px;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+footer .family button span {
+    float: left;
+}
+footer .family button i {
+    float: right;
+}
+footer .inner {
+    float: left;
+}
+footer .fnav li {
+    position: relative;/*작대기 기준점*/
+    float: left;
+}
+footer .fnav li::after {
+    position: absolute;/*작대기 놓기*/
+    right: -2px;
+    top: 6px;
+    width: 1px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.6);
+    content: "";
+}
+footer .fnav li:last-child::after {
+    display: none;/*li중에 마지막 li으 after을 숨김*/
+}
+footer .fnav li .privacy {
+    font-weight: 700;
+}
+footer .fnav li a {
+    display: block;
+    padding: 0 16px;
+}
+footer .fnav li:first-child a {
+    padding-left: 0;
+}
+footer .finfo {
+    margin: 29px 0 5px 0;
+    color: rgba(255,255,255,0.6);
+
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
+
+/*footer 미디어시작*/
+@media screen and (max-width:640px){
+    footer {
+        padding: 26px 0 49px 0;
+    }
+    footer .family {
+        float: none;
+    }
+    footer .family button {
+        height: 38px;
+        padding: 0 9px 0 18px;
+    }
+    footer .inner {
+        float: none;
+    }
+    footer .fnav {
+        margin: 20px 0 0 0;
+    }
+    footer .fnav li a {
+        display: block;
+        padding: 0 16px;
+    }
+    footer .finfo {
+        margin: 29px 0 5px 0;
+        color: rgba(255,255,255,0.6);
+    
+    }
+    footer .copyright {
+        color: rgba(255,255,255,0.6);
+    }
+}
+/*footer 미디어 종료*/
