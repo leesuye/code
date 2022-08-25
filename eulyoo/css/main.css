@@ -205,7 +205,7 @@ header .tnb ul li button i {
     display: block;
 }
 .book .list ul li a img {
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
 }
 .book .list ul li a .subject {
     display: block;
@@ -278,7 +278,7 @@ header .tnb ul li button i {
     }
     .book .list ul li a img {
         width: 100%;
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
     }
     .book .list ul li a .subject {
         margin: 10px 0 4px 0;
@@ -310,13 +310,15 @@ header .tnb ul li button i {
     position: absolute;
     left: 0;
     top: 60px;
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.25);
+}
+.interview .pic_box img {
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
 }
 .interview .cnt_box {
     height: 512px;
     margin: 0 0 0 40px;
     background-color: #EEDFD3;
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.25);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
 }
 .interview .cnt_box .inner {
     padding: 85px 30px 0 660px;
@@ -380,16 +382,16 @@ header .tnb ul li button i {
         width: 100%;
         height: calc(100% + 100px);
         background-color: #EEDFD3;
-        box-shadow: 4px 4px 10px rgba(0,0,0,0.25);
+        box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
         content: "";
     }
     .interview .cnt_box .inner {
-        padding: 20px 24px;
+        padding: 20px 24px 33px 24px;
         position: relative;
         z-index: 1;
     }
     .interview .cnt_box h3 {
-        margin: 0 0 6px 0;
+        margin: -9px 0 6px 0;
         font-size: 15px;
     }
     .interview .cnt_box p {
@@ -399,13 +401,215 @@ header .tnb ul li button i {
         display: none;
     }
     .interview .cnt_box a {
-        display: block;
         float: right;
         width: 97px;
         height: 22px;
+        padding: 0 0 0 10px;
+        line-height: 22px;
+        white-space: nowrap;
     }
-    .interview .cnt_box a i {
-        float: right;
-        margin: -30px 0 0 0 ;
+    .interview .cnt_box a span {
+        font-size: 13px;
     }
+    
+.interview .cnt_box a i {
+    margin: 0;
+    font-size: 20px;
 }
+}/*인터뷰 모바일 종료*/
+
+
+.news {
+    margin: 124px 0 0 0;
+}
+.news .tit h2 {
+    float: left;
+    font-size: 35px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.news .tit .btn {
+    float: right;
+}
+.news .tit .btn button {
+    float: left;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #3d3d3d;
+}
+.news .tit .btn button span {
+    display: none;
+}
+.news .tit .btn button i {
+    margin: 5px 0 0 0;
+    font-size: 20px; /*이이콘의 가로세로 넓이는 폰트 사이즈로 들어감*/
+    font-weight: 300;
+}
+.news .list {
+    padding: 35px 0 0 0 ;
+}
+.news .list ul {
+    /*li넓이 290 + 여백 40 =330 * 8개 */
+    width: 2640px;
+    margin: 0 0 0 -330px;
+}
+.news .list ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a img {
+    width: 100%;
+}
+.news .list ul li a .subject {
+    display: block;
+    margin: 20px 0 11px 0;
+    font-size: 15px;
+    font-weight: 700;
+    /*최대2줄*/
+    line-height: 1.5;
+    max-height: 3em; /*행간*줄 수*/
+    overflow: hidden;
+}
+.news .list ul li a .cnt {
+    display: block;
+}
+
+/*뉴스 모바일 시작*/
+@media screen and (max-width:640px){
+    .news {
+        margin: 56px 0 0 0;
+    }
+    .news .tit h2 {
+        font-size: 18px;
+    }
+    .news .tit .btn button {
+        margin-right: 6px;
+        width: 22px;
+        height: 22px;
+    }
+    .news .tit .btn button i {
+        margin: 3px 0 0 0;
+        font-size: 13px;
+    }
+    .news .list {
+        overflow-y: hidden;
+        overflow-x: auto;
+        width: calc(100% + 10px);
+        /*왼쪽으로 20px 이동
+        margin: 0 0 0 -10px;
+        position: relative
+        left -10px;*/
+        padding: 17px 0 17px 0;
+    }
+    .news .list ul {
+        /*li넓이 290 + 여백 40 =330 * 8개 */
+        width: 1200px;
+        margin: 0;
+    }
+    .news .list ul li {
+        width: 140px;
+        margin: 0 10px 0 0;
+    }
+    .news .list ul li a .subject {
+        margin: 15px 0 0 0;
+    }
+    .news .list ul li a .cnt {
+        display: none;
+    }
+}/*뉴스 모바일 종료*/
+
+footer {
+    padding: 78px 0 78px 0;
+    margin: 163px 0 0 0;
+    background-color: #3D3930;
+    color: rgba(255,255,255,0.6);
+}
+footer .flogo {
+    float: left;
+}
+footer .flogo img {
+    width: 200px;
+    opacity: 0.8;
+}
+footer .fnav {
+    float: left;
+    margin: 0 73px;
+}
+footer .fnav ul li a {
+    display: block;
+    line-height: 25px;
+}
+footer .sns {
+    float: right;
+    /* ↓ 글자 없애기 폰트사이즈와 행간을 0으로 주기*/
+    font-size: 0;
+    line-height: 0;
+}
+footer .sns a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+footer .sns a.insta {
+    background: url(../images/sns_insta.svg) no-repeat center center;
+}
+footer .sns a.facebook {
+    background: url(../images/sns_facebook.svg) no-repeat center center;
+}
+footer .sns a.naver {
+    background: url(../images/sns_naver.svg) no-repeat center center;
+}
+footer .copyright {
+    float: left;
+    line-height: 25px;
+}
+
+/*카피라이터 모바일 시작*/
+@media screen and (max-width:640px){
+    footer {
+        padding: 39px 0 39px 0;
+        margin: 58px 0 0 0;
+        text-align: center;
+    }
+    footer .flogo {
+        float: none;
+    }
+    footer .flogo img {
+        width: 146px;
+    }
+    footer .fnav {
+        float: none;
+        margin: 6px 0 11px 0;
+    }
+    footer .fnav ul li a {
+        line-height: 22px;
+    }
+    footer .sns {
+        float: none;
+    }
+    footer .sns a {
+        width: 30px;
+        height: 30px;
+    }
+    footer .sns a.insta {
+        background-size: 20px auto;
+        /*background-size를 %로 주면 background가 들어간 영역의 넓이의 몇%로 적용됨.
+        원래 배경 이미지의 비율로 계산x*/
+    }
+    footer .sns a.facebook {
+        background-size: 10px auto;
+    }
+    footer .sns a.naver {
+        background-size: 23px auto;
+    }
+    footer .copyright {
+        float: none;
+        margin: 10px 0 0 0;
+        line-height: 19px;
+    }
+}/*카피라이터 모바일 시작*/
