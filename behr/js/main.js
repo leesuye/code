@@ -24,20 +24,23 @@ $(document).ready(function(){
     스크롤되면 헤더에 클래스 추가
     */
 
-    /*로딩했을때 맨 처음*/
-    let scrolling = $(window).scrollTop() 
-    console.log(scrolling)
+    /*로딩했을때 맨 처음에만 1번 실행*/
+    let scrolling
+    headerFixed()//함수의 실행
 
-    /*스크롤 할때마다 실행*/
+    /*스크롤 할때마다 실행 */
     $(window).scroll(function(){
+        headerFixed()//함수의 실행
+    })
+
+    function headerFixed(){//함수의 선언
         scrolling = $(window).scrollTop()
-        console.log(scrolling)
         if(scrolling > 0){
             $('header').addClass('fixed')
         }else{
             $('header').removeClass('fixed')
         }
-    })
+    }
 })
 
 
