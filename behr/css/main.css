@@ -435,9 +435,119 @@ aside button span {
     font-weight: 700;
 }
 
-/*푸터 모바일 시작*/
+/*탑버튼 모바일 시작*/
 @media screen and (max-width:1400px){
     aside {
         display: none;
     }
+}/*탑버튼 모바일 종료*/
+
+footer {
+    padding: 0 0 70px 0;
+    background-color: #fff;
+    color: rgba(102,102,102,0.8);
 }
+footer .inner {
+    position: relative; /*flogo의 정렬의 기준점*/
+}
+footer .sns {
+    height: 75px;
+    border-bottom: 1px solid #ededed;
+}
+footer .sns ul {
+    float: right;
+    margin: 20px 0 0 0;
+}
+footer .sns ul li {
+    float: left;
+    margin: 0 5px 0 0;
+}
+footer .sns ul li:last-child {
+    margin-right: 0;
+}
+footer .sns ul li a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 17.5px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 21px auto;
+    border: 1px solid rgba(102,102,102,0.8);
+    /* a 안의 글자를 안보이게 폰트사이즈와 행간을 0으로 줌*/
+    font-size: 0;
+    line-height: 0;
+}
+footer .sns ul li.facebook a {
+    background-image: url(../images/facebook.png);
+}
+footer .sns ul li.naver a {
+    background-image: url(../images/naver.png);
+}
+footer .sns ul li.insta a {
+    background-image: url(../images/insta.png);
+}
+footer .sns ul li.youtube a {
+    background-image: url(../images/yotubu.png);
+}
+footer .flogo {
+    position: absolute;
+    left: 0;
+    top: 22px;
+}
+footer .flogo img {
+    width: 98px;
+    opacity: 0.6;
+}
+footer .finfo {
+    margin: 26px 0;
+    line-height: 1.7;
+}
+footer .finfo span {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+/*footer 모바일 시작*/
+@media screen and (max-width:640px){
+    footer {
+        padding: 0 0 40px 0;
+    }
+    footer .sns {
+        height: 50px;
+        text-align: center;
+    }
+    footer .sns ul {
+        display: inline-block;
+        float: none;
+        margin: 0;
+        padding: 19px 0 0 0;
+    }
+    footer .sns ul li {
+        margin: 0 5px 0 0;
+    }
+    footer .sns ul li a {
+        width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        background-size: 11px auto;
+    }
+    footer .flogo {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 12px 0 0 0;
+    }
+    footer .flogo img {
+        width: 56px;
+    }
+    footer .finfo {
+        margin: 7px 0 20px 0;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    footer .copyright {
+        font-size: 12px;
+    }
+}
+/*footer 모바일 종료*/
