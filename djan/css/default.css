@@ -3,7 +3,7 @@
 
 
 /*삭제*/
-body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, li, address, strong, span, em, p, i {/*모든 태그에 브라우저에서 주는 여백 삭제*/
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, li, address, strong, span, em, p, i , dl, dd, dt {/*모든 태그에 브라우저에서 주는 여백 삭제*/
     padding: 0;
     margin: 0;
     box-sizing: border-box;/*넓이,높이,패딩이 결합되면 사이즈가 늘어나는데 이걸 막는 스타일, 패딩을 줘도 넓이와 높이가 유지됨*/
@@ -15,7 +15,7 @@ a {/*a 태그에 브라우저가 주는 기본 속성 초기화*/
 em, address {/*브라우저에서 기울임을 주는 것을 초기화. 삭제*/
     font-style: normal;
 }
-ul, li {/*항목 앞에 동그라미 삭제*/
+ul, ol, li {/*항목 앞에 동그라미 삭제*/
     list-style: none;
 }
 

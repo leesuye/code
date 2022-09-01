@@ -1,1 +1,371 @@
 @import url('default.css');
+
+header {
+    position: absolute;/*비주얼 위에 있으니까*/
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+}
+header .logo {
+    float: left;
+    margin: 25px 184px 0 0;
+    font-size: 0;
+    line-height: 0;
+}
+header .gnb {
+    float: left;
+}
+header .gnb > ul > li {
+    float: left;
+    width: 194px;
+    text-align: center;
+}
+header .gnb > ul > li > a {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100px;/*헤더의 높이가 100px - 글자를 헤더 위 아래 가운데 위치*/
+    white-space: nowrap;
+    /*행간으로 위아래 여백을 처리해버리는 경우
+    절대 2줄이 되지 못하도록 white-space: nowrap(즐바꿈 금지)을 준다*/
+}
+header .gnb > ul > li > ul {/*2차메뉴*/
+    display: none;
+}
+header .gnb .gnb_open {/*모바일 버튼*/
+    display: none;
+}
+header .gnb .gnb_close {/*모바일 버튼*/
+    display: none;
+}
+header .tnb {
+    float: right;
+    margin: 38px 0 0 0;
+}
+header .tnb a {
+    display: block;
+    float: left;
+    margin: 0 0 0 25px;
+}
+header .tnb a i {
+    font-size: 28px;
+}
+header .tnb a span {
+    display: none;
+}
+
+/*헤더 모바일 시작*/
+@media screen and (max-width:640px){
+    header {
+        height: 45px;
+    }
+    header .logo {
+        margin: 14px 0 0 0;
+    }
+    header .logo a img {
+        width: 80px;
+    }
+    header .gnb {
+        float: right;
+        margin: 27px 0 0 0;
+    }
+    header .gnb > ul > li {
+        display: none;
+    }
+    header .gnb .gnb_open {/*모바일 버튼*/
+        display: block;
+    }
+    header .gnb .gnb_open span {/*모바일 버튼*/
+        display: none;
+    } 
+    header .gnb .gnb_open i {
+        font-size: 15px;
+    }
+    header .tnb {
+        display: none;
+    }
+}
+/*헤더 모바일 종료*/
+
+
+.visual {
+    position: relative;
+    height: 1000px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+.visual .inner {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    /*margin: -300px 0 0 0;*/
+    transform: translate(0, -313px);
+}
+.visual h2 {
+    margin: 0 0 0 889px;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1.35;
+}
+.visual h2 strong {
+    font-weight: 700;
+}
+.visual p {
+    margin: 0 0 34px 889px;
+    font-size: 35px;
+}
+.visual a {
+    margin: 0 0 0 889px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/*비주얼 모바일 시작*/
+@media screen and (max-width:640px){
+    .visual {
+        height: 760px;
+        background-size: auto 100%;
+        background-position: left 19% top 26%;
+    }
+    .visual .inner {
+        transform: translate(0, -200px);
+    }
+    .visual h2 {
+        margin: 0;
+        font-size: 35px;
+    }
+    .visual p {
+        margin: 0 0 28px 0;
+        font-size: 20px;
+    }
+    .visual a {
+        margin: 0;
+        font-size: 15px;
+    }
+}
+/*비주얼 모바일 시작*/
+
+.care .inner {
+    position: relative;
+}
+.care .tit {
+    margin: 154px 0 67px 0;
+}
+.care .tit h2 {
+    float: left;
+    color: #1D1D1D;
+    font-size: 45px;
+    font-weight: 700;
+}
+.care .tit p {
+    float: left;
+    margin: 38px 0 0 12px;
+    font-size: 15px;
+}
+.care .more {
+    position: absolute;
+    right: 0;
+    top: 45px;
+}
+.care .more a {
+    display: block;
+    width: 124px;
+    height: 22px;
+    line-height: 22px;
+}
+.care .more a span {
+    float: left;
+}
+.care .more a i {
+    float: right;
+    font-size: 20px;
+    margin: 3px 0 0 0;
+}
+.care .more a:hover {
+    color: #048B3E;
+}
+.care ul li {
+    float: left;
+    width: 440px;
+    margin: 0 40px 122px 0;
+}
+.care ul li:nth-child(3),.care ul li:nth-child(6) {
+    margin-right: 0;
+}
+.care ul li:nth-child(2),.care ul li:nth-child(5) {
+    margin-top: 70px;
+}
+.care ul li a {
+    display: block;
+}
+
+/*마우스 오버 시 이미지 확대
+1. 이미지만 감싸는 별도의 영역이 필요
+2. 해당 영역은 overflow: hidden;과 높이 설정이 필요
+   (높이는 100%)
+3. 감싸는 영역에서 font-size: 0;, line-height: 0;으로 이미지 하단에 발생하는 행간을 삭제해야함
+4. 이미지에 미리(오버전) transition을 줘서 자연스럽게 확대되도록 해야함
+5. 오버후 이미지를 transform: scale3d(확대값,확대값,1);을 줘야함(확대값은 1.2 정도를 많이 줌)
+*/
+.care ul li a span {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 20px;
+    /*이미지도 하단에 행간이 적용되어 여백이 발생함
+    이미지 하단 행간을 삭제하려면 감싸는 요소에 글자크기, 행간을 0으로 줘야함*/
+    font-size: 0;
+    line-height: 0;
+}
+.care ul li a span img {
+    transition: 0.5s;
+}
+.care ul li a:hover span img {/*이미지에 마우스를 오버했을때 이미지 사이즈가 커짐*/
+    transform: scale3d(1.2,1.2,1);/*scale3d에서 1.2는 좌우 넓이 배율, 마지막1은 축-1을 줘야 가운데서 늘어남*/
+}
+.care ul li a:hover span {
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+}
+.care ul li a dl {
+    margin: 18px 0 0 20px;
+    font-size: 20px;
+    line-height: 35px;
+}
+.care ul li a dl dt {
+    font-weight: 700;
+    float: left;
+}
+.care ul li a dl dd {
+    display: block;
+    position: relative;
+    margin: 0 0 0 100px;
+}
+.care ul li a dl dd::before {
+    position: absolute;
+    left: -13px;
+    top: 12px;
+    width: 1px;
+    height: 11px;
+    background-color: #ccc;
+    content: "";
+}
+
+/*케어 모바일 시작*/
+@media screen and (max-width:640px){
+    .care .tit {
+        margin: 63px 0 20px 0;
+    }
+    .care .tit h2 {
+        float: none;
+        font-size: 25px;
+    }
+    .care .tit p {
+        float: none;
+        margin: 0;
+    }
+    .care .more {
+        position: relative;
+        right: auto;
+        top: auto;
+        text-align: center;
+    }
+    .care .more a {
+        display: inline-block;
+        width: 124px;
+        height: 36px;
+        line-height: 36px;
+        border: 1px solid #3D3D3D;
+        border-radius: 18px;
+        padding: 0 10px 0 15px;
+    }
+    .care .more a span {
+        float: left;
+    }
+    .care .more a i {
+        margin: 8px 0 0 0;
+    }
+    
+    .care ul li {
+        float: none;
+        width: auto;
+        margin: 0 0 45px 0;
+    }
+    .care ul li:nth-child(2),.care ul li:nth-child(5) {
+        margin-top: 0;
+    }
+    .care ul li:nth-child(4),.care ul li:nth-child(5),.care ul li:nth-child(6) {
+        display: none;
+    }
+    .care ul li a span {
+        height: 100%;
+    }
+    .care ul li a span img {
+        width: 100%;
+    }
+    .care ul li a dl {
+        margin: 13px 0 0 0;
+        font-size: 15px;
+        line-height: 26px;
+    }
+    .care ul li a dl dd {
+        margin: 0 0 0 74px;
+    }
+    .care ul li a dl dd::before {
+        left: -13px;
+        top: 12px;
+        width: 1px;
+        height: 11px;
+    }
+}
+/*케어 모바일 종료*/
+
+.step {
+    height: 697px;
+    margin: 43px 0 0 0;
+    background: url(../images/step_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+.step .tit {
+    padding: 163px 0 82px 0 ;
+}
+.step .tit h2 {
+    float: left;
+    font-size: 45px;
+    font-weight: 700;
+}
+.step .tit p {
+    float: left;
+    margin: 38px 0 0 12px;
+    font-size: 15px;
+}
+.step .ctrl {
+    display: none;
+}
+.step .list ol li {
+    float: left;
+    width: 200px;
+    height: 200px;
+    padding: 18px 25px 0 19px;
+    margin: 0 40px 0 0;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.step .list ol li:last-child {
+    margin-right: 0;
+}
+.step .list ol li strong {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+}
+.step .list ol li h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
