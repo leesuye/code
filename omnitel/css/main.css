@@ -1,0 +1,219 @@
+@import url('default.css');
+
+h1 {
+    display: none;
+}
+.visual {
+    height: 850px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+.visual h2 {
+    padding: 292px 0 0 0;
+    font-size: 75px;
+    font-weight: 400;
+    line-height: 1;
+}
+.visual h2 span {
+    font-weight: 700;
+}
+@media screen and (max-width:640px){
+    .visual {
+        height: 350px;
+    }
+    .visual h2 {
+        padding: 107px 0 0 0;
+        font-size: 35px;
+    }
+}
+.works {
+    color: #fff;
+    text-align: center;
+}
+.works .inner {
+    height: 245px;
+    background-color: #F39800;
+}
+.works h2 {
+    padding: 52px 0 10px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.works span {
+    display: block;
+}
+.works .inner2 ul li {
+    float: left;
+    width: 33.33%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+}
+.works .inner2 ul li.marketing {
+    background-image: url(../images/works01.png);
+}
+.works ul li.commerce {
+    background-image: url(../images/works02.png);
+}
+.works ul li.overseas {
+    background-image: url(../images/works03.png);
+}
+.works ul li a {
+    display: block;
+    height: 300px;
+    padding: 104px 0 0 0;
+}
+.works ul li a i {
+    font-size: 50px;
+}
+.works ul li a h3 {
+    margin: 14px 0 0 0;
+}
+@media screen and (max-width:640px){
+   
+    .works .inner {
+        height: 618px;
+        background-color: #F39800;
+    }
+    .works h2 {
+        padding: 36px 0 13px 0;
+        font-size: 25px;
+    }
+    .works span {
+        display: auto;
+    }
+    .works .inner2 ul li {
+        float: none;
+        width: auto;
+    }
+    .works ul li a {
+        height: 150px;
+        padding: 27px 0 0 0;
+    }
+    .works ul li a i {
+        font-size: 30px;
+    }
+    .works ul li a h3 {
+        margin: 6px 0 0 0;
+    }
+}
+.news h2 {
+    margin: 52px 0 35px 0;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}   
+.news ul li {
+    float: left;
+    width: 400px;
+    margin: 0 40px 0 0;
+}
+.news ul li:last-child {
+    margin-right: 0;
+}
+.news ul li strong {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    height: 4.5em;
+    overflow: hidden;
+}
+.news ul li span {
+    display: block;
+    margin: 12px 0 9px 0;
+    color: #666;
+}
+.news ul li p {
+    margin: 0 0 97px 0;
+    line-height: 1.5;
+    height: 10.5em;
+    overflow: hidden;
+}
+@media screen and (max-width:640px){
+    .news h2 {
+        margin: 39px 0 29px 0;
+        font-size: 25px;
+        white-space: normal;
+        overflow: visible;
+    }   
+    .news ul li {
+        position: relative;
+        float: none;
+        width: auto;
+        margin: 0;
+    }
+    .news ul li strong {
+        font-size: 17px;
+        line-height: 0;
+        height: 0;
+        overflow: none;
+    }
+    .news ul li span {
+        display: block;
+        margin: 10px 0 10px 0;
+    }
+    .news ul li p {
+        margin: 0 0 21px 0;
+        height: 6em;
+    }
+    .news ul li p::after {
+        position: absolute;
+        bottom: -9px;
+        width: 320px;
+        height: 1px;
+        background-color: #ccc;
+        content: "";
+    }
+}
+footer {
+    background-color: #3d3d3d;
+    color: rgba(255,255,255,0.8);
+}
+footer .finfo {
+    padding: 61px 0 17px 0;
+    line-height: 1.8;
+}
+footer .finfo span {
+    display: inline-block;
+    position: relative;
+    margin-right: 16px;
+}
+footer .finfo span::after {
+    position: absolute;
+    right: -9px;
+    top: 8px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255,255,255,0.2);
+    content: "";
+}
+footer .finfo span:nth-child(4):after {
+    display: none;
+}
+footer .finfo span:last-child:after {
+    display: none;
+}
+footer .copyright {
+    margin: 0 0 102px 0;
+}
+
+/*footer 모바일 시작*/
+@media screen and (max-width:640px){
+  
+    footer .finfo {
+        padding: 45px 0 17px 0;
+        line-height: 1.2;
+    }
+    footer .finfo span::after {
+        right: -9px;
+        top: 3px;
+        height: 8px;
+    }
+    footer .finfo p {
+        display: block;
+    }
+    footer .copyright {
+        margin: 0 0 47px 0;
+    }  
+}

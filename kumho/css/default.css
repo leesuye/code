@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*모든 태그의 스타일 초기화-삭제*/
+
+
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul,ol, li, address, strong, span, em, p, i , dl, dd, dt {/*모든 태그에 브라우저에서 주는 여백 삭제*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/*넓이,높이,패딩이 결합되면 사이즈가 늘어나는데 이걸 막는 스타일, 패딩을 줘도 넓이와 높이가 유지됨*/
+} 
+a {/*a 태그에 브라우저가 주는 기본 속성 초기화*/
+    color: inherit;/*기본으로 주는 파란색 컬러 제거*/
+    text-decoration: none;/*기본으로 주는 밑줄 제거*/
+}
+em, address {/*브라우저에서 기울임을 주는 것을 초기화. 삭제*/
+    font-style: normal;
+}
+ul, ol, li {/*항목 앞에 동그라미 삭제*/
+    list-style: none;
+}
+
+button {
+    background-color: transparent;/*투명*/
+    border: 0;
+    color: inherit;
+    font-family: inherit;/*서체상속- button은 form 관련 태그이기 때문에 body 에서 적용한 서체를 자동으로 상속받지않음*/
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    cursor: pointer;/*마우스 오버 시 손바닥 모양이 나옴*/
+}
+
+
+
+
