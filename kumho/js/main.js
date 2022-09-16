@@ -14,5 +14,6 @@ $(document).ready(function(){//모든 html요소가 로딩된 후에 jquery 실�
         $('.visual .cnt_h').height(winH); //visaul의 높이를 window의 높이로 설정
         console.log('window의 높이'+ winH);
     });
+    
 
 }); //document.ready 종료

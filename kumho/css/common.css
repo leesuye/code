@@ -6,8 +6,6 @@ html, body {/*고정적이고 기본적인거 주기*/
     color: #3d3d3d;
     line-height: 1.5;/*행간*/
     font-family: 'Noto Sans KR','NanumGothic','Malgun Gothic','Apple SD Gothic','Apple SD Gothic Neo','Dotum', sans-serif;
-    /* ↑ 폰트적용우선순위 - 을유웹폰트 우선적용이고 만약 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용,  apple sd gothic은 아이폰에서 지원하는 폰트
-    영문 국문 폰트 다르게 설정할때는 폰트가 영문과 국문 둘 다 지원하면 안되고 선언은 영어폰트 먼저 선언*/
     font-size: 15px;
     font-weight: 400;/*글자두께 - 보통*/
     /* letter-spacing: -0.05em;자간 */
@@ -15,6 +13,7 @@ html, body {/*고정적이고 기본적인거 주기*/
 }
 #wrap {/*id=wrap*/
     overflow: hidden;
+    position: relative;/*header 정렬의 기준점*/
     min-width: 1400px; /*브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 최소 넓이를 줌*/
 }
 
@@ -53,6 +52,7 @@ html, body {/*고정적이고 기본적인거 주기*/
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 100;/*높은 숫자가 위로 올라옴 header아래 콘텐츠 요소는 z-index가 필요하면 100 이하의 값을 줌*/
     width: 100%; /*absolutes를 주면 요소가 inline 태그처럼 콘텐츠가 존재하는 만큼만 넓이를 갖는다. block태그처럼 사용하려면 width 100%가 필요*/
     height: 100px;
     color: #fff;
@@ -60,12 +60,13 @@ html, body {/*고정적이고 기본적인거 주기*/
 .header .logo {
     position: absolute;
     left: 30px;
-    top: 21px;
+    top: 26px;
+    z-index: 103;
 }
 .header .logo a {
     display: block;
-    width: 103;
-    height: 30px;
+    width: 107px;
+    height: 35px;
     background-image: url(../images/common/logo_w.svg);
     background-repeat: no-repeat;
     background-position: center center;/*위아래가운데 좌우가운데*/
@@ -74,6 +75,10 @@ html, body {/*고정적이고 기본적인거 주기*/
     영역의 사이지가 변경되면 배경이미지 사이즈가 알아서 변경됨*/
     font-size: 0;
     line-height: 0;
+}
+.header .gnb {
+    position: relative;/*z-index를 주기위해*/
+    z-index: 102;
 }
 .header .gnb .open {
     display: none; /*모바일에서만 보임*/
@@ -90,17 +95,352 @@ html, body {/*고정적이고 기본적인거 주기*/
     justify-content: center;
     /*ul의 넓이 안에서 li를 가운데 정렬*/
 }
+.header .gnb > ul > li {
+    position: relative;
+    width: 158px;
+    text-align: center;
+}
+.header .gnb > ul > li > a {
+    display: block;
+    font-size: 20px;
+    line-height: 100px; /*header 위아래 가운데*/
+    color: #1d1d1d;
+}
+.header .gnb > ul > li:hover > a {
+    font-weight: 700;
+    color: #DF1B23;
+    line-height: 100px;
+}
+.header .gnb > ul > li:hover > a > span {
+    position: relative;
+}
+.header .gnb > ul > li:hover > a > span::after {/*1차메뉴 밒에 마우스 오버하면 나타나는 빨간 실선-html에서 1차 메뉴들 이름을 span으로 묶음*/
+    position: absolute;
+    left: 0;
+    bottom: -37px;
+    width: 100%;
+    height: 2px;
+    background-color: #DF1B23;
+    content: "";
+}
 .header .gnb > ul > li > ul {
     display: none;/* 2차 메뉴 마우스 오버시에만 나옴*/
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 216px;
+    padding: 20px 0 0 0;
+    /*1차 메뉴 a와 2차메뉴 ul위아래 사이에는 여백이 존재하면 안됨->메뉴가 아웃됨
+    ul이 정확하게 a 밑에 배치될 수 있도록 줘야함
+    그래서 .header .gnb > ul > li:hover > a 의 행간값과 .header .gnb > ul > li > ul의 탑값을 동일하게 주고
+    a와 ul 사이의 여백을padding으로 준다
+
+    2차메뉴와 ul의 높이는 일정한게 좋음
+    2차메뉴 사이를 좌우로 이동 할 수 있어야함(메뉴가 아웃되면 안됨)
+    -->높이값을 주면 됨
+    */
+}
+.header .gnb > ul > li > ul > li > a {
+    display: block;
+    line-height: 31px;
+}
+.header .gnb > ul > li > ul > li > a:hover {
+    font-weight: 700;
+    color: #DF1B23;
 }
 .header .lang {
     position: absolute;
     right: 30px;
-    top: 21px;
+    top: 36px;
+    z-index: 103;
 }
-.header .lang ul {
-    display: none;
+.header .lang button {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    /* ↑ button 내부요소 i와 span태그를 좌우정렬, 위아래 가운데 배치*/
+    width: 118px;
+    height: 35px;
+    font-weight: 700;              
+    background-color: rgba(217,217,217,0.2);
+    border-radius: 30px;
+}
+.header .lang button i {
+    color: rgba(255,255,255,0.6);
+    font-size: 18px;
 }
 .header .lang .close {
     display: none;
 }
+.header .lang ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 118px;
+    height: 67px;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.7);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+    color: #3d3d3d;
+    text-align: center;
+}
+.header .lang ul li:first-child {
+    margin: 11px 0 0 0;
+}
+.header .lang ul li a {
+    display: block;
+}
+.header .lang ul li a:hover, .header .lang ul li.active a {
+    font-weight: 700;
+    color: #DF1B23;
+}
+
+/*언어가 열렸을때*/
+.header .lang.lang_open ul {
+    display: block;
+}
+.header .lang.lang_open .open {
+    display: none;
+}
+.header .lang.lang_open .close {
+    display: flex;
+}
+
+/*메뉴에 마우스를 오버했을때*/
+.header.menu_open {
+    color: #3d3d3d;
+}
+.header.menu_open::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 102;
+    width: 100%;
+    height: 336px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    content: "";
+}
+.header.menu_open::after { /*헤더 메뉴 밑에 실선*/
+    position: absolute;
+    left: 0;
+    top: 101px;
+    z-index: 102;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    content: "";
+}
+.header.menu_open .logo a {
+    background-image: url(../images/common/logo.svg);
+}
+.header.menu_open .gnb > ul > li > ul {
+    display: block;/*2차메뉴*/
+
+}
+.header.menu_open .lang button {
+    border: 1px solid #666;
+    background-color: #fff;
+}
+.header.menu_open .lang button span {
+    color: #1d1d1d;
+}
+.header.menu_open .lang button i {
+    color: #3d3d3d
+}
+
+@media screen and (max-width:640px){
+    .header {
+        height: 45px;
+    }
+    .header .logo {
+        left: 13px;
+        top: 10px;
+    }
+    .header .logo a {
+        width: 73px;
+        height: 25px;
+    }
+    .header .gnb .open {
+        display: block;
+        float: right;
+        padding: 11px 20px /*버튼의 크기를 키우기 위해 */
+    }
+    .header .gnb .open i {
+        font-size: 22px;
+    }
+    .header .gnb .close {
+        display: none;/*모바일에서만 보임*/
+        position: absolute;
+        right: 0;
+        top: 6px;
+        /*코딩에 순서상 메뉴 뒤에 있지만 오른쪽 상단에 배치하기 위해서*/
+        padding: 11px 20px
+    }
+    .header .gnb .close i {
+        font-size: 22px;
+    }
+    .header .gnb > ul {
+        display: none;
+        padding: 67px 20px 0 20px;
+    }
+    .header .gnb > ul > li {
+        width: auto;
+        text-align: left;
+    }
+    .header .gnb > ul > li > a {
+        position: relative;
+        line-height: 40px;
+    }
+    .header .gnb > ul > li > a::after {/*모바일 1차 메뉴 옆에 아이콘을 갖다놓기 위해 엑스 아이콘에 해당하는 속성을 가져옴*/
+        position: absolute;
+        right: 0;
+        top: 10px;
+        color: #666;
+        font-family: 'Material Symbols Rounded';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 22px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+        content: "\e5cf";/*아래모양 아이콘의 코드포인트*/
+    }
+    .header .gnb > ul > li > ul {
+        display: none;/* 2차 메뉴 마우스 오버시에만 나옴*/
+        position: relative;
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+        padding: 7px 0 7px 34px;
+        border-top: 1px solid #EDEDED;
+        border-bottom: 1px solid #EDEDED;
+    }
+
+    .header .gnb > ul > li > ul > li > a {
+        font-size: 15px;
+    }
+    .header .gnb > ul > li > ul > li > a:hover {
+        font-weight: 700;
+        color: #DF1B23;
+    }
+     /*서브메뉴가 열렸을때*/
+     .header .gnb > ul > li.sub_open > ul {
+        display: block;
+    }
+    .header .gnb > ul > li.sub_open > a {
+        font-weight: 700;
+        color: #DF1B23;
+    }
+    .header .gnb > ul > li.sub_open > a::after {
+        content: "\e5ce";
+        color: #DF1B23;
+    }
+    .header .lang {
+        display: none;
+        right: auto;
+        left: 111px;
+        top: 18px;
+    }
+    .header .lang button {
+        display: none;
+    }
+    .header .lang ul {
+        display: block;
+        position: relative;/*해제*/
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        background-color: transparent;/*투명*/
+        box-shadow: none;
+        text-align: left;
+    }
+    .header .lang ul li:first-child {
+        margin: 0;
+    }
+    .header .lang ul li {
+        float: left;
+    }
+    .header .lang ul li:first-child {
+        position: relative;
+        margin: 0 20px 0 0 ;
+    }
+    .header .lang ul li:first-child::after {
+        position: absolute;
+        right: -12px;
+        top: 5px;
+        width: 1px;
+        height: 10px;
+        background-color: #CCCCCC;
+        content: "";
+    }
+    .header .lang ul li a:hover, .header .lang ul li.active a {
+        font-weight: 700;
+        color: #DF1B23;
+    }
+    
+    /*언어가 열렸을때*/
+    .header .lang.lang_open ul {
+        display: block;
+    }
+    .header .lang.lang_open .open {
+        display: none;
+    }
+    .header .lang.lang_open .close {
+        display: flex;
+    }
+    
+    /*
+    모바일에서 메뉴가 열리면
+    header menu_mobile 클래스 추가
+    1. gnb open 숨김
+        gnb close 나타남
+    2. 흰색이 전페에 꽉차게 나옴
+    3. gnb ul 나타남
+    4. logo 이미지 변경
+    5.lang 나타남
+    */
+    
+    .header.menu_mobile {
+        color: #3d3d3d;
+    }
+    .header.menu_mobile::before {
+        position: fixed;
+        /* position: fixed는 무조건 body를 기준으로 정렬함 */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        content: "";
+    }
+    .header.menu_mobile .logo a {
+        background-image: url(../images/common/logo.svg);
+    }
+    .header.menu_mobile .gnb .open {
+        display: none;
+    }
+    .header.menu_mobile .gnb .close {
+        display: block;/*none을 보이게 하려면 block로 바꿈*/
+    }
+    
+    .header.menu_mobile .gnb > ul {
+        display: block;
+    }
+    .header.menu_mobile .lang {
+        display: block;
+    }
+    
+    
+}/*header 모바일 종료*/
