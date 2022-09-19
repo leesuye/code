@@ -114,7 +114,7 @@ html, body {/*고정적이고 기본적인거 주기*/
 .header .gnb > ul > li:hover > a > span {
     position: relative;
 }
-.header .gnb > ul > li:hover > a > span::after {/*1차메뉴 밒에 마우스 오버하면 나타나는 빨간 실선-html에서 1차 메뉴들 이름을 span으로 묶음*/
+.header .gnb > ul > li:hover > a > span::after {/*1차메뉴 밑에 마우스 오버하면 나타나는 빨간 실선-html에서 1차 메뉴들 이름을 span으로 묶음*/
     position: absolute;
     left: 0;
     bottom: -37px;
@@ -313,6 +313,12 @@ html, body {/*고정적이고 기본적인거 주기*/
         -webkit-font-feature-settings: 'liga';
         -webkit-font-smoothing: antialiased;
         content: "\e5cf";/*아래모양 아이콘의 코드포인트*/
+    }
+
+    /*hover이 요소를 클릭해도 스타일이 적용됨*/
+    
+    .header .gnb > ul > li:hover > a > span::after {
+        display: none;
     }
     .header .gnb > ul > li > ul {
         display: none;/* 2차 메뉴 마우스 오버시에만 나옴*/

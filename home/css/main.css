@@ -1,0 +1,30 @@
+@import url('default.css');
+
+h1 {
+    display: none;
+}
+.visual {
+    height: 870px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+.visual h2 {
+    padding: 285px 0 0 0;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+}
+.visual span {
+    font-weight: 700;
+}
+@media screen and (max-width:640px){
+
+    .visual {
+        height: auto;
+    }
+    .visual h2 {
+        padding: 160px 0 202px 0;
+        font-size: 25px;
+        line-height: 30px;
+    }
+}
