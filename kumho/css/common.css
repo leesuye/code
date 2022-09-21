@@ -1,38 +1,36 @@
-/*모든 페이지에 공통으로 들어가는 스타일(header/footer)*/
-
+/* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
-
-html, body {/*고정적이고 기본적인거 주기*/
-    color: #3d3d3d;
-    line-height: 1.5;/*행간*/
-    font-family: 'Noto Sans KR','NanumGothic','Malgun Gothic','Apple SD Gothic','Apple SD Gothic Neo','Dotum', sans-serif;
+html, body {
+    color: #3D3D3D;
+    line-height: 1.5;
+    font-family: 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
+    /* 폰트 적용 우선순위
+       을유 웹폰트 우선적용, - 만약에 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용됨
+       apple sd gothic - 아이폰에서 지원하는 폰트 */
     font-size: 15px;
-    font-weight: 400;/*글자두께 - 보통*/
-    /* letter-spacing: -0.05em;자간 */
-    word-break: keep-all;/*글자를 단어별로 떨어트려 나타남*/
+    font-weight: 400;
+    /* letter-spacing: -0.05em; */
+    word-break: keep-all; /* 단어별 줄바꿈 */
 }
-#wrap {/*id=wrap*/
+#wrap { /* id="wrap" */
     overflow: hidden;
-    position: relative;/*header 정렬의 기준점*/
-    min-width: 1400px; /*브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 최소 넓이를 줌*/
+    position: relative;
+    min-width: 1400px;
+    /* 브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 
+       최소 넓이를 줌 */
 }
-
-.wrapper {/*콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치*/
-    /* overflow: hidden; */
+/* 콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
+.wrapper {
     width: 1400px;
     margin: 0 auto;
 }
-
-/*media (모바일) 시작*/
 @media screen and (max-width:640px){
-    /*640px 이하의 디바이스에서만 아래 css 가 적용
-    pc에서는 1280px라는 콘텐츠 고정 넓이가 존재했지만 모바일에서는 디바이스 넓이에 맞춰서 꽉차게 구현
-    구현 방식이 달라서 고정값을 모두 삭제*/
+    /* 640px 이하의 디바이스에서만 아래 css가 적용
+      pc에서는 1280px이라는 콘텐츠 고정 넓이가 존재했지만
+      모바일에서는 디바이스 넓이에 맞춰서 꽉차게 구현
+      구현방식이 달라서 고정값을 모두 삭제 */
     html, body {
         font-size: 13px;
-        /*글자크기
-        em : 상대크기 ,1em = 글자 1개의 크기, 브라우저가 정의하는 글자 크기,자기 엄마 사이즈에 상대적으로 들어감 
-        rem : 절대크기,body에서 정의된 글자 크기대로 비율에 맞게 들어감 */
     }
     #wrap {
         min-width: 320px;
@@ -41,130 +39,145 @@ html, body {/*고정적이고 기본적인거 주기*/
         width: auto;
         margin: 0 20px;
     }
-}/*media 종결*/
-
-
-
+}/* media 종료 */
 .clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
-.clearfix{display:block;} /*가상선택자, float로 인해 밑에 영역이 따라 올라오는 경우 사용*/
+.clearfix{display:block;}
+
+.cnt_wrap {/*wrapper와 동일한 넓이를 갖는 position:relative가 있는 요소는 cnt_wrap라고 클래스를 줌*/
+    position: relative;
+}
+
 
 .header {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 100;/*높은 숫자가 위로 올라옴 header아래 콘텐츠 요소는 z-index가 필요하면 100 이하의 값을 줌*/
-    width: 100%; /*absolutes를 주면 요소가 inline 태그처럼 콘텐츠가 존재하는 만큼만 넓이를 갖는다. block태그처럼 사용하려면 width 100%가 필요*/
+    z-index: 100; 
+    /* z-index가 높은 숫자가 위로 올라옴 
+       header아래 콘텐츠 요소는 z-index가 필요하면 
+       100이하의 값을 줌 (header가 무조건 위에 있어야함)
+    */
+    width: 100%;
+    /* absolute를 주면 요소가 inline태그처럼 
+       콘텐츠가 존재하는 만큼만 넓이를 갖는다 
+       block 태그처럼 사용하려면 반드시 width:100% 필요
+    */
     height: 100px;
-    color: #fff;
+    color: #FFF;
 }
 .header .logo {
     position: absolute;
-    left: 30px;
-    top: 26px;
+    left: 20px;
+    top: 29px;
     z-index: 103;
 }
 .header .logo a {
     display: block;
-    width: 107px;
-    height: 35px;
+    width: 112px;
+    height: 37px;
     background-image: url(../images/common/logo_w.svg);
     background-repeat: no-repeat;
-    background-position: center center;/*위아래가운데 좌우가운데*/
+    background-position: center center;
     background-size: contain;
-    /* contain : 지정한 영역에서 로고 전체가 잘리지 않고 최대한 꽉차게 나오는 속성
-    영역의 사이지가 변경되면 배경이미지 사이즈가 알아서 변경됨*/
+    /* 주어진 넓이와 높이에서 로고 전체가 짤리지 않고 
+       최대한 꽉차게 나타나는 속성
+       영역의 넓이와 높이가 변경되면 
+       배경이미지 사이즈가 알아서 변경됨  */
     font-size: 0;
     line-height: 0;
 }
 .header .gnb {
-    position: relative;/*z-index를 주기위해*/
+    position: relative;
     z-index: 102;
 }
 .header .gnb .open {
-    display: none; /*모바일에서만 보임*/
+    display: none; /* 모바일에서만 나타남 */
 }
 .header .gnb .close {
-    display: none;/*모바일에서만 보임*/
+    display: none; /* 모바일에서만 나타남 */
 }
 .header .gnb > ul {
     /*
-    li를 좌우로 배치할때 float left로 할때는 li에 float를 줌
-    하지만 flexbox 코딩으로 좌우를 정렬할때는 li를 감싸는 부모에 flex를 줘야함 (절대 조부모 gnb에 줄 수 없음)
+        li를 좌우로 배치할때 float:left할때는 li에 float를 줌
+        하지만 flexbox 코딩으로 좌우로 정렬할때는
+        li를 감싸는 부모(ul)에 flex를 줘야함 
+        (절대 조부모 gnb에 줄 수는 없음)
     */
     display: flex;
-    justify-content: center;
-    /*ul의 넓이 안에서 li를 가운데 정렬*/
+    justify-content: center; 
+    /* ul의 넓이안에서 li를 가운데 정렬 */
+    margin: 5px 5px 0 0;
 }
 .header .gnb > ul > li {
-    position: relative;
-    width: 158px;
+    position: relative; /* 2차메뉴 정렬의 기준 */
+    width: 150px;
     text-align: center;
 }
 .header .gnb > ul > li > a {
     display: block;
     font-size: 20px;
-    line-height: 100px; /*header 위아래 가운데*/
-    color: #1d1d1d;
+    line-height: 95px;
 }
 .header .gnb > ul > li:hover > a {
+    color: #ED1C24 !important;
     font-weight: 700;
-    color: #DF1B23;
-    line-height: 100px;
 }
 .header .gnb > ul > li:hover > a > span {
     position: relative;
 }
-.header .gnb > ul > li:hover > a > span::after {/*1차메뉴 밑에 마우스 오버하면 나타나는 빨간 실선-html에서 1차 메뉴들 이름을 span으로 묶음*/
+.header .gnb > ul > li:hover > a > span::after {
     position: absolute;
     left: 0;
-    bottom: -37px;
+    bottom: -34px;
     width: 100%;
     height: 2px;
-    background-color: #DF1B23;
+    background-color: #ED1C24;
     content: "";
 }
 .header .gnb > ul > li > ul {
-    display: none;/* 2차 메뉴 마우스 오버시에만 나옴*/
+    display: none; /* 2차메뉴 */
     position: absolute;
     left: 0;
-    top: 100px;
+    top: 95px;
     width: 100%;
-    height: 216px;
-    padding: 20px 0 0 0;
-    /*1차 메뉴 a와 2차메뉴 ul위아래 사이에는 여백이 존재하면 안됨->메뉴가 아웃됨
-    ul이 정확하게 a 밑에 배치될 수 있도록 줘야함
-    그래서 .header .gnb > ul > li:hover > a 의 행간값과 .header .gnb > ul > li > ul의 탑값을 동일하게 주고
-    a와 ul 사이의 여백을padding으로 준다
+    height: 255px;
+    padding: 14px 0 0 0;
+    /* 1차메뉴 a와 2차메뉴 ul 위아래 사이에는 여백이 존재하면 안됨
+       메뉴가 out됨
+       ul이 정확하게 a 밑에 배치될 수 있도록 줘야함
+       하지만 실제 디자인에서 a와 ul 사이에 여백이 존재한다면
+       이는 2차메뉴 ul의 상단 padding값으로 주면 된다.
+       padding은 내부 여백이라 실제 여백으로 판단하지 않음
 
-    2차메뉴와 ul의 높이는 일정한게 좋음
-    2차메뉴 사이를 좌우로 이동 할 수 있어야함(메뉴가 아웃되면 안됨)
-    -->높이값을 주면 됨
-    */
+       2차메뉴 ul의 높이는 일정한게 좋음
+       2차메뉴 사이를 좌우로 이동 할 수 있어야함 (메뉴가 out되면 안됨)
+       --> 높이값을 주면 됨.
+       */
 }
+
 .header .gnb > ul > li > ul > li > a {
     display: block;
-    line-height: 31px;
+    line-height: 36px;
 }
 .header .gnb > ul > li > ul > li > a:hover {
+    color: #ED1C24;
     font-weight: 700;
-    color: #DF1B23;
 }
 .header .lang {
     position: absolute;
-    right: 30px;
-    top: 36px;
+    right: 20px;
+    top: 34px;
     z-index: 103;
 }
 .header .lang button {
     display: flex;
-    justify-content: space-evenly; 
+    justify-content: space-around;
     align-items: center;
-    /* ↑ button 내부요소 i와 span태그를 좌우정렬, 위아래 가운데 배치*/
-    width: 118px;
-    height: 35px;
-    font-weight: 700;              
-    background-color: rgba(217,217,217,0.2);
-    border-radius: 30px;
+    /* button 내부 요소 i와 span태그를 좌우 정렬, 위아래 가운데 배치 */
+    width: 116px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 18px;
 }
 .header .lang button i {
     color: rgba(255,255,255,0.6);
@@ -177,27 +190,28 @@ html, body {/*고정적이고 기본적인거 주기*/
     display: none;
     position: absolute;
     left: 0;
-    top: 35px;
-    width: 118px;
-    height: 67px;
-    border-radius: 20px;
-    background-color: rgba(255,255,255,0.7);
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
-    color: #3d3d3d;
+    top: 36px;
+    width: 116px;
+    height: 81px;
+    border-radius: 18px;
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    color: #3D3D3D;
     text-align: center;
 }
 .header .lang ul li:first-child {
-    margin: 11px 0 0 0;
+    margin: 8px 0 0 0;
 }
 .header .lang ul li a {
     display: block;
+    line-height: 2;
 }
-.header .lang ul li a:hover, .header .lang ul li.active a {
+.header .lang ul li a:hover, 
+.header .lang ul li.active a {
+    color: #ED1C24;
     font-weight: 700;
-    color: #DF1B23;
 }
-
-/*언어가 열렸을때*/
+/* lang가 열렸을때 */
 .header .lang.lang_open ul {
     display: block;
 }
@@ -208,82 +222,79 @@ html, body {/*고정적이고 기본적인거 주기*/
     display: flex;
 }
 
-/*메뉴에 마우스를 오버했을때*/
+/* 메뉴에 마우스를 오버했을때 */
 .header.menu_open {
-    color: #3d3d3d;
+    color: #3D3D3D;
 }
 .header.menu_open::before {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 102;
+    z-index: 101;
     width: 100%;
-    height: 336px;
-    background-color: #fff;
+    height: 386px;
+    background-color: #FFF;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     content: "";
 }
-.header.menu_open::after { /*헤더 메뉴 밑에 실선*/
+.header.menu_open::after {
     position: absolute;
     left: 0;
-    top: 101px;
-    z-index: 102;
+    top: 100px;
+    z-index: 101;
     width: 100%;
     height: 1px;
-    background-color: #ccc;
+    background-color: #EDEDED;
     content: "";
 }
-.header.menu_open .logo a {
+.header.menu_open .logo a {    
     background-image: url(../images/common/logo.svg);
 }
+.header.menu_open .gnb > ul > li > a {
+    color: #1D1D1D;
+}
 .header.menu_open .gnb > ul > li > ul {
-    display: block;/*2차메뉴*/
-
+    display: block; /* 2차메뉴 */
 }
 .header.menu_open .lang button {
     border: 1px solid #666;
-    background-color: #fff;
-}
-.header.menu_open .lang button span {
-    color: #1d1d1d;
 }
 .header.menu_open .lang button i {
-    color: #3d3d3d
+    color: #666;
 }
-
 @media screen and (max-width:640px){
     .header {
         height: 45px;
     }
     .header .logo {
-        left: 13px;
-        top: 10px;
+        top: 12px;
     }
     .header .logo a {
-        width: 73px;
-        height: 25px;
+        width: 62px;
+        height: 21px;
     }
     .header .gnb .open {
-        display: block;
+        display: block; /* 모바일에서만 나타남 */
         float: right;
-        padding: 11px 20px /*버튼의 크기를 키우기 위해 */
+        padding: 11px 20px; /* 버튼을 크기를 키우기 위해서 여백을 padding으로 줌 */
     }
     .header .gnb .open i {
         font-size: 22px;
     }
     .header .gnb .close {
-        display: none;/*모바일에서만 보임*/
+        display: none; /* 모바일에서만 나타남 */
         position: absolute;
         right: 0;
-        top: 6px;
-        /*코딩에 순서상 메뉴 뒤에 있지만 오른쪽 상단에 배치하기 위해서*/
-        padding: 11px 20px
+        top: 0;
+        /* 코딩에 순서상 메뉴 뒤에 있지만 오른쪽 상단에 배치하기 위해서 */
+        padding: 11px 20px;
     }
     .header .gnb .close i {
         font-size: 22px;
     }
     .header .gnb > ul {
         display: none;
+        margin: 0;
         padding: 67px 20px 0 20px;
     }
     .header .gnb > ul > li {
@@ -291,13 +302,15 @@ html, body {/*고정적이고 기본적인거 주기*/
         text-align: left;
     }
     .header .gnb > ul > li > a {
+        display: block;
         position: relative;
+        color: #1D1D1D;
         line-height: 40px;
     }
-    .header .gnb > ul > li > a::after {/*모바일 1차 메뉴 옆에 아이콘을 갖다놓기 위해 엑스 아이콘에 해당하는 속성을 가져옴*/
+    .header .gnb > ul > li > a::after {
         position: absolute;
         right: 0;
-        top: 10px;
+        top: 9px;
         color: #666;
         font-family: 'Material Symbols Rounded';
         font-weight: normal;
@@ -312,63 +325,57 @@ html, body {/*고정적이고 기본적인거 주기*/
         direction: ltr;
         -webkit-font-feature-settings: 'liga';
         -webkit-font-smoothing: antialiased;
-        content: "\e5cf";/*아래모양 아이콘의 코드포인트*/
+        content: "\e5cf";
     }
-
-    /*hover이 요소를 클릭해도 스타일이 적용됨*/
-    
+    /* hover이 요소를 클릭해도 스타일이 적용됨 */
     .header .gnb > ul > li:hover > a > span::after {
         display: none;
     }
     .header .gnb > ul > li > ul {
-        display: none;/* 2차 메뉴 마우스 오버시에만 나옴*/
+        display: none; /* 2차메뉴 */
         position: relative;
         left: auto;
         top: auto;
         width: auto;
         height: auto;
-        padding: 7px 0 7px 34px;
-        border-top: 1px solid #EDEDED;
-        border-bottom: 1px solid #EDEDED;
+        padding: 5px 0 5px 34px;
+        margin: 5px 0;
+        border-top: 1px solid #ededed;
+        border-bottom: 1px solid #ededed;
     }
-
     .header .gnb > ul > li > ul > li > a {
         font-size: 15px;
     }
-    .header .gnb > ul > li > ul > li > a:hover {
-        font-weight: 700;
-        color: #DF1B23;
-    }
-     /*서브메뉴가 열렸을때*/
-     .header .gnb > ul > li.sub_open > ul {
-        display: block;
+    /* 서브메뉴가 열렸을때 */
+    .header .gnb > ul > li.sub_open > ul {
+        display: block; 
     }
     .header .gnb > ul > li.sub_open > a {
+        color: #ED1C24;
         font-weight: 700;
-        color: #DF1B23;
     }
     .header .gnb > ul > li.sub_open > a::after {
+        color: #ED1C24;
         content: "\e5ce";
-        color: #DF1B23;
     }
     .header .lang {
         display: none;
         right: auto;
         left: 111px;
-        top: 18px;
+        top: 17px;
     }
     .header .lang button {
         display: none;
     }
     .header .lang ul {
         display: block;
-        position: relative;/*해제*/
+        position: relative;
         left: auto;
         top: auto;
         width: auto;
         height: auto;
         border-radius: 0;
-        background-color: transparent;/*투명*/
+        background-color: transparent;
         box-shadow: none;
         text-align: left;
     }
@@ -380,23 +387,21 @@ html, body {/*고정적이고 기본적인거 주기*/
     }
     .header .lang ul li:first-child {
         position: relative;
-        margin: 0 20px 0 0 ;
+        margin: 0 17px 0 0;
     }
     .header .lang ul li:first-child::after {
         position: absolute;
-        right: -12px;
-        top: 5px;
+        right: -11px;
+        top: 6px;
         width: 1px;
-        height: 10px;
-        background-color: #CCCCCC;
+        height: 8px;
+        background-color: #ccc;
         content: "";
     }
-    .header .lang ul li a:hover, .header .lang ul li.active a {
-        font-weight: 700;
-        color: #DF1B23;
+    .header .lang ul li a {
+        line-height: 1.5;
     }
-    
-    /*언어가 열렸을때*/
+    /* lang가 열렸을때 */
     .header .lang.lang_open ul {
         display: block;
     }
@@ -408,28 +413,27 @@ html, body {/*고정적이고 기본적인거 주기*/
     }
     
     /*
-    모바일에서 메뉴가 열리면
-    header menu_mobile 클래스 추가
-    1. gnb open 숨김
-        gnb close 나타남
-    2. 흰색이 전페에 꽉차게 나옴
-    3. gnb ul 나타남
-    4. logo 이미지 변경
-    5.lang 나타남
+        모바일에서 메뉴가 열리면 
+        header .menu_mobile 클래스 추가
+        1. gnb open 숨김
+           gnb close 나타남
+        2. 흰색이 전체에 꽉차게 들어감
+        3. gnb ul 나타남
+        4. logo가 이미지 변경
+        5. lang 나타남
     */
-    
     .header.menu_mobile {
-        color: #3d3d3d;
+        color: #3D3D3D;
     }
     .header.menu_mobile::before {
         position: fixed;
-        /* position: fixed는 무조건 body를 기준으로 정렬함 */
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: #fff;
+        background-color: #FFF;
         content: "";
+        /* position fixed는 무조건 body를 기준으로만 정렬함 */
     }
     .header.menu_mobile .logo a {
         background-image: url(../images/common/logo.svg);
@@ -438,7 +442,7 @@ html, body {/*고정적이고 기본적인거 주기*/
         display: none;
     }
     .header.menu_mobile .gnb .close {
-        display: block;/*none을 보이게 하려면 block로 바꿈*/
+        display: block; 
     }
     
     .header.menu_mobile .gnb > ul {
@@ -447,6 +451,119 @@ html, body {/*고정적이고 기본적인거 주기*/
     .header.menu_mobile .lang {
         display: block;
     }
-    
-    
-}/*header 모바일 종료*/
+
+}/* header 반응형 종료 */
+
+.footer {
+    background-color: #787878;
+    color: #fff;
+}
+.footer .family {/*cnt_wrap가 기준점 (header위에 position:relative를 줬음)*/
+    position: absolute;
+    right: 0;
+    top: 71px;
+}
+.footer .family .inner {
+    position: relative;/*.footer .family.open ul정렬의 기준*/
+    width: 180px;
+}
+.footer .family button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    /* ↑ button안에 있는 span i를 좌우 끝으로 배치, 위아래 가운데 배치*/
+    width: 100%;
+    height: 35px;
+    padding: 0 6px 0 13px;
+    /* ↑ button안에서 좌우 끝으로 배치된 span과 i의 여백*/
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 5px;
+}
+.footer .family button i {
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+}
+.footer .family ul {
+    display: none;
+    position: absolute;/*넓이를 가지고 있는 family inner를 기준으로 들어감*/
+    left: 0;
+    bottom: 35px;
+    width: 100%;
+    padding: 11px 0 13px 11px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-bottom-width: 0;
+    border-radius: 5px 5px 0 0;
+    background-color: #9E9E9E;
+}
+.footer .family ul li a {
+    line-height: 2;
+}
+.footer .family ul li a:hover {
+    font-weight: 700;
+    color: #ED1C24;
+}
+.footer .family .btn_close {
+    display: none;
+}
+
+/*damily가 열렸을때의 스타일
+    1.btn_open이 사라짐
+    2.ul이 나타남
+    3.btn_close 나타남
+*/
+.footer .family.open .btn_open {
+    display: none;
+}
+.footer .family.open ul {
+    display: block;
+}
+.footer .family.open .btn_close {
+    display: flex;
+    border-radius: 0 0 5px 5px;
+    background-color: #9E9E9E;
+}
+.footer .fnav {
+    display: flex;
+    padding: 85px 0 0 0;
+}
+.footer .fnav li {
+    margin: 0 14px 0 0;
+}
+.footer .copyright {
+    padding: 22px 0 93px 0;
+    color: rgba(255,255,255,0.6);
+}
+
+@media screen and (max-width:640px){
+    .footer .family {
+        position: relative;/*position:absolute를 줬던걸 모바일에서는 해지하기 위해 relative를 두고 right와 top값을 auto*/
+        right: auto;
+        top: auto;
+        display: flex;
+        justify-content: center;
+        padding: 49px 0 0 0;
+    }
+    .footer .family .inner {
+        width: 180px;
+    }
+    .footer .family button i {
+        font-size: 16px;
+    }
+    .footer .family ul {
+        bottom: 35px;
+        padding: 10px 0 15px 15px;
+    }
+    .footer .family ul li a {
+        line-height: 26px;
+    }
+    .footer .fnav {
+        flex-wrap: wrap;
+        padding: 37px 0 0 0;
+    }
+    .footer .fnav li {
+        margin: 0 20px 0 0;
+    }
+    .footer .copyright {
+        padding: 12px 0 51px 0;
+    }
+}/*footer 모바일 종료*/
