@@ -14,61 +14,58 @@ h1 {
     font-weight: 400;
     line-height: 1;
 }
-.visual h2 span {
+.visual h2 strong {
     font-weight: 700;
 }
 @media screen and (max-width:640px){
     .visual {
-        height: 350px;
+        height: auto;
     }
     .visual h2 {
-        padding: 107px 0 0 0;
+        padding: 107px 0 138 0;
         font-size: 35px;
     }
 }
 .works {
     color: #fff;
     text-align: center;
-}
-.works .inner {
-    height: 245px;
     background-color: #F39800;
 }
-.works h2 {
+.works .tit h2 {
     padding: 52px 0 10px 0;
     font-size: 50px;
     font-weight: 700;
 }
-.works span {
+.works .tit span {
     display: block;
 }
-.works .inner2 ul li {
+.works ul {
+    margin: 67px 0 0 0;
+}
+.works ul li {
     float: left;
     width: 33.33%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    color: #fff;
 }
-.works .inner2 ul li.marketing {
-    background-image: url(../images/works01.png);
+.works ul li.marketing a {
+    background: url(../images/works01.png) no-repeat center center / cover;
 }
-.works ul li.commerce {
-    background-image: url(../images/works02.png);
+.works ul li.commerce a {
+    background: url(../images/works02.png) no-repeat center center / cover;
 }
-.works ul li.overseas {
-    background-image: url(../images/works03.png);
+.works ul li.overseas a {
+    background: url(../images/works03.png) no-repeat center center / cover;
 }
 .works ul li a {
     display: block;
     height: 300px;
-    padding: 104px 0 0 0;
 }
 .works ul li a i {
+    margin: 82px 0 14px 0;
+    color: rgba(255,255,255,0.8);
     font-size: 50px;
 }
 .works ul li a h3 {
-    margin: 14px 0 0 0;
+    
 }
 @media screen and (max-width:640px){
    
