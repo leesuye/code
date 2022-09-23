@@ -6,7 +6,7 @@ $(document).ready(function(){
         .lnb .menu .depth .btn_close를 클릭하면
         .lnb .menu .depth에서 open 클래스 삭제
 
-       <div class="depth">    ----- $(this).parents('.depth')
+        <div class="depth">    ----- $(this).parents('.depth')
             <button class="btn_open"></button>   ----> 클릭한 요소 $(this)
         </div>
         <div class="depth">
