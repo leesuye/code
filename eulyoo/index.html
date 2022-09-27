@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--스크립트를 호출할때는 반드시 jquery파일을 먼저 호출하고 내가 만든 파일을 호출-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <title>을유문화사</title>
+</head>
+<body>
+    <div id="wrap"><!--홈페이지 전체를 감싸는 요소-->
+        <header><!--브라우저가 스크롤이 되면 jquary 에서 header에 fixed라는 클래스를 추가해줄 예정
+        css에서 header에 fixed클래스가 추가되었을때의 스타일을 미리 주면 됨-->
+            <div class="wrapper">
+                <h1><a href="#">을유문화사 로고</a></h1>
+                <nav class="gnb"><!--상단 메뉴-->
+                    <button>
+                        <span>메뉴열기</span>
+                        <i class="material-symbols-outlined">menu</i>
+                    </button>
+                    <ul>
+                        <li><a href="#">을유문화사</a></li>
+                        <li><a href="#">책</a></li>
+                        <li><a href="#">커뮤니티</a></li>
+                    </ul>
+                </nav>
+                <div class="tnb"><!--검색,장보기,로그인,마이페이지 등 탑 네비게이션-->
+                    <ul>
+                        <li class="mypage">
+                            <button> <!--눌러서 메뉴가 열리면 버튼, 다른 페이지로 넘어가면 a-->
+                                <span>회원서비스 열기</span>
+                                <i class="material-symbols-outlined">person</i>
+                            </button>
+                        </li>
+                        <li class="search">
+                            <button>
+                                <span>검색 열기</span>
+                                <i class="material-symbols-outlined">search</i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="visual">
+            <div class="wrapper">
+                <h2>1945년(을유년) 12월 1일</h2>
+                <!--pc에서 나타나는 문구-->
+                <p class="txt_pc">광복의 감격과 의의를 기리며 ‘출판은 곧 건국 사업’이라는 사명감으로<br />
+                    첫발을 내디딘 을유문화사는 한국 현대사와<br />
+                    궤軌를 같이하며 한국 출판의 기틀을 다져 왔습니다.</p>
+                 <!--모바일에서 나타나는 문구-->
+                <p class="txt_mobile">한국 현대사와궤軌를 같이하며<br />
+                     한국 출판의 기틀을 다져 왔습니다.</p>
+            </div>
+        </section>
+        <section class="book">
+            <div class="wrapper">
+                <div class="tit clearfix">
+                    <h2>을유책</h2>
+                    <p>을유문화사에서<br />
+                        발간한 도서목록입니다.</p>
+                        <div class="btn">
+                            <button>
+                                <span>이전 책 보기</span>
+                                <i class="material-symbols-outlined">chevron_left</i>
+                            </button>
+                            <button>
+                                <span>다음 책 보기</span>
+                                <i class="material-symbols-outlined">chevron_right</i>
+                            </button>
+                        </div>
+                </div>
+                <div class="list">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">
+                                <img src="images/book01.png" alt="무심한 듯 씩씩하게 표지"/>
+                                <strong class="subject">무심한 듯 씩씩하게</strong>
+                                <span class="writer">김필영,김영화</span>
+                                <span class="cnt">느리고 흐물흐물하지만 덕분에 절대로 부러지지 않는, 무심한 듯 씩씩하게 살아온 김필영 씨의 삶과 결혼 이야기. </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/book02.png" alt="휠체어 탄 소녀를 위한 동화는 없다 표지"/>
+                                <strong class="subject">휠체어 탄 소녀를 위한 동화는 없다</strong>
+                                <span class="writer">어맨다 레덕 ,김소정</span>
+                                <span class="cnt">우리를 사로잡은 이야기들이 소외를 낳는 방식
+                                    동화를 거울삼아 돌아보는 장애에 대한 편견과 그 너머의 이야기</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/book03.png" alt="몸은 기억한다 표지"/>
+                                <strong class="subject">몸은 기억한다</strong>
+                                <span class="writer">베셀 반 데어 콜크 ,제효영</span>
+                                <span class="cnt">“트라우마의 기억은 처음 유입된 시점에서 오랜 시간이 지나도 계속해서 영향을 주는 이물질과 같다.”</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/book04.png" alt="나의 뇌는 나보다 잘났다 표지"/>
+                                <strong class="subject">나의 뇌는 나보다 잘났다</strong>
+                                <span class="writer">프란카 파리아넨 ,유영미</span>
+                                <span class="cnt">유머를 좀 아는젊은 사회신경과학자가
+                                    뇌 과학으로인간관계의 불편함을 가볍고
+                                    유쾌하게 덜어내다</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/book05.png" alt="수면의 과학 표지"/>
+                                <strong class="subject">수면의 과학</strong>
+                                <span class="writer">사쿠라이 다케시 ,장재순</span>
+                                <span class="cnt">“인간의 모든 행복과 불행은 ‘수면’에서 비롯된다”
+                                    일본 수면 연구 일인자가 밝히는 잠의 모든 것   </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/book06.png" alt="언제 들어도 좋은 말 표지"/>
+                                <strong class="subject">언제 들어도 좋은 말</strong>
+                                <span class="writer">이석원</span>
+                                <span class="cnt">『보통의 존재』 이석원의 또 한 권의 베스트셀러
+                                    한번 잡으면 놓을 수 없는 독특한 서사
+                                    개정판 ‘그 후의 이야기’ 추가</span>
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+            </div>
+        </section>
+        <section class="interview">
+            <div class="wrapper">
+                <h2>을유인터뷰</h2>
+                <div class="colgroup">
+                    <div class="pic_box">
+                        <img src="images/intreview.png" alt="『보이지 않는 도시』저자 임우진 사진"/>
+                    </div>
+                    <div class="cnt_box">
+                        <div class="inner">
+                            <h3>보이지 않는 도시 저자
+                                건축가 임우진</h3>
+                            <p><span>안녕하세요. 저는 보이지 않는 도시를 쓴 건축가 임우진이라고 합니다.<br /><br />
+
+                            여행 작가들 사이에 그런 말이 있어요. "로마에 일주일 가보고는 몇 권의 책이라도 쓸 수 있다. 
+                            그러나 정작 그곳에서 산다면 한 페이지의 글도 쓸 수 없다" 
+                            익숙해진다는 것은 편하지만 한편으론 무섭습니다. 눈을 가리니까요. 
+                            특히 무엇인가를 창조하는 직업군에게는 더욱 그렇습니다.
+                            저는 어릴 때부터 여행을 좋아했는데요. 여행을 떠나보면 여기서 가지고 누리는 것들이
+                            저기서는 하나도 당연하지 않다는 것이 신기했어요. 새로운 곳을 발견하는 즐거움과 나아가, 익숙한 곳을 재발견하는 놀라움을 함께 얻었습니다.<br /><br /> 
+                            </span>
+                            매일 보는 도시의 공간인데 시점을 바꾸면, 
+                            보이지 않는 측면이 들여다보이는 그 독특한 경험을 독자들과 나누고 싶었어요.
+                            ‘보이지 않는 도시’는 그런 뜻이 담긴 제목이에요.</p>
+                            <a href="#">
+                                <span>자세히보기</span>
+                                <i class="material-symbols-outlined">chevron_right</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="news">
+            <div class="wrapper">
+                <div class="tit clearfix">
+                    <h2>을유소식</h2>
+                    <div class="btn">
+                        <button>
+                            <span>이전 소식 보기</span>
+                            <i class="material-symbols-outlined">chevron_left</i>
+                        </button>
+                        <button>
+                            <span>다음 소식 보기</span>
+                            <i class="material-symbols-outlined">chevron_right</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">
+                                <img src="images/news01.png" alt="아주 편안한 죽음 책 표지"/>
+                                <strong class="subject">한국출판문화산업진흥원 4월 추천도서 아주 편안한 죽음이 선정되었습니다.</strong>
+                                <span class="cnt">한국출판문화산업진흥원 4월 추천도서로 시몬 드 보부아르 아주 편안한 죽음이 선정되었습니다. 조경란 소설가의 추천사 전문은 아래 링크를 통해 만나 보실 수 있습니다.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news02.png" alt="윤혜정 북토크 사진"/>
+                                <strong class="subject">인생, 예술 윤혜정 작가 소전서림 북토크</strong>
+                                <span class="cnt">인생, 예술 윤혜정 작가 북토크가 소전서림에서 진행됩니다. 보그 바자 에디터, 현 국제갤러리 디렉터 윤혜정 작가의 이야기를 통해 책에 소개된 예술가와 작품에 대한 풍성한 이야기를 만나 보세요.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news03.png" alt="이기적 유전자 표지"/>
+                                <strong class="subject">이기적 유전자 한정판 예스리커버 출간!</strong>
+                                <span class="cnt">오직 예스24에서만 만날 수 있는 리처드 도킨스의 이기적 유전자 한정판 리커버가 출간되었습니다. 예스리커버 이기적 유전자 포함 자연과학 3만 원 이상 구매 시, '이기적 유전자 블랙 머그'를 드립니다.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news04.png" alt="유현준 작가 포스터"/>
+                                <strong class="subject">유현준 작가 교보문고 광화문점 41주년 기념 사인회</strong>
+                                <span class="cnt">교보문고 광화문점 41주년 기념 사인회, 그 시작을 공간의 미래 유현준 작가가 장식합니다. 오랜만에 진행하는 대면 사인회에 독자 여러분의 많은 관심과 참여 바랍니다!</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news05.png" alt="그림 속 소녀의 웃음이 내 마음에 표지"/>
+                                <strong class="subject">그림 속 소녀의 웃음이 내 마음에 출간 이벤트!</strong>
+                                <span class="cnt">을유문화사에서 3월 신간으로 그림에세이를 출간하게 되었습니다.
+                                    미술 분야 파워블로거로 7년 연속 선정된 ‘레스까페 님’의 아름다운 명화 이야기와
+                                    관련된 이벤트를 알고 싶으시다면페이스북 페이지를 방문해주세요~</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news06.png" alt="공간의 미래 표지"/>
+                                <strong class="subject">공간의 미래 교보문고 리커버 출간 기념
+                                    랜선 팬사인회가 열립니다.</strong>
+                                <span class="cnt">3월 3일 목요일 7시, 교보문고 유튜브에서 공간의 미래 리커버 출간을 기념하여 유현준 작가의 랜선 팬사인회가 열립니다. 방송 중 책을 구매하시면 작가가 직접 사인한 도서를 보내 드립니다.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news07.png" alt="미래에서 온 외계인 보고서 표지"/>
+                                <strong class="subject">미래에서 온 외계인 보고서 올해의 청소년 교양도서 선정</strong>
+                                <span class="cnt">미래에서 온 외계인 보고서가 대한문화협회 청소년 교양도서에 선정되었습니다.
+                                    선정된 도서에 많은 관심 부탁드립니다.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news08.png" alt="제2의 성 세계 여성의 날 기념 북토크 표지"/>
+                                <strong class="subject">제2의 성 세계 여성의 날 기념 북토크</strong>
+                                <span class="cnt">세계 여성의 날을 맞이하여 시몬 드 보부아르 제2의 성 북토크가 '번역가의 서재'에서 열립니다.
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                
+                </div>
+            </div>
+        </section>
+       <footer class="clearfix">
+            <div class="wrapper">
+                <div class="flogo">
+                    <img src="images/logo.svg.svg" alt="을유문화사로고"/>
+                </div>
+                <div class="fnav">
+                   <ul>
+                    <li><a href="#">서비스 이용약관</a></li>
+                    <li><a href="#">개인 정보 처리 방침</a></li>
+                    <li><a href="#">책임 한계 및 법적 고지</a></li>
+                   </ul>
+                </div>
+                <div class="sns">
+                    <a href="https://www.instagram.com/eulyoo/" target="_blank" title="새창" class="insta">인스타그램</a>
+                    <a href="https://www.facebook.com/eulyoo/" target="_blank" title="새창" class="facebook">페이스북</a>
+                    <a href="https://m.post.naver.com/my.nhn?memberNo=20168227" target="_blank" title="새창" class="naver">네이버블로그</a>
+                </div>
+                <div class="copyright">
+                    COPYRIGHT © 2020 EULYOO PUBLISHING CO., LTD.<br />
+                    ALL RIGHTS RESERVED. SINCE 1945.<br />
+                    DESIGNED BY WORKROOM.
+                </div>
+            </div>
+       </footer>
+</body>
+</html>

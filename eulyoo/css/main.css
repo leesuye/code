@@ -1,0 +1,625 @@
+@import url('default.css');
+
+header {
+    position: absolute; /*body를 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    width: 100%; /*position: absolute;을 주면 주변 요소가 inline-block이 된 것처럼
+    내부에 콘텐츠가 존재하는 만큼의 넓이만 갖는다 그래서 넓이를 100% 줘야함*/
+    min-width: 1280px;
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    transition: background-color 0.5s;/*효과가 부드럽게 들어감*/
+}
+header h1 {
+    float: left;
+    margin: 30px 289px 0 0;
+}
+header h1 a {/*로고부분*/
+    display: block;
+    width: 225px;
+    height: 38px;
+    background: url(../images/logo.svg.svg) no-repeat center center / 100%;
+    /* 로고를 영역에 꽉차게 하기 위해서 size를 넓이 100% (높이는 비율에 맞게 알아서 - 높이를 안써주면 알아서 들어감)
+    cover은 배경을 영역에 빈틈없이 매꾸는 것이기 때문에 로고가 짤림*/
+    font-size: 0;/*웹접근성 때문에 배경로고 대체텍스트로 쓴 글자 숨기기위해 폰트 사이즈와 행간은 0*/
+    line-height: 0;
+}
+header .gnb {
+    float: left;
+    margin: 21px 0 0 0;
+}
+header .gnb button {
+    display: none;/*모바일에서만 표시 - 메뉴 여는 버튼*/
+}
+header .gnb ul li {
+    float: left;    
+}
+header .gnb ul li a {
+    display: block;
+    padding: 18px 21px;
+    font-size: 20px;
+}
+header .tnb {
+    float: right;
+    margin: 24px 11px 0 0;
+}
+header .tnb ul li {
+    float: left;
+}
+header .tnb ul li button span {
+    display: none;/*설명문구 숨김*/
+}
+header .tnb ul li button i {
+    padding: 14px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/*header에 fixed 클래스가 추가되었을때의 디자인*/
+header.fixed {
+    position: fixed;/*스크롤을 내려도 그위치 그대로*/
+    z-index: 100;
+    border-bottom: 0;
+    background-color: #595954;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1) ;
+}
+
+
+/*헤더 모바일 시작*/
+@media screen and (max-width:640px){
+header {
+    height: 45px;
+    min-width: auto;
+}
+header h1 {
+    margin: 14px 0 0 0;
+}
+header h1 a {
+    width: 115px;
+    height: 19px;
+}
+header .gnb {
+    float: right;
+    margin: 12px 0 0 7px;
+}
+/*
+h1 / gnb / tnb 코딩 순서가 이와 같을때 모든요소에 float:right를 주면 화면에 나타나는 순서는 tnb / gnb / h1이 된다
+→ float:right를 먼저 선언한 요소가 오른쪽 자리를 차지
+*/
+header .gnb button {
+    display: block;
+}
+header .gnb button span {
+    display: none;
+}
+header .gnb button i {
+    font-size: 20px;
+    font-weight: 400;
+}
+header .gnb ul {
+    display: none;
+}
+header .tnb {
+    margin: 12px 0 0 0;
+}
+header .tnb ul li.mypage {
+    display: none;
+}
+header .tnb ul li button i {
+    padding: 0;
+    font-size: 20px;
+}
+}
+/*헤더 모바일 종료*/
+
+
+.visual {
+    height: 850px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover; /*배경에 대한 것들 한 번에 적용시키기 컬러 반복 위치 / 사이즈*/
+    color: #fff;
+    text-align: center;
+}
+.visual h2 {
+    padding: 347px 0 14px 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+.visual p {
+    font-size: 25px;
+    line-height: 1.4;
+}
+.visual .txt_mobile {
+    display: none; /*모바일에서 보일 글자니까 pc에서는 안보이게 처리*/
+}
+
+/*비주얼 모바일 시작*/
+@media screen and (max-width:640px){
+    .visual {
+        height: auto;
+        padding: 0 0 50px 0;
+        text-align: left;
+    }
+    .visual h2 {
+        padding: 128px 0 13px 0;
+        font-size: 20px;
+    }
+    .visual p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    .visual .txt_pc {
+        display: none;
+    }
+    .visual .txt_mobile {
+        display: block;
+    }
+}
+/*비주얼 모바일 시종료*/
+
+.book {
+    margin: 200px 0 180px 0;
+    color: #3d3d3d;
+}
+.book .tit {
+    float: left;
+}
+.book .tit h2 {
+    margin: 0 0 15px 0;
+    color: #1d1d1d;
+    font-size: 35px;
+    font-weight: 700;
+}
+.book .tit .btn {
+    margin: 24px 0 0 0;
+}
+.book .tit .btn button {
+    float: left;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #3d3d3d;
+}
+.book .tit .btn button span {
+    display: none;
+}
+.book .tit .btn button i {
+    margin: 5px 0 0 0;
+    font-size: 20px; /*이이콘의 가로세로 넓이는 폰트 사이즈로 들어감*/
+    font-weight: 300;
+}
+
+/* ↓ 컨텐츠 영역 밖으로 나가는 리스트-스크롤(모바일)
+1. ul을 감싸는 div가 있어야함
+2. ul을 감싸는 div는 ovwrflow:auto이어야함 (모바일) 
+    넓이와 높이를 입력
+3. ul은 li전체의 넓이를 가져야함
+    ul은 position:absolute(모바일) - 좌우로 슬라이드는 absolute만됨*/
+
+.book .list {
+    margin-left: 330px;
+    /*왼쪽요소는 float left, 오른쪽요소는 margin left로  왼쪽요소의 넓이 만큼의 여백으로 준다
+    오른쪽요소는 block임
+    오른쪽요소가 왼쪽요소를 인지하지 못하고 위로 올라옴*/
+}
+.book .list ul { 
+    width: 1980px;/*모든 li가 한줄로 들어갈 수 있는 넓이*/
+}
+.book .list ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.book .list ul li a {
+    display: block;
+}
+.book .list ul li a img {
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+}
+.book .list ul li a .subject {
+    display: block;
+    margin: 20px 0 6px 0;
+    font-size: 15px;
+    font-weight: 700;
+    /* ↓ 무조건 한줄*/
+    white-space: nowrap;
+    overflow: hidden;/*해당 줄을 넘어가면 안보이게*/
+    text-overflow: ellipsis;/*잘린 글자 끝에 ...으로 표시됨*/
+}
+.book .list ul li a .writer {
+    display: block;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.book .list ul li a .cnt {
+    display: block;
+    /* ↓ 여러줄*/
+    line-height: 1.5;
+    height: 4.5em; /*행간*줄 수*/
+    overflow: hidden;
+}
+
+/*책 모바일 시작*/
+@media screen and (max-width:640px){
+    .book {
+        margin: 57px 0 63px 0;
+    }
+    .book .tit {
+        float: none;
+    }
+    .book .tit h2 {
+        float: left;
+        margin: 0;
+        font-size: 17px;
+    }
+    .book .tit p {
+        display: none;/*모바일숨김*/
+    }
+    .book .tit .btn {
+        float: right;
+        margin: 0;
+    }
+    .book .tit .btn button {
+        margin-right: 6px;
+        width: 22px;
+        height: 22px;
+    }
+    .book .tit .btn button i {
+        margin: 3px 0 0 0;
+        font-size: 15px;
+    }
+    .book .list {
+        overflow-y: hidden; /*가로스크롤바가 생성되면 가로스크롤 만큼 높이가 줄어서 세로 스크롤바가 생성되기도 하는데 그걸 방지*/
+        overflow-x: auto;
+        width: calc(100% + 20px);/*calc는 넓이나 높이의 숫자를 게산할때 사용. 대부분 %와 px를 합칠때 사용 list에 100%를 주면
+         wrapper가 좌우에 여백 20px를 준 안쪽으로 넓이가 생성된다. 그런데 오른쪽만 콘텐츠 영역 밖으로 더 나가고자 하면 calc(100% + 20px)*/
+        padding: 17px 0;
+        margin-left: 0;
+    }
+    .book .list ul { 
+        width: 925px;
+    }
+    .book .list ul li {
+        width: 140px;
+        margin: 0 12px 0 0;
+    }
+    .book .list ul li a img {
+        width: 100%;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    }
+    .book .list ul li a .subject {
+        margin: 10px 0 4px 0;
+        /*1줄 -> 2줄로 바꾸려면 화이트 스페이스는 nomal에 행간과 높이em를 줘야함*/
+    }
+    .book .list ul li a .writer {
+        margin: 0 0 4px 0;
+    }
+    .book .list ul li a .cnt {
+        display: none;
+    }
+}
+/*책 모바일 종료*/
+
+.interview {
+    padding-bottom: 276px;
+    background-color: rgba(239,237,218,0.4);
+}
+.interview h2 {
+    padding: 77px 0 50px 0;
+    color: #1d1d1d;
+    font-size: 35px;
+    font-weight: 700;
+}
+.interview .colgroup {
+    position: relative; /*pic_box정렬의 기준점*/
+}
+.interview .pic_box {
+    position: absolute;
+    left: 0;
+    top: 60px;
+}
+.interview .pic_box img {
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+}
+.interview .cnt_box {
+    height: 512px;
+    margin: 0 0 0 40px;
+    background-color: #EEDFD3;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+}
+.interview .cnt_box .inner {
+    padding: 85px 30px 0 660px;
+}
+.interview .cnt_box h3 {
+    margin: 0 0 16px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+.interview .cnt_box p {
+    margin: 0 0 52px 0; 
+}
+.interview .cnt_box a {
+    display: block;
+    width: 125px;
+    height: 30px;
+    padding: 0 10px 0 14px;
+    line-height: 30px; /*버튼디자인에서 글자를 높이의 위아래 가운데 배치하기 위해서는
+    제일 쉬운 방법인 행간을 높이값과 동일하게 주는 것이다*/
+    white-space: nowrap;
+    border: 1px solid #3d3d3d;
+}
+.interview .cnt_box a span {
+    float: left;
+}
+.interview .cnt_box a i {
+    float: right;
+    margin: 2px 0 0 0 ;
+}
+/*인터뷰 모바일 시작*/
+@media screen and (max-width:640px){
+   .interview {
+    padding-bottom: 20px;
+    }
+    .interview h2 {
+        padding: 19px 0 34px 0;
+        font-size: 18px;
+    }
+    .interview .pic_box {
+        position: relative;
+        left: auto;
+        top: auto;
+        text-align: center;
+    }
+    .interview .pic_box img {
+        width: 208px;
+        position: relative;
+        z-index: 1;
+    }
+    .interview .cnt_box {
+        position: relative;
+        height: auto;
+        margin: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .interview .cnt_box::after {
+        position: absolute;
+        left: 0;
+        top: -100px;
+        width: 100%;
+        height: calc(100% + 100px);
+        background-color: #EEDFD3;
+        box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+        content: "";
+    }
+    .interview .cnt_box .inner {
+        padding: 20px 24px 33px 24px;
+        position: relative;
+        z-index: 1;
+    }
+    .interview .cnt_box h3 {
+        margin: -9px 0 6px 0;
+        font-size: 15px;
+    }
+    .interview .cnt_box p {
+        margin: 0 0 19px 0; 
+    }
+    .interview .cnt_box p span {
+        display: none;
+    }
+    .interview .cnt_box a {
+        float: right;
+        width: 97px;
+        height: 22px;
+        padding: 0 0 0 10px;
+        line-height: 22px;
+        white-space: nowrap;
+    }
+    .interview .cnt_box a span {
+        font-size: 13px;
+    }
+    
+.interview .cnt_box a i {
+    margin: 0;
+    font-size: 20px;
+}
+}/*인터뷰 모바일 종료*/
+
+
+.news {
+    margin: 124px 0 0 0;
+}
+.news .tit h2 {
+    float: left;
+    font-size: 35px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.news .tit .btn {
+    float: right;
+}
+.news .tit .btn button {
+    float: left;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #3d3d3d;
+}
+.news .tit .btn button span {
+    display: none;
+}
+.news .tit .btn button i {
+    margin: 5px 0 0 0;
+    font-size: 20px; /*이이콘의 가로세로 넓이는 폰트 사이즈로 들어감*/
+    font-weight: 300;
+}
+.news .list {
+    padding: 35px 0 0 0 ;
+}
+.news .list ul {
+    /*li넓이 290 + 여백 40 =330 * 8개 */
+    width: 2640px;
+    margin: 0 0 0 -330px;
+}
+.news .list ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a img {
+    width: 100%;
+}
+.news .list ul li a .subject {
+    display: block;
+    margin: 20px 0 11px 0;
+    font-size: 15px;
+    font-weight: 700;
+    /*최대2줄*/
+    line-height: 1.5;
+    max-height: 3em; /*행간*줄 수*/
+    overflow: hidden;
+}
+.news .list ul li a .cnt {
+    display: block;
+}
+
+/*뉴스 모바일 시작*/
+@media screen and (max-width:640px){
+    .news {
+        margin: 56px 0 0 0;
+    }
+    .news .tit h2 {
+        font-size: 18px;
+    }
+    .news .tit .btn button {
+        margin-right: 6px;
+        width: 22px;
+        height: 22px;
+    }
+    .news .tit .btn button i {
+        margin: 3px 0 0 0;
+        font-size: 13px;
+    }
+    .news .list {
+        overflow-y: hidden;
+        overflow-x: auto;
+        width: calc(100% + 10px);
+        /*왼쪽으로 20px 이동
+        margin: 0 0 0 -10px;
+        position: relative
+        left -10px;*/
+        padding: 17px 0 17px 0;
+    }
+    .news .list ul {
+        /*li넓이 290 + 여백 40 =330 * 8개 */
+        width: 1200px;
+        margin: 0;
+    }
+    .news .list ul li {
+        width: 140px;
+        margin: 0 10px 0 0;
+    }
+    .news .list ul li a .subject {
+        margin: 15px 0 0 0;
+    }
+    .news .list ul li a .cnt {
+        display: none;
+    }
+}/*뉴스 모바일 종료*/
+
+footer {
+    padding: 78px 0 78px 0;
+    margin: 163px 0 0 0;
+    background-color: #3D3930;
+    color: rgba(255,255,255,0.6);
+}
+footer .flogo {
+    float: left;
+}
+footer .flogo img {
+    width: 200px;
+    opacity: 0.8;
+}
+footer .fnav {
+    float: left;
+    margin: 0 73px;
+}
+footer .fnav ul li a {
+    display: block;
+    line-height: 25px;
+}
+footer .sns {
+    float: right;
+    /* ↓ 글자 없애기 폰트사이즈와 행간을 0으로 주기*/
+    font-size: 0;
+    line-height: 0;
+}
+footer .sns a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+footer .sns a.insta {
+    background: url(../images/sns_insta.svg) no-repeat center center;
+}
+footer .sns a.facebook {
+    background: url(../images/sns_facebook.svg) no-repeat center center;
+}
+footer .sns a.naver {
+    background: url(../images/sns_naver.svg) no-repeat center center;
+}
+footer .copyright {
+    float: left;
+    line-height: 25px;
+}
+
+/*카피라이터 모바일 시작*/
+@media screen and (max-width:640px){
+    footer {
+        padding: 39px 0 39px 0;
+        margin: 58px 0 0 0;
+        text-align: center;
+    }
+    footer .flogo {
+        float: none;
+    }
+    footer .flogo img {
+        width: 146px;
+    }
+    footer .fnav {
+        float: none;
+        margin: 6px 0 11px 0;
+    }
+    footer .fnav ul li a {
+        line-height: 22px;
+    }
+    footer .sns {
+        float: none;
+    }
+    footer .sns a {
+        width: 30px;
+        height: 30px;
+    }
+    footer .sns a.insta {
+        background-size: 20px auto;
+        /*background-size를 %로 주면 background가 들어간 영역의 넓이의 몇%로 적용됨.
+        원래 배경 이미지의 비율로 계산x*/
+    }
+    footer .sns a.facebook {
+        background-size: 10px auto;
+    }
+    footer .sns a.naver {
+        background-size: 23px auto;
+    }
+    footer .copyright {
+        float: none;
+        margin: 10px 0 0 0;
+        line-height: 19px;
+    }
+}/*카피라이터 모바일 시작*/

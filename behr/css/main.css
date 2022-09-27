@@ -1,0 +1,624 @@
+@import url('default.css');
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+}
+header::after {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 259px;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    content: "";
+}
+header h1 {
+    float: left;
+    margin: 30px 0 0 0;
+}
+header h1 a {
+    display: block;
+    width: 129px;
+    height: 44px;
+    background: url(../images/logo_w.svg) no-repeat left top / 100% auto;
+    /*영역에 맞춰서 들어가는 로고는 짤리면 안되기 때문에(cover x) 사이즈가 100% 넓이에 가득, auto 높이는 비율에 맞게*/
+    font-size: 0;
+    line-height: 0;
+}
+header nav {
+    position: relative;
+    z-index: 110;
+    float: right;
+    margin: 14px 0 0 0;
+}
+header nav .gnb_open {
+    display: none;
+}
+header nav .gnb_close {
+    display: none;
+}
+/*자손선택자
+<ul>
+     <li>
+        <a href="#n">1차 메뉴</a>
+         <ul> <!--2차 메뉴-->
+            <li><a href="#n">2차 메뉴</a></li>
+         </ul>
+    </li>
+</ul>
+이렇게 동일한 태그가 반복되는 경우 (메뉴) 사용하는게 자식 선택자
+1. 자식선택의 시작이 반복되는 태그x, nav처럼 한번 나오는 태그만 가능
+2. 자식선택의로 선택시 중간에 감싸는 태그를 누락할 수 있음
+ nav > ul > ul 선택불가
+ 그래서 1차 메튜의a를 선택하는 선택자는 nav > ul > li> a
+ 2ckapsbcml ㅁ를 선택하는 선택자는 nav > ul > li> ul > li> a
+*/
+header nav > ul > li {/*1차메뉴 li*/
+    float: left;
+    width: 240px;
+    text-align: center;
+}
+header nav > ul > li > a {/*1차메뉴*/
+    display: block;
+    padding: 20px 0;
+    font-size: 25px;
+}
+header nav > ul > li:hover > a {
+    font-weight: 700;
+}
+header nav > ul > li > a > span {
+    position: relative;
+}
+header nav > ul > li:hover > a span::before {
+    position: absolute;
+    left: -7px;
+    top: -3px;
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #1d1d1d;
+    content: "";
+}
+header nav > ul > li > ul {/*2차메뉴*/
+    display: none;
+    padding: 30px 0 0 0;
+    
+    /*1차메뉴와 2차메뉴 사이에는 여백(margin)이 존재하면 안됨
+    padding은 내부 영역으로 태그영역 자체가 늘어나는 것이라 여백이 아님
+    --->여백이 존재하면 1차 메뉴에서 2차메뉴로 이동할때(내려갈때) 메뉴가 아웃되어버림*/
+}
+
+header nav > ul > li > ul > li > a {
+    display: block;
+    color: #6D6D6D;
+    font-size: 20px;
+    line-height: 33px;
+}
+header nav > ul > li > ul > li > a:hover {
+    color: #1d1d1d;
+    font-weight: 700;
+}
+
+/*헤더가 고정되거나(fixed), 메뉴에 마우스를 오버했을때(open)*/
+header.fixed {
+    position: fixed;
+}
+header.fixed, header.open {
+    border-bottom: 1px solid #EDEDED;
+    background-color: #fff;
+    color: #1D1D1D;
+}
+header.fixed h1 a, header.open h1 a {
+    background-image: url(../images/logo.svg);
+}
+header.open::after {
+    display: block;
+}
+header.open nav > ul > li > ul {/*2차메뉴*/
+    display: block;
+    padding: 35px 0 0 0;
+}
+
+/*헤더 모바일 시작*/
+@media screen and (max-width:640px){
+    header {
+        height: 45px;
+    }
+    header h1 {
+        float: left;
+        margin: 15px 0 0 0;
+    }
+    header h1 a {
+        width: 56px;
+        height: 19px;
+    }
+    header nav {
+        margin: 0;
+    }
+    header nav .gnb_open {
+        display: block;
+        padding: 0 0 0 14px;
+        height: 45px;
+    }
+    header nav .gnb_open span {
+        display: none;
+    }
+    header nav .gnb_open i {
+        margin: 4px 0 0 0;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    header nav > ul {/*1차메뉴 li*/
+       display: none;
+    }
+    
+}
+/*헤더 모바일 종료*/
+
+.visual {
+    height: 900px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+.visual h2 {
+    padding: 346px 0 12px 0;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.visual p {
+    font-size: 30px;
+    line-height: 1.2;
+}
+/*비주얼 모바일 시작*/
+@media screen and (max-width:640px){
+    .visual {
+        height: auto;
+    }
+    .visual h2 {
+        padding: 152px 0 96px 20px;
+        font-size: 25px;
+        line-height: 1.2;
+    }
+    .visual h2 span {
+        display: block;
+    }
+    .visual p {
+        display: none;
+    }
+}
+/*비주얼 모바일 종료*/
+
+.product {
+    margin: 127px 0 0 0;
+}
+.product h2 {
+    position: sticky;
+    left: 0;
+    top: 106px;
+    float: left;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.product h2 span {/*pc에서만 줄바꿈*/
+    display: block;
+}
+.product .list {
+    margin-left: 400px;
+}
+.product .list ul li {
+    width: 400px;
+    margin: 0 0 157px 0;
+}
+.product .list ul li:nth-child(1),
+.product .list ul li:nth-child(3),
+.product .list ul li:nth-child(5) {
+    float: left;
+}
+.product .list ul li:nth-child(2),
+.product .list ul li:nth-child(4){
+    float: right;
+}
+.product .list ul li:nth-child(2) {
+    margin-top: 232px;
+}
+.product .list ul li a {
+    display: block;
+}
+.product .list ul li a strong {
+    display: block;
+    margin: 2px 0 11px 0;
+    font-size: 25px;
+    font-weight: 700;
+    /*글자 2줄*/
+    line-height: 1.2;
+    height: 2.4em; /*행간*줄수*/
+    overflow: hidden;
+}
+.product .list ul li a span {
+    display: block;
+    margin: 0 0 15px 0;
+       /*글자 2줄*/
+       line-height: 1.5;
+       height: 3em;
+       overflow: hidden;
+}
+.product .list ul li a i {
+    font-size: 24px;
+}
+
+/*제품 모바일 시작*/
+@media screen and (max-width:640px){
+    .product {
+        margin: 45px 0 0 0;
+    }
+    .product h2 {
+        position: relative;
+        left: auto;
+        top: auto;
+        float: none;
+        font-size: 20px;
+    }
+    .product h2 span {
+        display: inline;
+    }
+    .product .list {
+        overflow-y: hidden;
+        overflow-x: auto;
+        width: calc(100% + 20px);/*영역 밖에 나가기*/
+        margin-left: 0;
+    }
+    .product .list ul {
+        width: 1235px;/* (225+20)*5 */
+        padding: 15px 0;/*스크롤바와 콘텐츠 바로 아래 생성돠는 것을 막기 위해*/
+    }
+    .product .list ul li {
+        width: 225px;
+        margin: 0 22px 0 0;
+    }
+    .product .list ul li:nth-child(2),
+    .product .list ul li:nth-child(4){
+        float: left;
+    }
+    .product .list ul li:nth-child(2) {
+        margin-top: 0;
+    }
+    .product .list ul li a img {
+        width: 100%;
+    }
+    .product .list ul li a strong {
+        margin: 9px 0 6px 0;
+        font-size: 14px;
+    }
+    .product .list ul li a span {
+        margin: 0 0 19px 0;
+    }
+    .product .list ul li a i {
+        font-size: 17px;
+    }
+}
+/*제품 모바일 종료*/
+
+.brand {
+    padding: 0 0 145px 0;
+     background-color: #F7F7F7;
+     text-align: center;
+}
+
+.brand h2 {
+    padding: 139px 0 100px 0;
+    font-size: 35px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.brand h2 strong {
+    display: block;
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: #3d3d3d;
+}
+.brand ul li {
+    position: relative;
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.brand ul li:last-child {
+    margin-right: 0;
+}
+.brand ul li::after {
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 1px;
+    height: 99px;
+    background-color: #ccc;
+    content: "";
+}
+.brand ul li:last-child:after {
+    display: none;
+}
+.brand ul li i {
+    font-size: 35px;
+    color: #4d4d4d;
+}
+.brand ul li h3 {
+    margin: 9px 0 1px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/*브랜드 모바일 시작*/
+@media screen and (max-width:640px){
+    .brand {
+        padding: 0;
+        margin: 26px 0 0 0;
+    }
+    .brand h2 {
+        padding: 40px 0 41px 0;
+        font-size: 20px;
+    }
+    .brand h2 strong {
+        display: none;
+    }
+    .brand h2 span {
+        display: block;
+    }
+    .brand ul {
+        padding: 0 0 39px 0;
+    }
+    .brand ul li {
+        padding: 21px 0 20px 0;
+        width: 50%;
+        margin: 0;
+    }
+    .brand ul li::after {
+        right: 0px;
+        top: 0;
+        height: 100%;
+    }
+    .brand ul li:nth-child(1):after {
+        top: 6PX;
+    }
+    .brand ul li:nth-child(3):after {
+        top: auto;
+        bottom: 2px;
+    }
+    .brand ul li:nth-child(2):after {
+        display: none;
+    }
+    .brand ul li:nth-child(3)::before,
+    .brand ul li:nth-child(4)::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        content: "";
+    }
+    .brand ul li i {
+        font-size: 30px;
+    }
+    .brand ul li h3 {
+        margin: 6px 0 0px 0;
+        font-size: 13px;
+    }
+    .brand ul li p {
+        font-size: 12px;
+    }
+}
+/*브랜드 모바일 종료*/
+
+.service h2 {
+    display: none;
+}
+.service ul li {
+    float: left;
+    width: 33.33%;
+    /*10/3=33.33333인데 반올림해서 33.34%로 하면 3개가 안나옴, 합친 수가 33.33*3=100이하여야함*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+}
+.service ul li.how {
+    background-image: url(../images/service01.png);
+}
+.service ul li.store {
+    background-image: url(../images/service02.png);
+}
+.service ul li.color {
+    background-image: url(../images/service03.png);
+}
+.service ul li a {
+    display: block;
+    height: 300px;
+    padding: 40px 0 0 40px;
+}
+.service ul li a span {
+    display: block;
+}
+.service ul li a strong {
+    display: block;
+    margin: 0 0 10px 0;
+    font-size: 35px;
+    font-weight: 700;
+}
+.service ul li a i {
+    font-size: 24px;
+}
+
+/*서비스 모바일 시작*/
+@media screen and (max-width:640px){
+    .service ul li {
+        float: none;
+        width: auto;
+    }
+    .service ul li a {
+        height: 160px;
+        padding: 30px 0 0 30px;
+    }
+    .service ul li a strong {
+        margin: 0 0 5px 0;
+        font-size: 20px;
+    }
+    .service ul li a i {
+        font-size: 17px;
+    }
+}
+/*서비스 모바일 종료*/
+
+aside {
+    position: fixed;
+    bottom: 70px;
+    right: 50px;
+    z-index: 10;
+}
+aside button {
+    width: 50px;
+    height: 50px;
+    padding: 0 0px 9px 0;
+    border-radius: 25px;
+    background-color: rgba(102,102,102,0.8);
+    color: #fff;
+    line-height: 0.5;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.1) ;
+    text-align: center;
+}
+aside button i {
+    font-size: 24px;
+}
+aside button span {
+    font-weight: 700;
+}
+
+/*탑버튼 모바일 시작*/
+@media screen and (max-width:1400px){
+    aside {
+        display: none;
+    }
+}/*탑버튼 모바일 종료*/
+
+footer {
+    padding: 0 0 70px 0;
+    background-color: #fff;
+    color: rgba(102,102,102,0.8);
+}
+footer .inner {
+    position: relative; /*flogo의 정렬의 기준점*/
+}
+footer .sns {
+    height: 75px;
+    border-bottom: 1px solid #ededed;
+}
+footer .sns ul {
+    float: right;
+    margin: 20px 0 0 0;
+}
+footer .sns ul li {
+    float: left;
+    margin: 0 5px 0 0;
+}
+footer .sns ul li:last-child {
+    margin-right: 0;
+}
+footer .sns ul li a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 17.5px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 21px auto;
+    border: 1px solid rgba(102,102,102,0.8);
+    /* a 안의 글자를 안보이게 폰트사이즈와 행간을 0으로 줌*/
+    font-size: 0;
+    line-height: 0;
+}
+footer .sns ul li.facebook a {
+    background-image: url(../images/facebook.png);
+}
+footer .sns ul li.naver a {
+    background-image: url(../images/naver.png);
+}
+footer .sns ul li.insta a {
+    background-image: url(../images/insta.png);
+}
+footer .sns ul li.youtube a {
+    background-image: url(../images/yotubu.png);
+}
+footer .flogo {
+    position: absolute;
+    left: 0;
+    top: 22px;
+}
+footer .flogo img {
+    width: 98px;
+    opacity: 0.6;
+}
+footer .finfo {
+    margin: 26px 0;
+    line-height: 1.7;
+}
+footer .finfo span {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+
+/*footer 모바일 시작*/
+@media screen and (max-width:640px){
+    footer {
+        padding: 0 0 40px 0;
+    }
+    footer .sns {
+        height: 50px;
+        text-align: center;
+    }
+    footer .sns ul {
+        display: inline-block;
+        float: none;
+        margin: 0;
+        padding: 19px 0 0 0;
+    }
+    footer .sns ul li {
+        margin: 0 5px 0 0;
+    }
+    footer .sns ul li a {
+        width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        background-size: 11px auto;
+    }
+    footer .flogo {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 12px 0 0 0;
+    }
+    footer .flogo img {
+        width: 56px;
+    }
+    footer .finfo {
+        margin: 7px 0 20px 0;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    footer .copyright {
+        font-size: 12px;
+    }
+}
+/*footer 모바일 종료*/
