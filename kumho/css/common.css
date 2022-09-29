@@ -10,6 +10,7 @@ html, body {
     font-size: 15px;
     font-weight: 400;
     /* letter-spacing: -0.05em; */
+    -webkit-font-smoothing: antialiased;/*폰트를 깔끔하게 보이게 함*/
     word-break: keep-all; /* 단어별 줄바꿈 */
 }
 #wrap { /* id="wrap" */

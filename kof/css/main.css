@@ -107,3 +107,122 @@
         font-size: 13px;
     }
 }/*visual 미디어 종료*/
+
+
+.part {
+    margin: 110px 0 0 0;
+}
+.part h2 {
+    margin: 0 0 48px 0;
+    position: relative;
+    color: #1d1d1d;
+    font-size: 47px;
+    font-weight: 700;
+}
+.part h2::before {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 41px;
+    height: 4px;
+    background-color: #0083C9;
+    content: "";
+}
+.part .list ul {
+    width: 2400px; 
+    /* 모든 li의 넓이 + 여백을 합한 넓이를 가지고 있어야함
+      (li의 넓이 440px + 여백 40px)* li 갯수 5 */
+      margin-left: -480px; /*하나의 li의 넓이 + 여백*/
+}
+.part .list ul li {
+    float: left;
+    width: 440px;
+    margin: 0 40px 0 0;
+}
+.part .list ul li a {
+    display: block;
+}
+.part .list ul li a .pic {
+    overflow: hidden;/*마우스 오버시 이미지가 확대되는데 영역 밖으로 이미지가 나가지 않도록*/
+    font-size: 0;
+    line-height: 0;
+    /* 이미지 하단에 발생하는 여백 삭제 */
+}
+.part .list ul li a h3 {
+    margin: 8px 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+.part .list ul li a p {/*2줄로 만들기*/
+    line-height: 1.5;
+    height: 3em; /*행간*2*/
+    overflow: hidden;
+}
+.part .list ul li a .pic img {
+    width: 100%;
+    transition: 0.5s;
+}
+.part .list ul li a:hover .pic img {/* 마우스 오버했을때*/
+    transform: scale3d(1.2,1.2, 1); /*사이즈는 1.2배*/
+}
+.part .more {
+    position: absolute;
+    right: 0;
+    top: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #3d3d3d;
+    border-radius: 22px;
+}
+.part .more i {
+    font-size: 13px;
+    color: #3d3d3d;
+}
+
+@media screen and (max-width:640px){
+    .part {
+        margin: 71px 0 0 0;
+    }
+    .part h2 {
+        margin: 0 0 27px 0;
+        font-size: 25px;
+    }
+    .part h2::before {
+        top: -6px;
+        width: 23px;
+    }
+    .part .list {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px;/*가로 스크롤바가 글자에 겹쳐서*/
+    }
+    .part .list ul {
+        width: 1120px; 
+        /* 모든 li의 넓이 + 여백을 합한 넓이를 가지고 있어야함
+          (li의 넓이 2800px + 여백 20px)* li 갯수 5 */
+          margin-left: 0; /*모바일은 첫번째 li부터 나타남*/
+    }
+    .part .list ul li {
+        width: 208px;
+        margin: 0 20px 0 0;
+    }
+    .part .list ul li:last-child {
+        margin-right: 0;
+    }
+    .part .list ul li a h3 {
+        margin: 9px 0 0 0;
+        font-size: 15px;
+    }
+    .part .more {
+        top: 5px;
+        width: 25px;
+        height: 25px;
+        border-radius: 13px;
+    }
+    .part .more i {
+        font-size: 7px;
+    }
+}/*part 모바일 종료*/
