@@ -323,3 +323,161 @@ aside.top button i {
     font-size: 12px;
     color: #FFF;
 }
+
+
+@media screen and (max-width:640px){
+    aside.top {
+        bottom: 267px;
+    }
+    aside.top button {
+        width: 29px;
+        height: 37px;
+    }
+    aside.top button span {
+        margin: -3px 0 0 0;
+    }
+    aside.top button i {
+        font-size: 9px;
+    }
+}/*top버튼 모바일 종료*/
+
+.footer {
+    background-color: #242D36;
+    color: #fff;
+}
+.footer .sns {
+    position: absolute;
+    right: 0;
+    top: 65px;
+}
+.footer .sns ul li {
+    float: left;
+    margin: 0 4px 0 0;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.footer .sns ul li a {
+    display: block;
+    width: 25px;
+    height: 25px;
+    /*이미지를 a영역에 위아래/좌우 가운데 배치하기 위해서*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .flogo {
+    float: left;
+    margin: 60px 44px 0 0;
+}
+.footer .flogo img {
+    width: 114px;
+    height: 25px;
+}
+.footer .inner {
+    float: left;
+    margin: 67px 0 0 0;
+}
+.footer .fnav li {
+    position: relative;/*.footer .fnav li::after 작대기 기준점*/
+    float: left;
+    margin: 0 40px 0 0;
+    color: rgba(255,255,255,0.8);
+}
+.footer .fnav li::after {
+    position: absolute;
+    right: -21px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.3);
+    content: "";
+}
+.footer .fnav li:last-child:after {
+    display: none;
+}
+.footer .fnav li.privacy{
+    font-weight: 700;
+}
+.footer .finfo {
+    margin: 33px 0 15px 0;
+    color: rgba(255,255,255,0.8);
+}
+.footer .finfo span {
+    position: relative;
+    display: inline-block;
+    /*전화번호나 팩스처럼 짧은 스판태그로 묶인 요소들이 display: inline-block을 주면 모바일에서 두줄로 분리되서 나타나지 않음*/
+    margin: 0 40px 0 0;
+}
+.footer .finfo span::after {
+    position: absolute;
+    right: -21px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.3);
+    content: "";
+}
+.footer .finfo span:last-child:after {
+    display: none;
+}
+.footer .copyright {
+    margin: 0 0 94px 0;
+    color: rgba(255,255,255,0.6);
+}
+
+@media screen and (max-width:640px){
+    
+    .footer .sns {
+        position: relative;
+        right: auto;
+        top: auto;
+        height: 42px;
+        /*ul 가운데 정렬*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer .sns::after {/*sns 밑에 선이 영역 밖으로 나가기*/
+        position: absolute;
+        left: -20px;
+        bottom: 0;
+        width: calc(100% + 40px);
+        height: 1px;
+        background-color: rgba(255,255,255,0.3);
+        content: "";
+    }
+    .footer .sns ul li {
+        border: 0;
+    }
+    .footer .flogo {
+        float: none;
+        margin: 18px 0 25px 0;
+    }
+    .footer .flogo img {
+        width: 71px;
+        height: 16px;
+    }
+    .footer .inner {
+        float: none;
+        margin: 0;
+    }
+    .footer .fnav li {
+        margin: 0 30px 6px 0;
+    }
+    .footer .fnav li::after {
+        right: -16px;
+        height: 9px;
+    }
+    .footer .finfo {
+        margin: 28px 0 25px 0;
+    }
+    .footer .finfo span {
+        margin: 0 30px 6px 0;
+    }
+    .footer .finfo span::after {
+        right: -16px;
+        height: 9px;
+    }
+    .footer .copyright {
+        margin: 0 0 43px 0;
+    }
+}/*footer 미디어 종료*/

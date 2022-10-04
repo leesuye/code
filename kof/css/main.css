@@ -676,6 +676,17 @@
     font-size: 30px;
     font-weight: 700;
 }
+@media screen and (min-width:641px){
+    /*pc버전에서만 적용*/
+    .banner ul li {/*마우스를 오버하면 움직임*/
+        transition: 0.5s;
+    }
+    .banner ul li:hover {
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+        transform: translate(-10px, -10px);/*왼쪽으로 10, 오른쪽으로 10 움직임*/
+    }
+}
+
 
 @media screen and (max-width:640px){
     .banner {
@@ -702,3 +713,4 @@
         font-size: 20px;
     }
 }/*banner 모바일 종료*/
+
