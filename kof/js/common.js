@@ -20,7 +20,7 @@ $(document).ready(function(){
         //console.log(pcMo);
     }
 
-    $('.header .gnb > ul > li').on('mouseenter focusin', function(){
+    $('.header .gnb>ul>li').on('mouseenter focusin', function(){
         if(pcMo == 'pc'){
             $('.header').addClass('menu_open');
         }
@@ -59,32 +59,33 @@ $(document).ready(function(){
         $('.header').removeClass('menu_mobile');
     });
 
-    $('.header .gnb > ul > li > a   ').on('click', function(e){
+    $('.header .gnb>ul>li>a').on('click', function(e){
         if(pcMo == 'mobile'){
-            e.preventDefault();	
+            e.preventDefault();
             $(this).parents('li').toggleClass('sub_open');
         }
     });
+
 
     /* top 버튼을 누르면 상단으로 스크롤 */
     $('aside.top').on('click', function(){
         $('html, body').animate({
             scrollTop : 0
-        }, 500); //애니메이션은 0.5초
+        }, 500);
     });
 
-    /* 스크롤을 어느정도 내리면 aside가 나오고 다시 상단으로 올라가면 사라짐*/
+    /* 스크롤을 어느정도 내리면 aside나타나고, 다시 상단으로 올라면 aisde 사라짐 */
     topShow();
-     function topShow(){ //함수의 선언
+    function topShow(){ //함수의 선언
         scrolling = $(window).scrollTop();
         console.log(scrolling);
-        if(scrolling > 100){
-            $('aside.top').fadeIn('');
+        if(scrolling > 400){
+            $('aside.top').fadeIn();
         }else{
-            $('aside.top').fadeOut('');
+            $('aside.top').fadeOut();
         }
     }
-    
+
 
 
 });//document.ready 종료
