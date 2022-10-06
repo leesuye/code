@@ -241,4 +241,7 @@
     .content .cnt_introduce .inner02 strong {
         font-size: 18px;
     }
+    .content .cnt_introduce .inner02 span {
+        display: block;
+    }
 }
