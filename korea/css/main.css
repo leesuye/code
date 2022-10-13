@@ -14,10 +14,30 @@ ul, li {
     height: 100px;
     background-color: #ededed;
 }
+
+
+
+/*좌우로 이동하는 팝업*/
 .popup {
+    position: relative;
     height: 300px;
     background-color: #f4f4f4;
+    overflow: hidden;
 }
+.popup ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3600px; /*1개의 팝업 넓이 1200*3*/
+}
+.popup ul li {
+    float: left;
+}
+
+
+
+
+
 .container {
     height: 200px;
 }
