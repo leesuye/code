@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popup.js"></script>
+    <title>팝업 테스트</title>
+</head>
+<body>
+    <div id="wrap">
+        <section class="visual1 popup swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>따뜻한 향기에 빠져</span>
+                        <strong>1 자연으로, 위로받기</strong>
+                    </div>
+                    <img src="images/popup1.png" alt="">
+                </li>
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>시원한 바람따라</span>
+                        <strong>2 자연으로, 걸어가기</strong>
+                    </div>
+                    <img src="images/popup2.png" alt="">
+                </li>
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>차분한 마음과 함께</span>
+                        <strong>3 자연으로, 스며들기</strong>
+                    </div>
+                    <img src="images/popup3.png" alt="">
+                </li>
+            </ul>
+            <button class="ctrl_prev">이전 팝업보기</button>
+            <button class="ctrl_next">다음 팝업보기</button>
+            <div class="ctrl_group">
+                <div class="ctrl_paging"></div>
+                <button class="ctrl_stop">정지</button>
+                <button class="ctrl_play">재생</button>
+            </div>
+            <!--  swiper-pagination
+            swiper에서 제공하는 각 요소별 class명을 사용하면 기본 스타일이 적용됨
+            스타일을 변경해서 써도 되고 스타일을 내가 전부 변경해서 주려면 class명을 바꾸면됨
+            (swiper init에서 요소의 클래스명 변경)  -->
+
+        </section>
+    </div>
+</body>
+</html>
