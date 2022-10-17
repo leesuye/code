@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/popup.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <title>swiper 팝업</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="popup swiper"> <!--팝업의 높이를 줌-->
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>따뜻한 향기에 빠져</span>
+                        <strong>자연으로, 위로받기</strong>
+                    </div>
+                    <img src="images/popup4.png" alt="분홍색 꽃사진">
+                </li>
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>시원한 바람따라</span>
+                        <strong>자연으로, 걸어가기</strong>
+                    </div>
+                    <img src="images/popup5.png" alt="노란꽃사진">
+                </li>
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>차분한 마음과 함께</span>
+                        <strong>자연으로, 스며들기</strong>
+                    </div>
+                    <img src="images/popup6.png" alt="보라색 꽃사진">
+                </li>
+            </ul>
+            <!--
+                이전버튼 : swiper-button-prev
+                다음버튼 : swiper-button-next
+                페이징 : swiper-pagination
+                기본 swiper의 이름을 따르면 기본 스타일이 적용됨.
+                그 기본 스타일을 그대로 사용하고 변경하려면 그대로 사용하고
+                내가 스타일을 변경하려면 class명을 변경해도됨
+                -> swiper는 기본적으로 일시정지 버튼과 재생버튼을 제공하지 않음
+
+                접근성:버튼태그에 버튼의 기능을 text로 써야함 (css로 글자 지우기)
+                       일시정지 버튼과 재생버튼은 같이 사용 가능 단, 기능을 설명하는 text를 변경해야함
+
+            -->
+            <button class="button-prev">이전 팝업 보기</button>
+            <button class="button-next">다음 팝업 보기</button>
+            <div class="ctrl_wrap">
+                <div class="btn_paging"></div>
+                <button class="btn_stop">일시정지</button><!--일시정지/재생 버튼-->
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h1>배너 - 반응형으로 보일 갯수 제한</h1>
+            <div class="banner1 swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="images/banner1.png" alt="">
+                        <strong>Protecting Our Consumer</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner2.png" alt="">
+                        <strong>ZERO CHOLESTEROL</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner3.png" alt="">
+                        <strong>ZERO DAIRY</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner4.png" alt="">
+                        <strong>ZERO GMO</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <h1>배너 - 사이즈를 css에서 제어</h1>
+            <div class="banner2 swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="images/banner1.png" alt="">
+                        <strong>Protecting Our Consumer</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner2.png" alt="">
+                        <strong>ZERO CHOLESTEROL</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner3.png" alt="">
+                        <strong>ZERO DAIRY</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner4.png" alt="">
+                        <strong>ZERO GMO</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
