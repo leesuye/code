@@ -138,11 +138,6 @@ html, body {
     background-image: url(../images/common/logo.svg);
 }
 
-
-
-
-
-
 /*
 1440
 1200
@@ -220,4 +215,84 @@ html, body {
     .header.black .gnb .gnb_open span {
         background-color: #1d1d1d;
     }
+    .header.fixed {
+        border-bottom: 0;
+        background-color: rgba(0,0,0,0.2);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    .header.fixed .logo a,
+    .header.fixed.black .logo a {
+        background-image: url(../images/common/logo_w.svg);
+    }
+    .header.fixed .gnb .gnb_open span,
+    .header.fixed.black .gnb .gnb_open span {
+        background-color: #fff;
+    }
+    
 }/*header 모바일 종료*/
+
+.footer {
+    border-top: 1px solid #ccc;
+}
+.footer .fnav {
+    float: right;
+    margin: 67px 0 100px 0;
+}
+.footer .fnav li a {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: right;
+    line-height: 44px;
+    color: #666;
+}
+.footer .inner {
+    float: left;
+    margin: 80px 0 0 0;
+}
+.footer .flogo {
+    width: 77px;
+    height: 81px;
+    background: url(../images/common/logo.svg) no-repeat left top / auto 81px;
+}
+.footer .copyright {
+    margin: 18px 0 0 0;
+    color: #666;
+}
+
+@media screen and (max-width:800px){
+    .footer .flogo {
+        width: 67px;
+        height: 69px;
+        background: url(../images/common/logo.svg) no-repeat left top / auto 69px;
+    }
+    .footer .fnav li a {
+        font-size: 21px;
+        line-height: 35px;
+    }
+    .footer .fnav {
+        margin: 83px 0 84px 0;
+    }
+}
+@media screen and (max-width:640px){
+    .footer .fnav {
+        float: none;
+        margin: 57px 0 22px 0;
+    }
+    .footer .fnav li a {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .footer .inner {
+        float: none;
+        margin: 0;
+    }
+    .footer .flogo {
+        display: none;
+    }
+    .footer .copyright {
+        margin: 0 0 54px 0;
+        text-align: right;
+    }
+}
