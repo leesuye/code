@@ -1,0 +1,881 @@
+@charset "UTF-8";
+/*기본글자색상*/
+/*제목에 들어가는 글자색상*/
+/*기본회색*/
+/*밝은 회색*/
+/*어두운 배경에 기본 흰글씨*/
+/*어두운 배경에 제목 흰글씨*/
+/*카피라이트 회색*/
+/*
+    scss에서 mixin은 특정스타일의 속성명과 속성값을 모두 선언하는 방식(여러개)
+    변수는 특정 속성값 단 한개를 저장하는 방식(변수 한개에 한개의 속성값)
+    -->변수의 값은 어느 속성에 사용하더라도 상관없음
+*/
+/* 모든 태그의 스타일 초기화 */
+/* 모든 태그에 브라우저에서 주는 여백을 삭제 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap");
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd, form, fieldset, legend, input, textarea, select, table, caption, colgroup, col, thead, tbody, tfoot, tr, th, td {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* width/height와 padding결합되면 사이즈가 늘어남. 이걸 막는 스타일
+     padding을 줘도 width/height가 유지가 됨 */
+}
+
+/* a태그에 브라우저가 주는 기본 속성 초기화 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 브라우저에서 기울임을 주는 것을 초기화 */
+em, address {
+  font-style: normal;
+}
+
+/* 항목 앞에 동그라미 삭제 */
+ul, ol, li {
+  list-style: none;
+}
+
+/* form태그가 문자 스타일을 상속받지 않아서 상속받게 하기 */
+form, input, select, textarea, button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  /* 서체 상속 - button은 body에서 적용한 서체를 
+     자동으로 상속 받지 않음 - form관련 태그는 다 그럼 */
+}
+
+fieldset {
+  border: 0;
+}
+
+legend {
+  display: none; /* form 태그의 legend은 타이틀로 숨김처리 */
+}
+
+button {
+  background-color: transparent; /* 투명 */
+  border: 0;
+  cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+}
+
+table caption {
+  display: none;
+}
+
+/* 글자를 두껍게 하는 태그는 모두 일반 두께로 변형 */
+h1, h2, h3, h4, h5, h6, strong, th {
+  font-weight: 400;
+}
+
+/* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
+/* 본명조 */
+html, body {
+  color: #3d3d3d;
+  line-height: 1.5;
+  font-family: "Noto Sans KR", "NanumGothic", "Malgun Gothic", "Apple SD Gothic", "Apple SD Gothic Neo", "Dotum", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  /* letter-spacing: -0.05em; */
+  word-break: keep-all; /* 단어별 줄바꿈 */
+}
+
+#wrap { /* id="wrap" */
+  overflow: hidden;
+  position: relative;
+  min-width: 320px;
+}
+
+/* 콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 20px;
+  margin: 0 auto;
+  /* 1400px 이하부터 320px까지 모든 사이즈 반응형 
+     1400px 일때에도 좌우에 여백은 유지해야함 
+     (1400이상에서 1400px이하로 변경되는 점 - 반응형으로 전환되는점)
+     부드럽게 여백을 유지하면서 전환
+     원래 좌우에 여백이 20px씩 들어가 있는 걸로 스타일을 줌
+     1400px이 콘텐츠 영역인데 왼쪽 20 + 오른쪽 20 = 1440px이 넓이
+     padding으로 좌우에 여백을 20px씩 줌  */
+}
+
+@media screen and (max-width: 1000px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 640px) {
+  html, body {
+    font-size: 13px;
+  }
+} /* media 종료 */
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+
+.clearfix {
+  display: block;
+}
+
+/* wrapper와 동일한 사이즈를 갖은 position:relative를 요소는
+   cnt_wrap 클래스 줌 */
+.cnt_wrap {
+  position: relative;
+}
+
+.skip_nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000000000;
+  width: 100%;
+}
+
+.skip_nav a {
+  position: absolute;
+  left: 0;
+  top: -1000px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #0059A8;
+  color: #FFF;
+  text-align: center;
+}
+
+.skip_nav a:focus {
+  top: 0;
+}
+
+/* 브라우저에서 글자를 드래그했을대 드래그한 영역의 색과 글자색
+  -moz- -webkit- 이 앞에 붙은 속성은 표준화 되지 않은 속성  */
+::-moz-selection {
+  background: #CBA585;
+  color: #3E3E3F;
+}
+::selection {
+  background: #CBA585;
+  color: #3E3E3F;
+}
+
+::-moz-selection {
+  background: #CBA585;
+  color: #3E3E3F;
+}
+
+::-webkit-selection {
+  background: #CBA585;
+  color: #3E3E3F;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 300;
+  transition: 0.5s;
+}
+.header .logo {
+  float: left;
+  margin: 30px 0 0 40px;
+}
+.header .gnb {
+  float: right;
+  margin: 0 34px 0 0;
+}
+.header .gnb .gnb_open {
+  display: none;
+}
+.header .gnb ul li {
+  float: left;
+}
+.header .gnb ul li a {
+  display: block;
+  padding: 0 26px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 100px; /*헤더의 높이만큼주면 헤더의 위아래 가운데 위치*/
+}
+.header.fixed {
+  position: fixed;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1440px) {
+  .header .logo a img {
+    width: 150px;
+  }
+  .header .gnb {
+    margin: 0;
+  }
+  .header .gnb ul li a {
+    padding: 0 20px;
+    font-size: 21px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .header .logo a img {
+    width: 130px;
+  }
+  .header .gnb ul li a {
+    padding: 0 16px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .header {
+    height: 100px;
+  }
+  .header .logo {
+    margin: 18px 0 0 20px;
+  }
+  .header .logo a img {
+    width: 140px;
+    margin: 14px 0 0 0;
+  }
+  .header .gnb .gnb_open {
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  .header .gnb .gnb_open strong {
+    display: none;
+  }
+  .header .gnb .gnb_open span {
+    position: absolute;
+    right: 20px;
+    width: 40px;
+    height: 2px;
+    background-color: #FFF;
+  }
+  .header .gnb .gnb_open span.line1 { /*span.line1*/
+    top: 35px;
+  }
+  .header .gnb .gnb_open span.line2 {
+    top: 45px;
+    width: 28px;
+  }
+  .header .gnb .gnb_open span.line3 {
+    top: 55px;
+  }
+  .header .gnb ul {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .header {
+    height: 60px;
+  }
+  .header .logo {
+    margin: 18px 0 0 20px;
+  }
+  .header .logo a img {
+    width: 108px;
+    margin: 0;
+  }
+  .header .gnb .gnb_open {
+    display: block;
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+  .header .gnb .gnb_open strong {
+    display: none;
+  }
+  .header .gnb .gnb_open span {
+    right: 20px;
+    width: 21px;
+    height: 2px;
+    background-color: #FFF;
+  }
+  .header .gnb .gnb_open span.line1 { /*span.line1*/
+    top: 25px;
+  }
+  .header .gnb .gnb_open span.line2 {
+    top: 32px;
+    width: 16px;
+  }
+  .header .gnb .gnb_open span.line3 {
+    top: 39px;
+  }
+}
+/*
+    scss 내에서 import할 default와 common 등의 파일은 
+    파일명 앞에 _(언더바)를 입력하면 sass 컴파일러가 해당 파일은 컴파일 하지 않음
+    main.css나 sub.css에서 default, common을 필요에 따라서 import 해서 사용하면 됨.
+*/
+.visual {
+  position: relative;
+}
+.visual .tit {
+  position: absolute;
+  left: calc(50% - 700px);
+  top: 50%;
+  z-index: 10;
+  color: #fff;
+  transform: translate(0, -50%);
+}
+.visual .tit strong {
+  display: block;
+}
+.visual .tit h2 {
+  font-family: "Noto Serif KR", serif;
+  /* mixin으로 선언한 font_serif 스타일을 불러오는 명령 
+     @mixin font_serif 로 선언된 스타일이 그대로 이 안에 들어오는 것 
+     단, 무조건 @mixin이 @include보다 먼저 선언되어 있어야 함 */
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.visual .popup { /* .visual .popup */
+  height: 100vh; /*브라우저의 높이에 꽉차게*/
+}
+.visual .popup ul li img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.visual .popup .btn_wrap {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: calc(50% - 700px);
+  top: calc(50% + 110px);
+  z-index: 10;
+}
+.visual .popup .btn_wrap .btn_paging {
+  display: flex; /*span이 여러개 발생해도 한줄로 나타남*/
+  line-height: 0;
+  font-size: 0;
+}
+.visual .popup .btn_wrap .btn_paging span {
+  opacity: 0.5;
+  width: 70px;
+  height: 4px;
+  background-color: #FFF;
+  border-radius: 0;
+  /* li:last-child 의 경우 아래와 같이 &로 표기
+      li {
+          &:last-child {  }
+      }
+  */
+}
+.visual .popup .btn_wrap .btn_paging span.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.visual .popup .btn_wrap .btn_stop {
+  width: 7px;
+  height: 4px;
+  margin-left: 5px;
+  background-image: url(/code/bntailor/images/main/visual_btn_stop.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  font-size: 0;
+  line-height: 0;
+}
+.visual .popup .btn_wrap .btn_stop.play { /* .btn_stop.play*/
+  background-image: url(/code/bntailor/images/main/visual_btn_play.svg);
+}
+
+@media screen and (max-width: 1440px) {
+  .visual .tit {
+    left: 20px;
+  }
+  .visual .popup .btn_wrap {
+    left: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .visual .tit h2 {
+    font-size: 40px;
+  }
+  .visual .popup { /* .visual .popup */ }
+  .visual .popup .btn_wrap {
+    left: 105px;
+    top: calc(50% + 82px);
+    transform: translate(-50%, 0);
+  }
+  .visual .popup .btn_wrap .btn_paging {
+    /* li:last-child 의 경우 아래와 같이 &로 표기
+        li {
+            &:last-child {  }
+        }
+    */
+  }
+  .visual .popup .btn_wrap .btn_paging span {
+    width: 45px;
+    height: 3px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .visual .tit {
+    left: 50%;
+    width: calc(100% - 70px);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .visual .tit strong {
+    margin-bottom: 3px;
+  }
+  .visual .tit h2 {
+    font-size: 30px;
+  }
+  .visual .popup { /* .visual .popup */ }
+  .visual .popup .btn_wrap {
+    left: 50%;
+    top: calc(50% + 88px);
+    transform: translate(-50%, 0);
+  }
+  .visual .popup .btn_wrap .btn_paging {
+    /* li:last-child 의 경우 아래와 같이 &로 표기
+        li {
+            &:last-child {  }
+        }
+    */
+  }
+  .visual .popup .btn_wrap .btn_paging span {
+    width: 40px;
+    height: 3px;
+  }
+  .visual .popup .btn_wrap .btn_stop {
+    display: none;
+  }
+}
+.fabric {
+  position: relative;
+  color: #3d3d3d;
+}
+.fabric h2 {
+  padding: 277px 0 14px 0;
+  font-size: 30px;
+  color: #1d1d1d;
+}
+.fabric .tit {
+  font-family: "Noto Serif KR", serif;
+  font-size: 35px;
+  color: #1d1d1d;
+  font-weight: 700;
+}
+.fabric .cnt {
+  margin: 16px 0 98px 0;
+  width: 584px;
+}
+.fabric .tag {
+  color: #9D856D;
+  padding: 0 0 306px 0;
+}
+.fabric .tag span {
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+.fabric .bg {
+  position: absolute;
+  overflow: hidden;
+  /*bg영역 안에는 bg보다 큰 이미지가 포함됨, 이미지는 스크롤에 따라 bg영역 안에서 이동항 예정
+  그래서 overflow: hidden영역 밖에 나간 이미지는 안보이게 함*/
+  left: calc(50% - 80px);
+  top: 40px;
+  z-index: -1;
+  width: 800px;
+  height: 904px;
+}
+.fabric .bg img {
+  display: block;
+  width: 120%;
+  height: 120%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 1440px) {
+  .fabric h2 {
+    padding: 277px 0 8px 0;
+    font-size: 25px;
+  }
+  .fabric .tit {
+    font-size: 30px;
+  }
+  .fabric .cnt {
+    margin: 16px 0 98px 0;
+    width: 532px;
+  }
+  .fabric .bg {
+    left: calc(50% - 20px);
+    top: 80px;
+    width: 620px;
+    height: 800px;
+  }
+  .fabric .bg img {
+    display: block;
+    width: 120%;
+    height: 120%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fabric {
+    padding: 0 0 120px 0;
+  }
+  .fabric h2 {
+    padding: 120px 0 15px 0;
+    font-size: 25px;
+  }
+  .fabric .tit {
+    font-size: 35px;
+  }
+  .fabric .cnt {
+    margin: 22px 0 45px 0;
+    width: auto;
+    font-size: 18px;
+  }
+  .fabric .tag {
+    padding: 0 0 40px 0;
+  }
+  .fabric .tag span {
+    margin: 0 15px 0 0;
+  }
+  .fabric .bg {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: 500px;
+  }
+  .fabric .bg img {
+    transform: translateY(0) !important;
+    width: 100%;
+    height: 170%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .fabric {
+    padding: 0 0 53px 0;
+  }
+  .fabric h2 {
+    padding: 46px 0 8px 0;
+    font-size: 20px;
+  }
+  .fabric .tit {
+    font-size: 25px;
+  }
+  .fabric .tit .m_no {
+    display: none;
+  }
+  .fabric .cnt {
+    display: none;
+  }
+  .fabric .tag {
+    padding: 23px 0 28px 0;
+  }
+  .fabric .tag span {
+    margin: 0 7px 0 0;
+  }
+  .fabric .bg {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: 196px;
+  }
+  .fabric .bg img {
+    width: 100%;
+    height: 158%;
+  }
+}
+.product {
+  padding: 0 0 200px 0;
+  background-color: #33302D;
+  color: rgba(255, 255, 255, 0.8);
+}
+.product h2 {
+  font-family: "Noto Serif KR", serif;
+  padding: 150px 0 99px 0;
+  font-size: 60px;
+  font-weight: 700;
+  color: #fff;
+}
+.product h2 strong {
+  font-weight: 700;
+}
+.product .list {
+  position: relative;
+}
+.product .list .tit {
+  font-family: "Noto Serif KR", serif;
+  /* position: sticky;는 감싸는 요소에 overflow hidden이 없어야함
+   하지만 홈페이지 전체에 id=wrap으로 감싸져 있고 이 스타일에 overflow hidden 들어감
+   overflow를 주지않고 코딩은 어려워서 sticky는 사용불가
+
+  고정될 요소에 position: fixed를 줘야함
+  fixed는 body와만 정렬
+
+  <div class = "list">            --relative    
+      <div class = "tit"></div>   --absolute
+  </div>
+  tit이 absolute일때는 relative를 준 list를 기준으로 정렬함
+  하지만 fixed로 변경되면 무조건 body랑 정렬
+  정렬의 기준값이 변경됨
+  absolute일때와 fixed일때 위치를 동일하게 left값을 줘야함
+
+   */
+  position: absolute;
+  left: calc(50% - 700px);
+  top: 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 60px;
+  font-weight: 700;
+  transform: rotate(90deg) translate(43%, 457%);
+}
+.product .list .tit.fixed {
+  position: fixed;
+  top: 150px;
+}
+.product .list .tit.end {
+  position: absolute;
+  top: auto;
+  bottom: 550px;
+}
+.product .list ul li {
+  position: relative;
+  margin-bottom: 90px;
+}
+.product .list ul li a {
+  display: block;
+}
+.product .list ul li a .pic {
+  width: 720px;
+  height: 370px;
+  overflow: hidden;
+}
+.product .list ul li a .pic img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product .list ul li a h3 {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 700;
+}
+.product .list ul li a p {
+  margin: 5px 0 0 0;
+  width: 504px;
+  font-size: 20px;
+}
+.product .list ul li:nth-child(1), .product .list ul li:nth-child(3), .product .list ul li:nth-child(5) {
+  display: flex;
+  justify-content: flex-end;
+}
+.product .list ul li:nth-child(1) .inner, .product .list ul li:nth-child(3) .inner, .product .list ul li:nth-child(5) .inner {
+  position: absolute;
+  right: 640px;
+  bottom: 0;
+  text-align: right;
+}
+.product .list ul li:nth-child(2), .product .list ul li:nth-child(4) {
+  display: flex;
+}
+.product .list ul li:nth-child(2) .pic, .product .list ul li:nth-child(4) .pic {
+  margin: 0 0 0 103px;
+}
+.product .list ul li:nth-child(2) .inner, .product .list ul li:nth-child(4) .inner {
+  position: absolute;
+  left: 705px;
+  bottom: 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .product .list .tit {
+    left: 0;
+  }
+  .product .list .tit.fixed {
+    left: 20px;
+  }
+}
+@media screen and (max-width: 1210px) {
+  .product .list .tit {
+    left: 0;
+  }
+  .product .list .tit.fixed {
+    left: 20px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .product {
+    padding: 0 0 65px 0;
+  }
+  .product h2 {
+    padding: 65px 0 44px 0;
+    font-size: 30px;
+  }
+  .product .list .tit {
+    display: none;
+  }
+  .product .list ul li {
+    width: auto;
+    margin-bottom: 95px;
+  }
+  .product .list ul li a .pic {
+    width: 65%;
+    height: auto;
+  }
+  .product .list ul li a h3 {
+    font-size: 25px;
+  }
+  .product .list ul li a p {
+    margin: 5px 0 0 0;
+    width: auto;
+    font-size: 13px;
+  }
+  .product .list ul li:nth-child(1), .product .list ul li:nth-child(3), .product .list ul li:nth-child(5) {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .product .list ul li:nth-child(1) .pic, .product .list ul li:nth-child(3) .pic, .product .list ul li:nth-child(5) .pic {
+    margin-left: 35%;
+  }
+  .product .list ul li:nth-child(1) .inner, .product .list ul li:nth-child(3) .inner, .product .list ul li:nth-child(5) .inner {
+    right: 50%;
+    bottom: -23%;
+    text-align: left;
+  }
+  .product .list ul li:nth-child(2), .product .list ul li:nth-child(4) {
+    display: flex;
+  }
+  .product .list ul li:nth-child(2) .pic, .product .list ul li:nth-child(4) .pic {
+    margin: 0;
+    margin-right: 35%;
+  }
+  .product .list ul li:nth-child(2) .inner, .product .list ul li:nth-child(4) .inner {
+    left: 51%;
+    bottom: -30%;
+  }
+}
+.insta {
+  position: relative;
+  margin: 0 0 142px 0;
+}
+.insta h2 {
+  padding: 153px 0 75px 0;
+  font-family: "Noto Serif KR", serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #1d1d1d;
+}
+.insta .list ul li {
+  width: 320px;
+  font-size: 0;
+  line-height: 0;
+}
+.insta .list ul li a {
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.insta .list ul li a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.insta .list ul li:nth-child(1), .insta .list ul li:nth-child(3), .insta .list ul li:nth-child(5) {
+  padding: 30px;
+}
+.insta .bg_txt {
+  position: absolute;
+  font-family: "Noto Serif KR", serif;
+  left: 0;
+  top: 80px;
+  z-index: -1;
+  font-size: 100px;
+  color: #f4f4f4;
+  white-space: nowrap;
+  -webkit-animation-name: bg_txt_ani;
+          animation-name: bg_txt_ani;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes bg_txt_ani {
+  0% {
+    transform: translateX(0);
+  } /* 애니메이션을 시작할때의 속성 */
+  100% {
+    transform: translateX(-50.3%);
+  } /* 애니메이션이 종료될때의 속성 */
+  /*html에서 무조건 동일한 글자를 두번 입력
+  css에서 애니메이션으로 절반을 이동 그럼 두번째 단락의 글자가 다시 나타남*/
+}
+
+@keyframes bg_txt_ani {
+  0% {
+    transform: translateX(0);
+  } /* 애니메이션을 시작할때의 속성 */
+  100% {
+    transform: translateX(-50.3%);
+  } /* 애니메이션이 종료될때의 속성 */
+  /*html에서 무조건 동일한 글자를 두번 입력
+  css에서 애니메이션으로 절반을 이동 그럼 두번째 단락의 글자가 다시 나타남*/
+}
+@media screen and (min-width: 1441px) {
+  .insta .list {
+    width: calc(100% + 640px);
+    margin-left: -360px !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .insta h2 {
+    font-size: 45px;
+  }
+  .insta .list ul li:nth-child(1), .insta .list ul li:nth-child(3), .insta .list ul li:nth-child(5) {
+    padding: 0;
+  }
+  .insta .bg_txt {
+    top: 100px;
+    font-size: 70px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .insta {
+    margin: 0 0 66px 0;
+  }
+  .insta h2 {
+    padding: 98px 0 36px 0;
+    font-size: 30px;
+  }
+  .insta .list ul li {
+    width: 200px;
+  }
+  .insta .bg_txt {
+    top: 67px;
+    font-size: 45px;
+  }
+}

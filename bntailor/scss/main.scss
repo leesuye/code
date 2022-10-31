@@ -1,0 +1,589 @@
+@import "_var.scss";
+@import "_default.scss";
+@import "_common.scss";
+
+/*
+    scss 내에서 import할 default와 common 등의 파일은 
+    파일명 앞에 _(언더바)를 입력하면 sass 컴파일러가 해당 파일은 컴파일 하지 않음
+    main.css나 sub.css에서 default, common을 필요에 따라서 import 해서 사용하면 됨.
+*/
+
+.visual {
+    position: relative;
+    .tit {
+        position: absolute;
+        left: calc(50% - 700px);
+        top: 50%;
+        z-index: 10;
+        color: $w_tit_color;
+        transform: translate(0, -50%);
+        strong {
+            display: block;
+        }
+        h2 {
+            @include font_serif; 
+            /* mixin으로 선언한 font_serif 스타일을 불러오는 명령 
+               @mixin font_serif 로 선언된 스타일이 그대로 이 안에 들어오는 것 
+               단, 무조건 @mixin이 @include보다 먼저 선언되어 있어야 함 */
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+    }
+    .popup { /* .visual .popup */
+        height: 100vh;/*브라우저의 높이에 꽉차게*/
+        ul li img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .btn_wrap {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: calc(50% - 700px);
+            top: calc(50% + 110px);
+            z-index: 10;
+            .btn_paging {
+                display: flex;/*span이 여러개 발생해도 한줄로 나타남*/
+                line-height: 0;
+                font-size: 0;
+                span {
+                    opacity: 0.5;
+                    width: 70px;
+                    height: 4px;
+                    background-color: #FFF;
+                    border-radius: 0;
+                    /* li:last-child 의 경우 아래와 같이 &로 표기
+                        li {
+                            &:last-child {  }
+                        }
+                    */
+                    &.swiper-pagination-bullet-active {
+                        opacity: 1;
+                    }
+                }
+            }
+            .btn_stop {
+                width: 7px;
+                height: 4px;
+                margin-left: 5px;
+                background-image: url(/code/bntailor/images/main/visual_btn_stop.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                font-size: 0;
+                line-height: 0;
+                &.play {/* .btn_stop.play*/
+                    background-image: url(/code/bntailor/images/main/visual_btn_play.svg);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1440px){
+    .visual {
+        .tit {
+            left: 20px;
+        }
+        .popup {
+            .btn_wrap {
+                left:20px;
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .visual {
+        .tit {
+            h2 {
+                font-size: 40px;
+            }
+        }
+        .popup { /* .visual .popup */
+            .btn_wrap {
+                left: 105px;
+                top: calc(50% + 82px);
+                transform: translate(-50%, 0);
+                .btn_paging {
+                    span {
+                        width: 45px;
+                        height: 3px;
+                    }
+                    /* li:last-child 의 경우 아래와 같이 &로 표기
+                        li {
+                            &:last-child {  }
+                        }
+                    */
+                    
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .visual {
+        .tit {
+            left: 50%;
+            width: calc(100% - 70px);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            strong {
+                margin-bottom: 3px;
+            }
+            h2 {
+                font-size: 30px;
+            }
+        }
+        .popup { /* .visual .popup */
+            .btn_wrap {
+                left: 50%;
+                top: calc(50% + 88px);
+                transform: translate(-50%, 0);
+                .btn_paging {
+                    span {
+                        width: 40px;
+                        height: 3px;
+                    }
+                    /* li:last-child 의 경우 아래와 같이 &로 표기
+                        li {
+                            &:last-child {  }
+                        }
+                    */
+                }
+                .btn_stop {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.fabric {
+    position: relative;
+    color: $basic_color;
+    h2 {
+        padding: 277px 0 14px 0; 
+        font-size: 30px;
+        color: $tit_color;
+    }
+    .tit {
+        @include font_serif;
+        font-size: 35px;
+        color: $tit_color;
+        font-weight: 700;
+    }
+    .cnt {
+        margin: 16px 0 98px 0;
+        width: 584px;
+    }
+    .tag {
+        color: $point_color;
+        padding: 0 0 306px 0;
+        span {
+            display: inline-block;
+            margin: 0 15px 0 0;
+        }
+    }
+    .bg {
+        position: absolute;
+        overflow: hidden;
+        /*bg영역 안에는 bg보다 큰 이미지가 포함됨, 이미지는 스크롤에 따라 bg영역 안에서 이동항 예정
+        그래서 overflow: hidden영역 밖에 나간 이미지는 안보이게 함*/
+        left: calc(50% - 80px);
+        top: 40px;
+        z-index: -1;
+        width: 800px;
+        height: 904px;
+        img {
+            display: block;
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+        }
+    }
+}
+@media screen and (max-width:1440px){
+    .fabric {
+        h2 {
+            padding: 277px 0 8px 0; 
+            font-size: 25px;
+        }
+        .tit {
+            font-size: 30px;
+        }
+        .cnt {
+            margin: 16px 0 98px 0;
+            width: 532px;
+        }
+        .bg {
+            left: calc(50% - 20px);
+            top: 80px;
+            width: 620px;
+            height: 800px;
+            img {
+                display: block;
+                width: 120%;
+                height: 120%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    .fabric {
+        padding: 0 0 120px 0 ;
+        h2 {
+            padding: 120px 0 15px 0; 
+            font-size: 25px;
+        }
+        .tit {
+            font-size: 35px;    
+        }
+        .cnt {
+            margin: 22px 0 45px 0;
+            width: auto;
+            font-size: 18px;
+        }
+        .tag {
+            padding: 0 0 40px 0;
+            span {
+                margin: 0 15px 0 0;
+            }
+        }
+        .bg {
+            position: relative;
+            left: auto;
+            top: auto;
+            width: auto;
+            height: 500px;
+            img {
+                transform: translateY(0) !important;//애니메이션 취소
+                width: 100%;
+                height: 170%;
+            }
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .fabric {
+        padding: 0 0 53px 0 ;
+        h2 {
+            padding: 46px 0 8px 0; 
+            font-size: 20px;
+        }
+        .tit {
+            font-size: 25px;
+            .m_no {
+                display: none;
+            }
+        }
+        .cnt {
+            display: none;
+        }
+        .tag {
+            padding: 23px 0 28px 0;
+            span {
+                margin: 0 7px 0 0;
+            }
+        }
+        .bg {
+            position: relative;
+            left: auto;
+            top: auto;
+            width: auto;
+            height: 196px;
+            img {
+                width: 100%;
+                height: 158%;
+            }
+        }
+    }
+}
+
+.product{
+    padding: 0 0 200px 0;
+    background-color: #33302D;
+    color: $w_basic_color;
+    h2 {
+        @include font_serif;
+        padding: 150px 0 99px 0;
+        font-size: 60px;
+        font-weight: 700;
+        color: $w_tit_color;
+        strong {
+            font-weight: 700;
+        }
+    }
+    .list {
+        position: relative;
+        .tit {
+            @include font_serif;
+            /* position: sticky;는 감싸는 요소에 overflow hidden이 없어야함
+             하지만 홈페이지 전체에 id=wrap으로 감싸져 있고 이 스타일에 overflow hidden 들어감
+             overflow를 주지않고 코딩은 어려워서 sticky는 사용불가
+             
+            고정될 요소에 position: fixed를 줘야함
+            fixed는 body와만 정렬
+
+            <div class = "list">            --relative    
+                <div class = "tit"></div>   --absolute
+            </div>
+            tit이 absolute일때는 relative를 준 list를 기준으로 정렬함
+            하지만 fixed로 변경되면 무조건 body랑 정렬
+            정렬의 기준값이 변경됨
+            absolute일때와 fixed일때 위치를 동일하게 left값을 줘야함
+
+             */
+            position: absolute;
+            left: calc(50% - 700px);
+            top: 0;
+            color: rgba(255,255,255,0.4);
+            font-size: 60px;
+            font-weight: 700;
+            transform: rotate(90deg) translate(43%, 457%);
+
+            &.fixed {
+                position: fixed;
+                top: 150px;
+            }
+            &.end {
+                position: absolute;
+                top: auto;
+                bottom: 550px;
+            }
+        }
+        ul {
+            li {
+                position: relative;
+                margin-bottom: 90px;
+                a {
+                    display: block;
+                    .pic {
+                        width: 720px;
+                        height: 370px;
+                        overflow: hidden;
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    h3 {
+                        color: $w_tit_color;
+                        font-size: 55px;
+                        font-weight: 700;
+                    }
+                    p {
+                        margin: 5px 0 0 0;
+                        width: 504px;
+                        font-size: 20px;
+                    }
+                }
+                &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                    display: flex;
+                    justify-content: flex-end;
+                    .inner {
+                        position: absolute;
+                        right: 640px;
+                        bottom: 0;
+                        text-align: right;
+                    }
+                }
+                &:nth-child(2), &:nth-child(4) {
+                    display: flex;
+                    .pic {
+                        margin: 0 0 0 103px;
+                    }
+                    .inner {
+                        position: absolute;
+                        left: 705px;
+                        bottom: 0;
+                    }
+                }
+            }//li종료
+        }
+    }
+}
+@media screen and (max-width:1440px){
+    .product .list .tit {
+        left: 0;
+        &.fixed {
+            left: 20px;
+        }
+    }
+}
+@media screen and (max-width:1210px){
+    .product .list .tit {
+        left: 0;
+        &.fixed {
+            left: 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width:640px){
+    .product{
+        padding: 0 0 65px 0;
+        h2 {
+            padding: 65px 0 44px 0;
+            font-size: 30px;
+        }
+        .list {
+            .tit {
+                display: none;
+            }
+            ul {
+                li {
+                    width: auto;
+                    margin-bottom: 95px;
+                    a {
+                        .pic {
+                            width: 65%;
+                            height: auto;
+                        }
+                        h3 {
+                            font-size: 25px;
+                        }
+                        p {
+                            margin: 5px 0 0 0;
+                            width: auto;
+                            font-size: 13px;
+                        }
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        display: flex;
+                        justify-content: flex-end;
+                        .pic {
+                            margin-left: 35%;
+                        }
+                        .inner {
+                            right: 50%;
+                            bottom: -23%;
+                            text-align: left;
+                        }
+                    }
+                    &:nth-child(2), &:nth-child(4) {
+                        display: flex;
+                        .pic {
+                            margin: 0;
+                            margin-right: 35%;
+                        }
+                        .inner {
+                            left: 51%;
+                            bottom: -30%;
+                        }
+                    }
+                }//li종료
+            }
+        }
+    }
+}
+
+.insta {
+    position: relative;
+    margin: 0 0 142px 0;
+    h2 {
+        padding: 153px 0 75px 0;
+        @include font_serif;
+        font-size: 60px;
+        font-weight: 700;
+        color: #1d1d1d;
+    }
+    .list {
+        ul {
+            li {
+                width: 320px;
+                font-size: 0;//이미지 하단 여백 삭제
+                line-height: 0;
+                a {
+                    display: block;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &:nth-child(1),&:nth-child(3),&:nth-child(5) {
+                    padding: 30px;
+                }
+            }
+        }
+    }
+    .bg_txt {
+        position: absolute;
+        @include font_serif;
+        left: 0;
+        top: 80px;
+        z-index: -1;
+        font-size: 100px;
+        color: $gray_light_color;
+        white-space: nowrap;
+
+        animation-name: bg_txt_ani;
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;//동일한 속도의 애니메이션
+    }
+}
+@keyframes bg_txt_ani {
+    0% { transform:translateX(0); }  /* 애니메이션을 시작할때의 속성 */
+	100% { transform:translateX(-50.3%); } /* 애니메이션이 종료될때의 속성 */
+    /*html에서 무조건 동일한 글자를 두번 입력
+    css에서 애니메이션으로 절반을 이동 그럼 두번째 단락의 글자가 다시 나타남*/
+}
+
+@media screen and (min-width:1441px){
+    .insta {
+        .list {
+            width: calc(100% + 640px);
+            margin-left: -360px !important;
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .insta {
+        h2 {
+            font-size: 45px;
+        }
+        .list {
+            ul {
+                li {
+                    a {
+                    }
+                    &:nth-child(1),&:nth-child(3),&:nth-child(5) {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .bg_txt {
+            top: 100px;
+            font-size: 70px;
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .insta {
+        margin: 0 0 66px 0;
+        h2 {
+            padding: 98px 0 36px 0;
+            font-size: 30px;
+        }
+        .list {
+            ul {
+                li {
+                    width: 200px;
+                }
+            }
+        }
+        .bg_txt {
+            top: 67px;
+            font-size: 45px;
+        }
+    }
+}

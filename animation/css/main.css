@@ -101,6 +101,260 @@
     height: 100%;
 }
 
+.tour ul li.ico5 a:hover i {/*아이콘이 계속 빙글 돔*/
+    animation-name: ico_rotate;
+    animation-duration: 1s;/*애니메이션 0%~100%까지를 1초동안 실행*/
+    animation-iteration-count: infinite;/*애니메이션 무한반복*/
+    animation-timing-function: linear;
+}
+@keyframes ico_rotate {
+    0% {transform: rotateY(0deg);}
+    100%{transform: rotateY(360deg);}
+}
+
+
+.tour .circle_text {
+    position: absolute;
+    right: -105px;
+    top: 40px;
+    width: 285px;
+    height: 285px;
+    /*회전할 오브젝트는 정사각형으로 주기*/
+    background: url(../images/circle_text.svg) no-repeat right bottom;
+    
+    animation-name: circle_rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes circle_rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
+.tour .circle {
+    position: absolute;
+    left: -71px;
+    top: 21px;
+    width: 145px;
+    height: 145px;
+    background: url(../images/circle.svg) no-repeat left bottom;
+    
+    animation-name: circle_rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes circle_rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
+.tour .fire {
+    position: absolute;
+    background: url(../images/fire.svg) no-repeat center center / contain;
+
+    animation-name: fire_ani;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.tour .fire.po1 {
+    left: -140px;
+    top: 297px;
+    width: 144px;
+    height: 144px;
+    animation-duration: 5s;
+}
+.tour .fire.po2 {
+    left: 53%;
+    top: 73px;
+    width: 120px;
+    height: 120px;
+    animation-duration: 5s;
+    animation-delay: 1s;/*delay기간동안 애니메이션 적용 안됨*/
+    opacity: 0;
+}
+.tour .fire.po3 {
+    right: 6%;
+    top: 343px;
+    width: 80px;
+    height: 80px;
+    animation-duration: 5s;
+    animation-delay: 1.5s;/*delay기간동안 애니메이션 적용 안됨*/
+    opacity: 0;
+}
+@keyframes fire_ani {
+    0% {opacity: 0; transform: scale3d(0,0,1);}
+    30% {opacity: 1; transform: scale3d(1,1,1);}
+    70% {opacity: 1; transform: scale3d(1,1,1);}
+    100% {opacity: 0; transform: scale3d(1.5,1.5,1);}
+}
+
+.media h2 {
+    margin: 100px 0 20px 0;
+    font-size: 50px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.media ul li {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin: 0 40px 0 0;
+    width: 440px;
+}
+.media ul li:last-child {
+    margin-right: 0;
+}
+.media ul li a {
+    display: block;
+}
+
+.media ul li.list1 a {
+    height: 371px;
+    padding: 30px  20px 0 20px;
+    border: 1px solid #ccc;
+}
+.media ul li.list1 a .pic {
+    overflow: hidden;
+    height: 212px;
+}
+.media ul li.list1 a .pic img {
+    /*감싸는 영역이 제한되어 있을때 이미지만 따로 사이즈 주면 영역에 꽉차게 위치는 좌우 가운데 위아래 가운데에 배치*/
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.media ul li.list1 a h3 {
+    margin: 20px 0 0 0;
+    font-size: 21px;
+}
+.media ul li.list1 a .over {
+    position: absolute;
+    padding: 30px 20px 0 20px;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #1B4685;
+    color: #fff;
+}
+.media ul li.list1 a .over strong {
+    display: block;
+    font-size: 21px;
+    margin: 0 0 20px 0;
+}
+.media ul li.list1 a .over .txt {
+    display: block;
+    color: rgba(255,255,255,0.8);
+    /*7줄 제한*/
+    overflow: hidden;
+    line-height: 1.5;
+    height: 7.5em;
+}
+.media ul li.list1 a .over .date {
+    display: block;
+    color: rgba(255,255,255,0.8);
+    margin: 25px 0 0 0;
+}
+/*애니메이션*/
+.media ul li.list1 a .over {
+    transition: 0.5s;
+}
+.media ul li.list1 a:hover .over {
+    top: 0;
+}
+
+.media ul li.list2 a .pic img {  
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.media ul li.list2 a h3 {
+    position: absolute;
+    left: 20px;
+    top: 257px;
+    width: calc(100% - 40px);
+    font-size: 21px;
+    color: #fff;
+}
+.media ul li.list2 a p {
+    opacity: 0;
+    position: absolute;
+    left: 20px;
+    top: 300px;
+    width: calc(100% - 40px);
+    color: rgba(255,255,255,0.8);
+}
+/*마우스오버*/
+.media ul li.list2  a .pic::after {
+    transition: 0.5s;
+    opacity: 0;
+    position: absolute; /*li가 기준이됨*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0,0,0,0.6); */
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8));
+    content: "";
+}
+.media ul li.list2  a:hover .pic::after {
+   opacity: 1;
+}
+
+.media ul li.list2 a h3 {
+    transition: 0.5s;
+}
+.media ul li.list2 a p  {
+    transition: 0.5s;
+}
+.media ul li.list2:hover a h3 {
+    top: 170px;
+}
+.media ul li.list2:hover a p {
+    opacity: 1;
+    top: 257px;
+}
+
+.media ul li.list3 a .pic  {
+    overflow: hidden;
+    height: 215px;
+}
+.media ul li.list3 a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.media ul li.list3 a h3 {
+    margin: 10px 0 8px 0;
+    font-size: 21px;
+}
+.media ul li.list3 a p {
+    overflow: hidden;
+    line-height: 1.5;
+    height: 3em;
+}
+.media ul li.list3 a h3:after {
+    position: absolute;
+    left: 0;
+    bottom: 51px;
+    width: 0;
+    height: 2px;
+    background-color: #3d3d3d;
+    content: "";
+}
+/*애니메이션*/
+.media ul li.list3 a h3:after {
+    transition: 0.5s;
+}
+.media ul li.list3 a:hover h3:after {
+    width: 100%;
+} 
+
 
 
 /*슬라이드*/
@@ -146,4 +400,42 @@ slide에 hover이 아니라 jquery에서 slide에 오버를 하면 over라는 �
 @keyframes size100 {
     0% { width: 0; }
     100% { width: 100%; }
+}
+
+.menu {
+    margin: 100px;
+}
+.menu .gnb_open {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #3d3d3d;
+}
+.menu .gnb_open span {
+    position: absolute;
+    left: 40px;
+    width: 120px;
+    height: 10px;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.menu .gnb_open span.line1 {
+    top: 50px;
+}
+.menu .gnb_open span.line2 {
+    top: 90px;
+}
+.menu .gnb_open span.line3 {
+    top: 130px;
+}
+.menu .gnb_open:hover span.line1 {
+    transform: translate(0, 40px) rotate(45deg);
+}
+.menu .gnb_open:hover span.line2 {
+    transform: translate(-170px, 0);
+}
+.menu .gnb_open:hover span.line3 {
+    transform: translate(0, -40px) rotate(-45deg);
 }
