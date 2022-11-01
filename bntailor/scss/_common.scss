@@ -95,18 +95,20 @@ html, body {
         .gnb_open {
             display: none;
         }
-        ul {
-            li {
-                float: left;
-                a {
-                    display: block;
-                    padding: 0 26px;
-                    color: $w_tit_color;
-                    font-size: 22px;
-                    line-height: 100px; /*헤더의 높이만큼주면 헤더의 위아래 가운데 위치*/
+        .gnb_wrap {
+            ul {
+                li {
+                    float: left;
+                    a {
+                        display: block;
+                        padding: 0 26px;
+                        color: $w_tit_color;
+                        font-size: 22px;
+                        line-height: 100px; /*헤더의 높이만큼주면 헤더의 위아래 가운데 위치*/
+                    }
                 }
             }
-        }
+        }    
     }
     &.fixed{//header.fixed 헤더에 픽스드 클래스가 추가되었을때 - 헤더고정
         position: fixed;
@@ -116,6 +118,7 @@ html, body {
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 }
+
 @media screen and (max-width:1440px){
     .header .logo a img {
         width: 150px;
@@ -123,7 +126,7 @@ html, body {
     .header .gnb {
         margin: 0;
     }
-    .header .gnb ul li a {
+    .header .gnb .gnb_wrap ul li a {
         padding: 0 20px;
          font-size: 21px;
     }
@@ -132,7 +135,7 @@ html, body {
     .header .logo a img {
         width: 130px;
     }
-    .header .gnb ul li a {
+    .header .gnb .gnb_wrap ul li a {
         padding: 0 16px;
          font-size: 20px;
     }
@@ -153,6 +156,7 @@ html, body {
                 position: relative;
                 width: 100px;
                 height: 100px;
+                z-index: 2;
                 strong{
                     display: none;
                 }
@@ -162,6 +166,7 @@ html, body {
                     width: 40px;
                     height: 2px;
                     background-color: #FFF;
+                    transition: 0.3s;
                     &.line1 { /*span.line1*/
                         top: 35px;
                     }
@@ -174,10 +179,88 @@ html, body {
                     }
                 }
             }
-            ul {
-                display: none;
+            .gnb_wrap {
+                display: block;
+                position: fixed;//header기준
+                right: -100%;
+                top: 0;
+                width: 100%;
+                max-width: 375px;
+                height: 100vh;
+                z-index: 1;
+                background-color: #FFF;
+                color: #3d3d3d;
+                transition: right 0.5s;
+                ul {
+                    margin: 100px 0 0 0;
+                    li {
+                        float: none;
+                        border-bottom: 1px solid #f4f4f4;
+                        a {
+                            @include font_serif;
+                            padding: 0;
+                            color: $basic_color;
+                            font-size: 19px;
+                            line-height: 51px; /*헤더의 높이만큼주면 헤더의 위아래 가운데 위치*/
+                            text-align: center;
+                        }
+                        &:first-child {
+                            border-top: 1px solid #f4f4f4;
+                        }
+                    }
+                }
+            }    
+            &::after {
+                //메뉴 하단에 검은 배경을 채울때는 position fixed 주고, 사방에 0주기 높이,넓이에 100%준것과 동일하게 들어감 
+                
+                /*
+                <div class = "gnb">
+                    <button class = "gnb_open"></button>
+                    <div class = "gnb_wrap"></div>
+                    ::after -- gnb::after
+                </div>
+                이런 구조에서 순서를 조정할 수 있음
+                z-index는 이렇게 나란히 들어간 요소들 사이에서 높은 숫자가 위로 올라감
+                
+                */
+                position: fixed;
+                transition: opacity 0.5s;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                height: 100vh;
+                opacity: 0;
+                background-color: rgba(0,0,0,0.5);
+                content: "";
             }
-        }
+            //모바일 메뉴가 열렸을때
+            &.mobile_open {
+                .gnb_open {
+                    span {
+                        width: 30px;
+                        background-color: #3d3d3d;
+                        &.line1 { /*span.line1*/
+                            top: 50px;
+                            transform: rotate(42deg);
+                        }
+                        &.line2 {
+                            right: -40px;
+                        }
+                        &.line3 {
+                            top: 50px;
+                            transform: rotate(-42deg);
+                        }
+                    }
+                }
+                .gnb_wrap {
+                    right: 0;
+                }
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }//gnb종료
     }
 }
 @media screen and (max-width:640px){
@@ -220,3 +303,94 @@ html, body {
     }
 }
 
+.footer {
+    @include clearfix;
+    background-color: #33302D;
+    color: $w_basic_color;
+    padding: 65px 0;
+    .sns {
+        float: right;
+        ul {
+            li {
+                float: left;
+                a {
+                    display: block;
+                    position: relative;
+                    width: 49px;
+                    height: 49px;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: rgba(255,255,255,0.1);
+                    font-size: 0;
+                    line-height: 0;
+                    &::before {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        /*배경이미지가 한개를 보이는 영역을 제한해서 써야하기 때문에 bwfore, after에서 표시
+                        이때 사이즈는 내가 저장할때 사용된 아이콘의 넓이*/
+                        width: 35px;
+                        height: 35px;
+                        background-image: url(/code/bntailor/images/common/footer_ico.svg);
+                        background-repeat: no-repeat;
+                        content: "";
+                    }
+                }
+                &:first-child {
+                    a {
+                        border-left-width: 1px; 
+                    }
+                }
+                &.facebook a::before {
+                    background-position: left top;
+                }
+                &.instagram a::before {
+                    background-position: left -35px top;
+                }
+                &.naver a::before {
+                    background-position: left -70px top;
+                }
+            }//li종료
+        }
+    }
+    .inner {
+        float: left;
+        .finfo {
+            span {
+                margin-right: 26px;
+            }
+        }
+        .address {
+            margin: 0 0 22px;
+        }
+    }
+}
+
+@media screen and (max-width:640px){
+    .footer {
+        padding: 58px 0 95px 0;
+        .sns {
+            float: left;
+            ul {
+                li {
+                    float: left;
+                    a {
+                        margin: 0 0 28px 0;
+                    }
+                }//li종료
+            }
+        }
+        .inner {
+            float: left;
+            .finfo {
+                span {
+                    margin-right: 20px;
+                }
+            }
+            .address {
+                margin: 0 0 22px;
+            }
+        }
+    }
+}

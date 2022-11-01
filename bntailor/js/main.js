@@ -115,8 +115,8 @@ $(document).ready(function(){
     let fixBtm = 550;//css에서 end에 준 bottom값
     let fixStart;//fixed 시작점
     let fixEnd;//fixed 종료점
-    console.log(fixStart, 'fixStart');
-    console.log(fixEnd, 'fixEnd');
+    // console.log(fixStart, 'fixStart');
+    // console.log(fixEnd, 'fixEnd');
 
     objFixed();
     $(window).scroll(function(){
@@ -130,10 +130,10 @@ $(document).ready(function(){
        
 
     function objFixed(){
-        console.log(scrolling);
+        // console.log(scrolling);
         fixStart = fixArea.offset().top - fixTop;
         fixEnd = fixArea.offset().top + fixArea.height() - fixObj.height() - fixBtm - fixTop;
-        console.log(fixEnd);
+        // console.log(fixEnd);
 
         if(scrolling < fixStart){//위에서부터 tit이 고정되기전
             fixObj.removeClass('fixed');

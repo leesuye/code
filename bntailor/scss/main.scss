@@ -32,11 +32,23 @@
     }
     .popup { /* .visual .popup */
         height: 100vh;/*브라우저의 높이에 꽉차게*/
-        ul li img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        ul {
+            li {
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform: scale3d(1.1,1.1,1);
+                    transition: 3s;
+                }
+                // 현재 나타나는 팝업에 swiper가 자동으로 주는 class명
+                &.swiper-slide-active {
+                    img {
+                        transform: scale3d(1,1,1);
+                    }
+                }
+            }
         }
         .btn_wrap {
             display: flex;
@@ -359,8 +371,8 @@
                 a {
                     display: block;
                     .pic {
-                        width: 720px;
-                        height: 370px;
+                        width: 660px;
+                        height: 333px;
                         overflow: hidden;
                         img {
                             display: block;
@@ -371,11 +383,10 @@
                     }
                     h3 {
                         color: $w_tit_color;
-                        font-size: 55px;
+                        font-size: 50px;
                         font-weight: 700;
                     }
                     p {
-                        margin: 5px 0 0 0;
                         width: 504px;
                         font-size: 20px;
                     }
@@ -385,7 +396,7 @@
                     justify-content: flex-end;
                     .inner {
                         position: absolute;
-                        right: 640px;
+                        right: 535px;
                         bottom: 0;
                         text-align: right;
                     }
@@ -393,11 +404,11 @@
                 &:nth-child(2), &:nth-child(4) {
                     display: flex;
                     .pic {
-                        margin: 0 0 0 103px;
+                        margin: 0 0 0 165px;
                     }
                     .inner {
                         position: absolute;
-                        left: 705px;
+                        left: 731px;
                         bottom: 0;
                     }
                 }
@@ -406,18 +417,75 @@
     }
 }
 @media screen and (max-width:1440px){
-    .product .list .tit {
-        left: 0;
-        &.fixed {
-            left: 20px;
+    .product{
+        .list {
+            .tit {
+                display: none;
+            }
+            ul {
+                li {
+                    a {
+                        .pic {
+                            width: 580px;
+                        }
+                        h3 {
+                            font-size: 45px;
+                        }
+                        p {
+                            width: 500px;
+                            font-size: 18px;
+                        }
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        .inner {
+                            right: 535px;
+                        }
+                    }
+                    &:nth-child(2), &:nth-child(4) {
+                        .pic {
+                            margin: 0;
+                        }
+                        .inner {
+                            left: 498px;
+                        }
+                    }
+                }//li종료
+            }
         }
     }
 }
 @media screen and (max-width:1210px){
-    .product .list .tit {
-        left: 0;
-        &.fixed {
-            left: 20px;
+    .product{
+        h2 {
+            padding: 150px 0 61px 0;
+            font-size: 48px;
+        }
+        .list {
+            .tit {
+                display: none;
+            }
+            ul {
+                li {
+                    a {
+                        p {
+                            display: none;
+                        }
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        .inner {
+                            right: 535px;
+                        }
+                    }
+                    &:nth-child(2), &:nth-child(4) {
+                        .pic {
+                            margin: 0;
+                        }
+                        .inner {
+                            left: 498px;
+                        }
+                    }
+                }//li종료
+            }
         }
     }
 }
