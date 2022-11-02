@@ -15,7 +15,13 @@
 <body>
     <div id="wrap">
         <header class="header">
-            <h1 class="logo"><a href="/code/bntailor/index.html"><img src="/code/bntailor/images/common/logo.svg" alt="비앤케일러 로고"></a></h1>
+            <h1 class="logo">
+                <a href="/code/bntailor/index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 44">
+                        <text id="logo" transform="translate(0 35)" font-size="30" font-family="NotoSerifKR-Bold, Noto Serif KR" font-weight="700"><tspan x="0" y="0">B&amp;TAILOR</tspan></text>
+                    </svg>
+                </a>
+            </h1>
             <!--모바일에서 메뉴를 열면 gnb에 mobile_open
                 gnb_open 버튼은 삼지창에서 x로 바뀌는 애니메이션
                 gnb_wrap은 오른쪽에서 왼쪽으로 이동해서 나타남
@@ -59,22 +65,36 @@
                 </div>
                 <div class="tit">About Us</div>
             </div>
+            <div class="sub_visual_bg"></div>
+            <div class="sub_visual_path">
+                <svg xmlns="http://www.w3.org/2000/svg" >
+                    <clipPath id="sub_visual_path" clipPathUnits="objectBoundingBox" transform="scale(0.00078125,0.0013888888888889)">
+                        <path id="suv_wisual_bg" d="M-12035,1428h0l-243.5-80.616V787.5h1921v568.744Z" transform="translate(12278.498 -787.501)" fill="#363636"/>
+                    </clipPath>
+                </svg>
+            </div>
+              <!--svg에 clip path를 추가하면 svg는 화면에 출력되지 않음(svg는 눈에 안보이는 것 뿐 공간은 차지함)
+                css에서 clip-path로 사용하기 위해서 변환한 것
+                display:none;으로 숨기면 clip-path효과가 사라짐 그래서 absolute로 한쪽으로 치워두고 svg를 선택해서 1px로 작게 수정-->
         </div>
+        
         <nav class="lnb"><!--서브메뉴-->
             <div class="wrapper">
-                <ul>
-                    <!--현재메뉴에 active 클래스 추가-->
-                    <li class="active"><a href="#n">Chairman</a></li>
-                    <li><a href="#n">Family</a></li>
-                    <li><a href="#n">Our Business</a></li>
-                </ul>
+                <div class="lnb_wrap">
+                    <ul>
+                        <!--현재메뉴에 active 클래스 추가-->
+                        <li class="active"><a href="#n">Chairman</a></li>
+                        <li><a href="#n">Family</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <div class="container">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1920.999" height="640.498" viewBox="0 0 1920.999 640.498">
-                <path id="suv_wisual_bg" d="M-12035,1428h0l-243.5-80.616V787.5h1921v568.744Z" transform="translate(12278.498 -787.501)" fill="#363636"/>
-              </svg>
-              
+
         </div>
         
         <footer class="footer">

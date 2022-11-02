@@ -193,6 +193,12 @@ html, body {
   float: left;
   margin: 30px 0 0 40px;
 }
+.header .logo svg {
+  width: 162px;
+}
+.header .logo svg text {
+  fill: #FFF;
+}
 .header .gnb {
   float: right;
   margin: 0 34px 0 0;
@@ -219,7 +225,7 @@ html, body {
 }
 
 @media screen and (max-width: 1440px) {
-  .header .logo a img {
+  .header .logo a {
     width: 150px;
   }
   .header .gnb {
@@ -231,7 +237,7 @@ html, body {
   }
 }
 @media screen and (max-width: 1200px) {
-  .header .logo a img {
+  .header .logo a svg {
     width: 130px;
   }
   .header .gnb .gnb_wrap ul li a {
@@ -246,7 +252,7 @@ html, body {
   .header .logo {
     margin: 18px 0 0 20px;
   }
-  .header .logo a img {
+  .header .logo a svg {
     width: 140px;
     margin: 14px 0 0 0;
   }
@@ -360,7 +366,7 @@ html, body {
   .header .logo {
     margin: 18px 0 0 20px;
   }
-  .header .logo a img {
+  .header .logo a svg {
     width: 108px;
     margin: 0;
   }
@@ -478,6 +484,164 @@ html, body {
     margin: 0 0 22px;
   }
 }
-.container svg path {
-  fill: #60440D;
+.sub_visual {
+  position: relative;
+  margin: 0 0 42px 0;
+  height: 650px;
+}
+.sub_visual .sub_visual_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 650px;
+  z-index: -1;
+  background-image: url(/code/bntailor/images/sub/sub_visual1.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  -webkit-clip-path: url(#sub_visual_path);
+          clip-path: url(#sub_visual_path);
+  /* html에서 svg clip-path 에 지정된 id값을 url로 연결하면 해당요소의 path값이 적용됨
+  배경이 표시될 영역으로 활용됨
+  path로 직접 경로를 사용했는데 안되는 경우, svg path의 크기를 변경해야 하는 경우 이런 방식으로 사용함*/
+}
+.sub_visual.sub_bg1 .sub_visual_bg {
+  background-image: url(/code/bntailor/images/sub/sub_visual1.png);
+}
+.sub_visual.sub_bg2 .sub_visual_bg {
+  background-image: url(/code/bntailor/images/sub/sub_visual2.png);
+}
+.sub_visual.sub_bg3 .sub_visual_bg {
+  background-image: url(/code/bntailor/images/sub/sub_visual3.png);
+}
+.sub_visual.sub_bg4 .sub_visual_bg {
+  background-image: url(/code/bntailor/images/sub/sub_visual4.png);
+}
+.sub_visual.sub_bg5 .sub_visual_bg {
+  background-image: url(/code/bntailor/images/sub/sub_visual5.png);
+}
+.sub_visual.sub_bg6 .sub_visual_bg {
+  background-image: url(/code/bntailor/images/sub/sub_visual6.png);
+}
+.sub_visual.sub_bg7 .sub_visual_bg {
+  background-image: url(/code/bntailor/images/sub/sub_visual7.png);
+}
+.sub_visual.sub_bg8 .sub_visual_bg {
+  background-image: url(/code/bntailor/images/sub/sub_visual8.png);
+}
+.sub_visual .sub_visual_path {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.sub_visual .sub_visual_path svg {
+  width: 1px;
+  top: 1px;
+}
+.sub_visual .location {
+  display: flex;
+  padding: 361px 0 0 0;
+  color: #fff;
+}
+.sub_visual .location span {
+  position: relative;
+  margin-right: 16px;
+}
+.sub_visual .location span::after {
+  position: absolute;
+  width: 5px;
+  height: 7px;
+  right: -10px;
+  top: 11px;
+  background-color: #fff;
+  -webkit-clip-path: polygon(23% 0%, 36.6% 0%, 75.8% 45.8%, 37% 100%, 23.3% 100%, 59% 47.5%);
+          clip-path: polygon(23% 0%, 36.6% 0%, 75.8% 45.8%, 37% 100%, 23.3% 100%, 59% 47.5%);
+  /* 이미지로 하는 것이 아니라 svg를 이용해서 아이콘을 그리는데, 여러번 반복해서 들어가는 경우
+  css에서 원하는 도형의 크기, 넓이를 주고 배경색으로 아이콘의 색상을 주고
+  clip:path로 path 값을 줌
+  장점1. css로 여러요소를 선택해서 도형을 그릴 수 있다는 장점
+  단점 1. 사이즈 수정 불가 단, 5로 path를 그린 것은 가능
+       2. 작은 사이즈는 불가, 브라우저 호환성이 떨어짐
+       3. path를 그리는 방법 중 일부는 적용이 안됨.*/
+  content: "";
+}
+.sub_visual .location span:last-child::after {
+  display: none;
+}
+.sub_visual .tit {
+  font-family: "Noto Serif KR", serif;
+  color: #fff;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1440px) {
+  .sub_visual {
+    height: 710px;
+  }
+  .sub_visual .sub_visual_bg {
+    height: 100%;
+    -webkit-clip-path: none;
+            clip-path: none;
+    /* html에서 svg clip-path 에 지정된 id값을 url로 연결하면 해당요소의 path값이 적용됨
+    배경이 표시될 영역으로 활용됨
+    path로 직접 경로를 사용했는데 안되는 경우, svg path의 크기를 변경해야 하는 경우 이런 방식으로 사용함*/
+  }
+  .sub_visual .location {
+    padding: 425px 0 0 0;
+  }
+  .sub_visual .location span {
+    font-size: 22px;
+    margin-right: 26px;
+  }
+  .sub_visual .location span::after {
+    width: 10px;
+    height: 11px;
+    right: -18px;
+    top: 14px;
+  }
+  .sub_visual .tit {
+    font-size: 79px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .sub_visual {
+    height: 290px;
+  }
+  .sub_visual .location {
+    padding: 165px 0 0 0;
+  }
+  .sub_visual .tit {
+    font-size: 35px;
+  }
+}
+.lnb {
+  height: 68px;
+}
+.lnb .lnb_wrap ul li {
+  float: left;
+}
+.lnb .lnb_wrap ul li a {
+  display: block;
+  padding: 0 21px;
+  color: #231304;
+  font-size: 22px;
+}
+.lnb .lnb_wrap ul li:first-child a {
+  padding-left: 0;
+}
+.lnb .lnb_wrap ul li.active a {
+  position: relative;
+  font-weight: 700;
+}
+.lnb .lnb_wrap ul li.active a::before {
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  background-color: #231304;
+  border-radius: 3px;
+  content: "";
 }
