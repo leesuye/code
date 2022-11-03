@@ -1,1 +1,115 @@
 //각각의 콘텐츠 페이지 스타일
+/*about us - Chairman*/
+@import "_var.scss";
+
+
+
+.cts_about1 {
+    margin: 31px 0 523px 0;
+    .about_top {
+        position: relative;
+        overflow: hidden;
+        padding: 47px 0 0 0;
+        strong {
+            @include font_serif;
+            position: absolute;
+            font-size: 20px;
+            top: 328px;
+            left: calc(50% - 700px);
+            color: #fff;
+        }
+        p {
+            @include font_serif;
+            position: absolute;
+            top: 359px;
+            left: calc(50% - 700px);
+            font-size: 45px;
+            color: #fff;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: calc(50% + 140px);
+
+        }
+        .bg {
+            height: 670px;
+            background: url(/code/bntailor/images/contents/about_top_bg.png) no-repeat center center / cover;
+        }
+    }
+    .about_sub {
+        position: relative;
+        z-index: 10;
+        padding: 60px 0 0 80px;
+        margin-top: -245px;
+        margin-left: calc(50% - 340px);
+        background-color: #fff;
+        .inner {
+            width: 879px;
+        }
+        .tit {
+            @include font_serif;
+            font-size: 50px;
+            color: #231304;
+        }
+        .cnt {
+            margin: 17px 0 110px 0;
+            font-size: 27px;
+            color: #231304;
+        }
+        .sign {
+            float: right;
+            font-size: 27px;
+            color: #231304;
+        }
+    }
+}
+
+@media screen and (max-width:640px){
+    .cts_about1 {
+        margin: 31px 0 523px 0;
+        .about_top {
+            padding: 21px 0 0 0;
+            strong {
+                font-size: 16px;
+                top: 101px;
+                width: 80%;
+                left: 20px;
+            }
+            p {
+                z-index: 1;
+                top: 121px;
+                width: 80%;
+                left: 20px;
+                font-size: 25px;
+            }
+            img {
+                left: 60%;
+                width: 30%;
+    
+            }
+            .bg {
+                height: 152px;
+            }
+        }
+        .about_sub {
+            margin-top: 0;
+            background-color: #fff;
+            .inner {
+                width: auto;
+                padding: 0 20px;
+            }
+            .tit {
+                font-size: 25px;
+            }
+            .cnt {
+                margin: 17px 0 110px 0;
+                font-size: 13px;
+            }
+            .sign {
+                float: right;
+                font-size: 13px;
+            }
+        }
+    }
+}

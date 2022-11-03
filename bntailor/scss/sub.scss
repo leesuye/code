@@ -127,6 +127,14 @@
         height: 290px;
         .location {
             padding: 165px 0 0 0;
+            span {
+                font-size: 13px;
+                &::after {
+                    width: 6px;
+                    height: 7px;
+                    top: 7px;
+                }
+            }
         }
         .tit {
             font-size: 35px;
@@ -136,12 +144,20 @@
 .lnb {
     height: 68px;
     .lnb_wrap {
+        overflow-x: auto; //lnb_wrap
+        overflow-y: hidden;
         ul {
+            white-space: nowrap;
+            margin-left: 15px;
+            /*줄바꿈금지 - block, float 들어간 요소에는 안됨
+            inline, inline-block요소에만 적용됨
+            단, inline-block 요소의 사이사이에 space 한칸의 여백이 들어감
+            그럼 요소들 사이의 여백을 이를 감안해서 줄이면 됨*/
             li {
-                float: left;
+                display: inline-block;
                 a {
                     display: block;
-                    padding: 0 21px;
+                    padding: 0 15px;
                     color: #231304;
                     font-size: 22px;
                 }
@@ -164,6 +180,23 @@
                             border-radius: 3px;
                             content: "";
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:640px){
+    .lnb {
+        height: 40px;
+        .lnb_wrap {
+            padding: 20px 0 10px 0;
+            ul {
+                li {
+                    a {
+                        padding: 0 7px;
+                        font-size: 20px;
                     }
                 }
             }

@@ -270,7 +270,7 @@ html, body {
     position: absolute;
     right: 20px;
     width: 40px;
-    height: 2px;
+    height: 3px;
     background-color: #FFF;
     transition: 0.3s;
   }
@@ -326,14 +326,15 @@ html, body {
     z-index는 이렇게 나란히 들어간 요소들 사이에서 높은 숫자가 위로 올라감
 
     */
+    display: none;
     position: fixed;
+    opacity: 0;
     transition: opacity 0.5s;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     height: 100vh;
-    opacity: 0;
     background-color: rgba(0, 0, 0, 0.5);
     content: "";
   }
@@ -356,6 +357,7 @@ html, body {
     right: 0;
   }
   .header .gnb.mobile_open::after {
+    display: block;
     opacity: 1;
   }
 }
@@ -612,6 +614,14 @@ html, body {
   .sub_visual .location {
     padding: 165px 0 0 0;
   }
+  .sub_visual .location span {
+    font-size: 13px;
+  }
+  .sub_visual .location span::after {
+    width: 6px;
+    height: 7px;
+    top: 7px;
+  }
   .sub_visual .tit {
     font-size: 35px;
   }
@@ -619,12 +629,24 @@ html, body {
 .lnb {
   height: 68px;
 }
+.lnb .lnb_wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.lnb .lnb_wrap ul {
+  white-space: nowrap;
+  margin-left: 15px;
+  /*줄바꿈금지 - block, float 들어간 요소에는 안됨
+  inline, inline-block요소에만 적용됨
+  단, inline-block 요소의 사이사이에 space 한칸의 여백이 들어감
+  그럼 요소들 사이의 여백을 이를 감안해서 줄이면 됨*/
+}
 .lnb .lnb_wrap ul li {
-  float: left;
+  display: inline-block;
 }
 .lnb .lnb_wrap ul li a {
   display: block;
-  padding: 0 21px;
+  padding: 0 15px;
   color: #231304;
   font-size: 22px;
 }
@@ -644,4 +666,17 @@ html, body {
   background-color: #231304;
   border-radius: 3px;
   content: "";
+}
+
+@media screen and (max-width: 640px) {
+  .lnb {
+    height: 40px;
+  }
+  .lnb .lnb_wrap {
+    padding: 20px 0 10px 0;
+  }
+  .lnb .lnb_wrap ul li a {
+    padding: 0 7px;
+    font-size: 20px;
+  }
 }

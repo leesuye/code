@@ -270,7 +270,7 @@ html, body {
     position: absolute;
     right: 20px;
     width: 40px;
-    height: 2px;
+    height: 3px;
     background-color: #FFF;
     transition: 0.3s;
   }
@@ -326,14 +326,15 @@ html, body {
     z-index는 이렇게 나란히 들어간 요소들 사이에서 높은 숫자가 위로 올라감
 
     */
+    display: none;
     position: fixed;
+    opacity: 0;
     transition: opacity 0.5s;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     height: 100vh;
-    opacity: 0;
     background-color: rgba(0, 0, 0, 0.5);
     content: "";
   }
@@ -356,6 +357,7 @@ html, body {
     right: 0;
   }
   .header .gnb.mobile_open::after {
+    display: block;
     opacity: 1;
   }
 }
