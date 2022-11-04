@@ -216,13 +216,6 @@ html, body {
   font-size: 22px;
   line-height: 100px; /*헤더의 높이만큼주면 헤더의 위아래 가운데 위치*/
 }
-.header.fixed {
-  position: fixed;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
 @media screen and (max-width: 1440px) {
   .header .logo a {
@@ -491,6 +484,14 @@ html, body {
     파일명 앞에 _(언더바)를 입력하면 sass 컴파일러가 해당 파일은 컴파일 하지 않음
     main.css나 sub.css에서 default, common을 필요에 따라서 import 해서 사용하면 됨.
 */
+header.fixed {
+  position: fixed;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .visual {
   position: relative;
 }

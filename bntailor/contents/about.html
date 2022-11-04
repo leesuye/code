@@ -77,16 +77,23 @@
                 css에서 clip-path로 사용하기 위해서 변환한 것
                 display:none;으로 숨기면 clip-path효과가 사라짐 그래서 absolute로 한쪽으로 치워두고 svg를 선택해서 1px로 작게 수정-->
         </div>
+        <!--lnb를 고정할때는 lnb 전체를 fixed로 고정하면 x
+            lnb가 공간을 차지하지 않아 하단의 콘텐츠가 올라옴
+            (lnb가 고정되는 순간 밑에 콘텐츠가 올라오는 현상이 나타남)
+            lnb는 그대로 있고 안에 일부 콘텐츠만 fixed로 고정되어야함
         
+            lnb에 fixed 클래스가 추가되면 lnb_fix가 position fixed로 고정-->
         <nav class="lnb"><!--서브메뉴-->
-            <div class="wrapper">
-                <div class="lnb_wrap">
-                    <ul>
-                        <!--현재메뉴에 active 클래스 추가-->
-                        <li class="active"><a href="#n">Chairman</a></li>
-                        <li><a href="#n">Family</a></li>
-                        <li><a href="#n">Our Business</a></li>
-                    </ul>
+            <div class="lnb_fix"><!--상단에 fixed될 콘텐츠 영역-->
+                <div class="wrapper">
+                    <div class="lnb_wrap">
+                        <ul>
+                            <!--현재메뉴에 active 클래스 추가-->
+                            <li class="active"><a href="#n">Chairman</a></li>
+                            <li><a href="#n">Family</a></li>
+                            <li><a href="#n">Our Business</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
