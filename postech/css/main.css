@@ -1,0 +1,153 @@
+@import url('default.css');
+
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 246px;
+}
+.header .top {
+    height: 50px;
+    background-color: #C61065;
+    color: #FFF;
+}
+.header .top .slogan {
+    float: left;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    line-height: 50px;
+}
+.header .top .sns {
+    float: right;
+    color: rgba(255,255,255,0.8);
+    line-height: 50px;
+}
+.header .top .sns ul li {
+    float: left;
+    margin-top: 8px;
+}
+.header .top .sns ul li a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 21px auto;
+    /* a 안의 글자를 안보이게 폰트사이즈와 행간을 0으로 줌*/
+    font-size: 0;
+    line-height: 0;
+} 
+.header .top  .sns ul li.facebook a {
+    background-image: url(../images/facebook.png);
+}
+.header .top  .sns ul li.twitter a {
+    background-image: url(../images/twitter.png);
+}
+.header .top  .sns ul li.insta a {
+    background-image: url(../images/insta.png);
+}
+.header .top  .sns ul li.youtube a {
+    background-image: url(../images/youtube.png);
+}
+
+.header .middle {
+    position: relative;
+    height: 120px;
+}
+.header .middle::after {
+    position: absolute;
+    left: 0;
+    top: 120px;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px  solid #f4f4f4;
+    content: "";
+}
+
+.header .middle .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 120px;
+}
+.header .middle .search {
+    width: 240px;
+    height: 40px;
+    border: 1px solid #ccc;
+}
+.header .middle .search label {
+    display: none; 
+}
+.header .middle .search input[type="text"] {
+    float: left;
+    width: 129px;
+    height: 23px;
+    margin: 7px 55px 0 16px;
+    border: 0;
+    outline: 0; 
+    background-color: #FFF;
+    font-size: 16px;
+}
+.header .middle .search input[type="text"]::placeholder {
+    color: rgba(102,102,102,0.8);
+}
+.header .middle .search .btn {
+    float: left;
+    margin: 8px 0 0 0;
+    width: 24px;
+    height: 24px;
+}
+.header .middle .search input.btn {
+    border: 0; 
+    background-color: #fff;
+    background-image: url(../images/search.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: rgba(102,102,102,0.8);
+    font-size: 0;
+    cursor: pointer;
+}
+header .middle  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header .middle  .logo a {
+    display: block;
+    width: 233px;
+    height: 54px;
+    background: url(../images/logo.svg) no-repeat left top / 100% auto;
+    font-size: 0;
+    line-height: 0;
+}
+header .middle .side ul li {
+    float: left;
+}
+header .middle .side ul li a {
+    display: block;
+    margin-right: 31px;
+    color: #3d3d3d;
+    font-size: 16px;
+}
+
+.header .botton {
+    height: 76px;
+}
+header .gnb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .gnb button {
+    display: none;
+}
+header .gnb ul li {
+    float: left;   
+}
+header .gnb ul li a {
+    display: block;
+    margin: 0 42px 0 0;
+    font-size: 20px;
+}

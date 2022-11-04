@@ -1,0 +1,12 @@
+메인
+1920
+헤더 100
+12그리드 center /width 80/gutter 40
+비주얼 1000
+
+모바일
+360
+헤더 60  center /width 40/gutter 16
+
+
+ 
