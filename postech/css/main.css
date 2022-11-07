@@ -1,11 +1,6 @@
 @import url('default.css');
 
 .header {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    width: 100%;
     height: 246px;
 }
 .header .top {
@@ -35,10 +30,9 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 21px auto;
-    /* a 안의 글자를 안보이게 폰트사이즈와 행간을 0으로 줌*/
     font-size: 0;
     line-height: 0;
-} 
+}
 .header .top  .sns ul li.facebook a {
     background-image: url(../images/facebook.png);
 }
@@ -65,7 +59,6 @@
     border-bottom: 1px  solid #f4f4f4;
     content: "";
 }
-
 .header .middle .wrapper {
     display: flex;
     align-items: center;
@@ -109,12 +102,12 @@
     font-size: 0;
     cursor: pointer;
 }
-header .middle  .logo {
+.header .middle .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
-header .middle  .logo a {
+.header .middle  .logo a {
     display: block;
     width: 233px;
     height: 54px;
@@ -122,32 +115,341 @@ header .middle  .logo a {
     font-size: 0;
     line-height: 0;
 }
-header .middle .side ul li {
+.header .middle .side ul li {
     float: left;
 }
-header .middle .side ul li a {
+.header .middle .side ul li a {
     display: block;
-    margin-right: 31px;
+    margin: 0 15px;
     color: #3d3d3d;
     font-size: 16px;
 }
-
+.header .middle .side ul li a:hover {
+    color: #C61065;
+}
 .header .botton {
     height: 76px;
 }
-header .gnb {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-header .gnb button {
+.header .botton .logo_m {
     display: none;
 }
-header .gnb ul li {
+.header .botton .gnb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .botton .gnb button {
+    display: none;
+}
+.header .botton .gnb ul li {
     float: left;   
 }
-header .gnb ul li a {
+.header .botton .gnb ul li a {
     display: block;
-    margin: 0 42px 0 0;
+    padding: 0 21px 0 21px;
     font-size: 20px;
+    line-height: 76px;
+}
+.header .botton .gnb ul li a:hover {
+    color: #C61065;
+}
+@media screen and (max-width:640px){
+    .header {
+        height: 60px;
+    }
+    .header .top {
+        height: 15px;
+        background-color: #C61065;
+    }
+    .header .top .slogan {
+        display: none;
+    }
+    .header .top .sns {
+        display: none;
+    }
+    .header .middle {
+        display: none;
+    }
+    .header .botton {
+        height: 45px;
+    }
+    .header .botton .logo_m {
+        display: block;
+        float: left;
+        margin: 17px 0 0 0;
+    }
+    .header .botton .logo_m a {
+        display: block;
+        width: 95px;
+        height: 13px;
+        background: url(../images/logo_m.svg) no-repeat center center / 100%;
+        font-size: 0;
+        line-height: 0;
+    }
+    .header .gnb {
+        display: block;
+        float: right;
+    }
+    .header .gnb button {
+        display: block;
+        margin: 9px 0 0 0;
+    }
+    .header .gnb button span {
+        display: none;
+    }
+    .header .gnb button i {
+        font-size: 27px;
+        font-weight: 400;
+        color: #3d3d3d;
+    }
+    .header .gnb ul li {
+        display: none;  
+    }
+}
+
+.visual {
+    position: relative;
+    height: 700px;
+}
+.visual .tit {
+    position: absolute;
+    left: calc(50% - 700px);
+    top: 124px;
+    z-index: 10;
+    color: #fff;
+    line-height: 1.2;
+}
+.visual .tit h2 {
+    font-size: 53px;
+    font-weight: 700;
+}
+.visual .popup {
+    height: 700px;
+}
+.visual .popup ul li {
+    position: relative;
+}
+.visual .popup ul li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transform: scale3d(1.1, 1.1, 1);
+    transition: 3s;
+}
+.visual .popup ul li .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 700px;
+    height: 700px;
+    background-color: rgba(197,16,101,0.8);
+}
+.visual .popup ul li a {
+    position: absolute;
+    display: block;
+    left: calc(50% - 700px);
+    bottom: 148px;
+    width: 440px;
+    color: #fff;
+}
+.visual .popup ul li a h3 {
+    margin: 0 0 16px 0;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.visual .popup ul li a p {
+    font-size: 17px;
+}
+.visual .popup ul li.swiper-slide-active img {
+    transform: scale3d(1, 1, 1);
+}
+.visual .popup .btn_wrap {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: calc(50% - 700px);
+    top: calc(50% - 43px);
+    z-index: 10;
+}
+.visual .popup .btn_wrap .btn_paging {
+    display: flex;
+    line-height: 0;
+    font-size: 0;
+}
+.visual .popup .btn_wrap .btn_paging span {
+    opacity: 0.5;
+    width: 70px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 0;
+}
+.visual .popup .btn_wrap .btn_paging span.swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #E47105;
+}
+@media screen and (max-width:640px){
+    .visual {
+        height: auto;
+    }
+    .visual .tit {
+        display: none;
+    }
+    .visual .popup {
+        height: 433px;
+    }
+    .visual .popup ul li .bg {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.2);
+    }
+    .visual .popup ul li a {
+        left: 0;
+        margin: 0 20px 0 20px;
+        bottom: 88px;
+        width: auto;
+    }
+    .visual .popup ul li a h3 {
+        margin: 0 0 9px 0;
+        font-size: 23px;
+    }
+    .visual .popup ul li a p {
+        font-size: 15px;
+        width: 400px;
+    }
+    .visual .popup .btn_wrap {
+        left: 20px;
+        top: 200px;
+    }
+    .visual .popup .btn_wrap .btn_paging span {
+        width: 35px;
+        height: 2px;
+    }
+}
+
+.research {
+    margin: 166px 0 284px 0;
+}
+.research .tit {
+    float: left;
+}
+.research .tit h2 {
+    margin-top: 58px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.research .tit strong {
+    line-height: 1.12;
+    font-size: 50px;
+    font-weight: 700;
+    color: #A8175B;
+}
+.research .tit p {
+    margin: 23px 0 109px 0;
+    font-size: 16px;
+}
+.research .tit a {
+    display: block;
+    padding: 5px 27px;
+    width: 139px;
+    height: 36px;
+    border: 1px solid #AC8E63;
+    border-radius: 20px;
+}
+.research .tit a:hover {
+    border: 2px solid #AC8E63;
+}
+.research .list {
+    margin-left: 377px;
+}
+.research .list ul {
+    width: 1040px;
+}
+.research .list ul li {
+    float: left;
+    margin-right: 33px;
+    width: 320px;
+}
+.research .list ul li:last-child {
+    margin-right: 0;
+}
+.research .list ul li a {
+    display: block;
+}
+.research .list ul li a .pic {
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+.research .list ul li a .pic img {
+    width: 100%;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+    transition: 0.5s;
+}
+.research .list ul li a:hover .pic img {
+    transform: scale3d(1.2,1.2,1);
+}
+.research .list ul li a .subject {
+    position: relative;
+    margin: 20px 0 35px 0;
+    width: 320px;
+    font-weight: 700;
+}
+.research .list ul li a .subject::after {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #ccc;
+    content: "";
+}
+.research .list ul li a:hover .subject::after {
+    transition: 0.5s;
+    border-bottom: 1px solid #F58345;
+}
+.research .list ul li a .cnt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.research .list a .cnt .more {
+    position: relative;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #3d3d3d;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.research .list a .cnt .more::before {
+    position: absolute;
+    left: 25%;
+    top: 48%;
+    width: 50%;
+    height: 1px;
+    background-color: #3d3d3d;
+    content: "";
+}
+.research .list a .cnt .more::after {
+    position: absolute;
+    left: 48%;
+    top: 25%;
+    width: 1px;
+    height: 50%;
+    background-color: #3d3d3d;
+    content: "";
+}
+.research .list a:hover .cnt .more {
+    border: 1px solid #F58345;
+}
+.research .list a:hover .cnt .more::before {
+    background-color: #F58345;
+}
+.research .list a:hover .cnt .more::after {
+    background-color: #F58345;
+}
+.research .list a:hover .cnt .more {
+    transform: rotate(180deg);
 }
