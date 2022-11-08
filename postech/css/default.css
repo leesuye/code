@@ -62,7 +62,7 @@ html, body {/*고정적이고 기본적인거 주기*/
     position: relative;
 }
 .wrapper {/*콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치*/
-    width: 1280px;
+    width: 1400px;
     margin: 0 auto;
 }
 

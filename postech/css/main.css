@@ -364,9 +364,6 @@
 .research .list {
     margin-left: 370px;
 }
-.research .list ul {
-    width: 1040px;
-}
 .research .list ul li:last-child {
     margin-right: 0;
 }
@@ -423,6 +420,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    font-weight: 300px;
     font-size: 15px;
     color: #3d3d3d;
 }
@@ -514,7 +512,7 @@
     .research .detail a {
         padding: 5px 0;
         width: 107px;
-        height: 28px;
+        height: 32px;
         border: 0;
         background-color: #C61065;
         color: #fff;
@@ -528,7 +526,7 @@
     }
 }
 .notice {
-    height: 523px;
+    height: 614px;
 }
 .notice .tit {
     line-height: 1.12;
@@ -567,7 +565,7 @@
     display: none;
     position: absolute;
     left: 0;
-    top: 116px;
+    top: 122px;
     width: 100%;
 }
 .notice ul li.active .detail {
@@ -583,12 +581,12 @@
 }
 .notice ul li .detail ul.news1 {
     float: left;
-    width: 618px;
+    width: 680px;
     margin-right: 40px;
 }
 .notice ul li .detail ul.news2 {
     float: right;
-    width: 618px;
+    width: 680px;
 }
 .notice ul li .detail ul li {
     position: relative;
@@ -599,7 +597,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 25px 0;
+    margin: 12px 0;
 }
 .notice ul li .detail ul li a:hover {
     font-weight: 700;
@@ -630,6 +628,7 @@
 }
 @media screen and (max-width:640px){
     .notice {
+        margin: 0;
         height: 408px;
     }
     .notice .tit {
@@ -657,6 +656,235 @@
         display: none;
     }
     .notice .more_detail {
+        display: none;
+    }
+    .notice ul li span {
+        display: none;
+    }
+}
+.event {
+    position: relative;
+    padding: 87px 0 79px 0;
+    background-color:  #FFFAF2;
+}
+.event .tit {
+    margin: 0 0 52px 0;
+    font-size: 50px;
+    font-weight: 700;
+    color: #A8175B;
+    line-height: 1.12;
+}
+.event .promotion ul {
+    width: 1400px;
+}
+.event .promotion ul li a {
+    display: block;
+}
+.event .promotion ul li {
+    float: left;
+    margin-right: 40px;
+    width: 320px;
+}
+.event .promotion ul li:last-child {
+    margin-right: 0;
+}
+.event .promotion ul li a .pic {
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+.event .promotion ul li a .pic img {
+    width: 100%;
+}
+.event .promotion ul li .cnt p {
+    margin: 20px 0 40px 0;
+    font-weight: 700;
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+} 
+.event .promotion ul li .cnt .date {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.event .promotion ul li .cnt .note {
+    padding: 4px 0 0 0;
+    width: 80px;
+    height: 31px;
+    color: #fff;
+    text-align: center;
+}
+.event .promotion ul li .cnt .note::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 31px;
+    z-index: -1;
+    background-color: #F58345;
+    content: "";
+}
+.event .promotion ul li:nth-child(3) .cnt .note::after,
+.event .promotion ul li:nth-child(4) .cnt .note::after {
+    background-color: #C51065;
+}
+.event .promotion ul li:hover a .pic{
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+}
+.event .more_detail {
+    position: absolute;
+    right: 0;
+    top: 22px;
+}
+.event .more_detail a {
+    display: inline-block;
+    padding: 5px 27px;
+    width: 139px;
+    height: 36px;
+    border: 1px solid #AC8E63;
+    border-radius: 20px;
+}
+.event .more_detail a:hover {
+    border: 2px solid #AC8E63;
+}
+@media screen and (max-width:640px){
+    .event {
+        padding: 53px 0 34px 0;
+    }
+    .event .tit {
+        margin: 0 0 27px 0;
+        font-size: 25px;
+    }
+    .event .promotion ul {
+        width: 100%;
+    }
+    .event .promotion ul li .cnt p {
+        margin: 12px 0 21px 0;
+    } 
+    .event .promotion ul li .cnt .date {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .event .promotion ul li .cnt .note {
+        padding: 4px 0 0 0;
+        width: 80px;
+        height: 31px;
+        color: #fff;
+        text-align: center;
+    }
+    .event .promotion ul li .cnt .note::after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80px;
+        height: 31px;
+        z-index: -1;
+        background-color: #F58345;
+        content: "";
+    }
+    .event .promotion ul li:nth-child(3) .cnt .note::after,
+    .event .promotion ul li:nth-child(4) .cnt .note::after {
+        background-color: #C51065;
+    }
+    .event .more_detail {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 41px 0 60px 0;
+        text-align: center;
+    }
+    .event .more_detail a {
+        padding: 5px 0;
+        width: 107px;
+        height: 32px;
+        border: 0;
+        background-color: #C61065;
+        color: #fff;
+    }
+    .event .more_detail a:hover {
+        border: 0;
+        background-color: rgba(197,16,101,0.8);
+    }
+}
+.quick {
+    padding: 100px 0 145px 0;
+}
+.quick .tit {
+    margin: 0 0 70px 0;
+    line-height: 1.12;
+    font-size: 50px;
+    font-weight: 700;
+    color: #A8175B;
+}
+.quick .link ul {
+    display: flex;
+    justify-content: center;
+}
+.quick .link ul li {
+    float: left;
+    margin-right: 90px;
+    text-align: center;
+}
+.quick .link ul li a {
+    display: block;
+    padding: 39px 0 0 0;
+    width: 140px;
+    height: 140px;
+    border: 1px solid #AC8E63;
+    border-radius: 80px;
+    line-height: 4.5;
+}
+.quick .link ul li a:hover {
+    border: 2px solid #AC8E63;
+}
+.quick .link ul li:last-child {
+    margin-right: 0;
+}
+.quick .link ul li i {
+    font-size: 60px;
+    font-weight: 200;
+}
+.quick .link ul li span {
+    display: block;
+    font-size: 21px;
+}
+.quick .link ul li strong {
+    font-weight: 400;
+}
+@media screen and (max-width:640px){
+    .quick {
+        padding: 0 0 77px 0;
+    }
+    .quick .tit {
+        margin: 0 0 34px 0;
+        font-size: 25px;
+    }
+    .quick .link ul {
+        display: flex;
+        justify-content: space-around
+    }
+    .quick .link ul li {
+        margin-right: 12px;
+    }
+    .quick .link ul li a {
+        padding: 14px 0 0 0;
+        width: 54px;
+        height: 54px;
+        border-radius: 30px;
+        line-height: 2.8;
+    }
+    .quick .link ul li i {
+        font-size: 24px;
+    }
+    .quick .link ul li span {
+        display: block;
+        font-size: 13px;
+    }
+    .quick .link ul li strong {
         display: none;
     }
 }

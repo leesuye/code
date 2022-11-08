@@ -19,16 +19,12 @@ $(document).ready(function(){
 
 
     const swiper_research = new Swiper('.research .list', {
-        slidesPerView: 1, 
+        slidesPerView: 2, 
         spaceBetween: 16, 
         breakpoints: {
             640: {    
                 slidesPerView: 3,
                 spaceBetween: 40,
-            },
-            320: {    
-                slidesPerView: 2,
-                spaceBetween: 30,
             },
         },
     });
@@ -37,6 +33,18 @@ $(document).ready(function(){
         $('.notice ul li').removeClass('active');
         $(this).addClass('active');
     });
+
+    const swiper_event = new Swiper('.event .promotion', {
+        slidesPerView: 2, 
+        spaceBetween: 16, 
+        breakpoints: {
+            640: {    
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+        },
+    });
+
 
 });//document
 
