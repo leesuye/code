@@ -186,23 +186,23 @@
         font-size: 0;
         line-height: 0;
     }
-    .header .gnb {
+    .header .botton .gnb {
         display: block;
         float: right;
     }
-    .header .gnb button {
+    .header .botton .gnb button {
         display: block;
         margin: 9px 0 0 0;
     }
-    .header .gnb button span {
+    .header .botton .gnb button span {
         display: none;
     }
-    .header .gnb button i {
+    .header .botton .gnb button i {
         font-size: 27px;
         font-weight: 400;
         color: #3d3d3d;
     }
-    .header .gnb ul li {
+    .header .botton .gnb ul li {
         display: none;  
     }
 }
@@ -330,10 +330,21 @@
 }
 
 .research {
+    position: relative;
     margin: 166px 0 284px 0;
 }
 .research .tit {
     float: left;
+}
+.research .bg {
+    position: absolute;
+    top: -166px;
+    left: 0;
+    width: 700px;
+    height: 706px;
+    border-radius: 0 0 200px 0;
+    background-color: #FFF5E7;
+    z-index: -1;
 }
 .research .tit h2 {
     margin-top: 58px;
@@ -347,30 +358,14 @@
     color: #A8175B;
 }
 .research .tit p {
-    margin: 23px 0 109px 0;
+    margin: 23px 0 0 0;
     font-size: 16px;
 }
-.research .tit a {
-    display: block;
-    padding: 5px 27px;
-    width: 139px;
-    height: 36px;
-    border: 1px solid #AC8E63;
-    border-radius: 20px;
-}
-.research .tit a:hover {
-    border: 2px solid #AC8E63;
-}
 .research .list {
-    margin-left: 377px;
+    margin-left: 370px;
 }
 .research .list ul {
     width: 1040px;
-}
-.research .list ul li {
-    float: left;
-    margin-right: 33px;
-    width: 320px;
 }
 .research .list ul li:last-child {
     margin-right: 0;
@@ -394,8 +389,9 @@
 .research .list ul li a .subject {
     position: relative;
     margin: 20px 0 35px 0;
-    width: 320px;
+    width: 100%;
     font-weight: 700;
+    word-break: normal;
 }
 .research .list ul li a .subject::after {
     position: absolute;
@@ -423,33 +419,244 @@
     border-radius: 50%;
     transition: 0.5s;
 }
-.research .list a .cnt .more::before {
+.research .list a .cnt .more i {
     position: absolute;
-    left: 25%;
-    top: 48%;
-    width: 50%;
-    height: 1px;
-    background-color: #3d3d3d;
-    content: "";
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: #3d3d3d;
 }
-.research .list a .cnt .more::after {
-    position: absolute;
-    left: 48%;
-    top: 25%;
-    width: 1px;
-    height: 50%;
-    background-color: #3d3d3d;
-    content: "";
+.research .list a .cnt .more span {
+    font-size: 0;
+    line-height: 0;
 }
 .research .list a:hover .cnt .more {
     border: 1px solid #F58345;
 }
-.research .list a:hover .cnt .more::before {
-    background-color: #F58345;
-}
-.research .list a:hover .cnt .more::after {
-    background-color: #F58345;
+.research .list a:hover .cnt .more i {
+    color: #F58345;
 }
 .research .list a:hover .cnt .more {
     transform: rotate(180deg);
+}
+.research .detail {
+    position: absolute;
+    left: 0;
+    bottom: 21px;
+}
+.research .detail a {
+    display: inline-block;
+    padding: 5px 27px;
+    width: 139px;
+    height: 36px;
+    border: 1px solid #AC8E63;
+    border-radius: 20px;
+}
+.research .detail a:hover {
+    border: 2px solid #AC8E63;
+}
+@media screen and (max-width:640px){
+    .research {
+        margin: 47px 0 60px 0;
+    }
+    .research .tit {
+        float: none;
+    }
+    .research .tit::before {
+        display: none;
+    }
+    .research .tit h2 {
+        display: none;
+    }
+    .research .tit strong {
+        font-size: 25px;
+    }
+    .research .tit p {
+        margin: 13px 0 28px 0;
+        font-size: 13px;
+    }
+    .research .tit a {
+        padding: 3px 18px;
+        width: 107px;
+        height: 28px;
+        border: 0;
+        background-color: #C61065;
+        color: #FFF;
+    }
+    .research .tit a span {
+        font-size: 13px;
+    }
+    .research .tit a:hover {
+        border: 1px solid #C61065;
+        background-color: #fff;
+        color: #C61065;
+    }
+    .research .list {
+        margin-left: 0;
+    }
+    .research .list ul {
+        width: 100%;
+    }
+    .research .list ul li a .subject {
+        margin: 16px 0 23px 0;
+        font-size: 15px;
+    }
+    .research .list ul li a .subject::after {
+        bottom: -12px;
+    }
+    .research .detail {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 41px 0 60px 0;
+        text-align: center;
+    }
+    .research .detail a {
+        padding: 5px 0;
+        width: 107px;
+        height: 28px;
+        border: 0;
+        background-color: #C61065;
+        color: #fff;
+    }
+    .research .detail a:hover {
+        border: 0;
+        background-color: rgba(197,16,101,0.8);
+    }
+    .research .bg {
+        display: none;
+    }
+}
+.notice {
+    height: 523px;
+}
+.notice .tit {
+    line-height: 1.12;
+    font-size: 50px;
+    font-weight: 700;
+    color: #A8175B;
+}
+.notice ul.notice_wrap {
+    position: relative; 
+}
+.notice ul.notice_wrap > li {
+    float: left;
+    margin: 0 40px 0 0;
+}
+.notice ul li h2 {
+    margin: 52px 0 25px 0;
+    color: #999999;
+    font-size: 28px;
+    font-weight: 700;
+}
+.notice ul li.active h2 {
+    position: relative;
+    color: #3d3d3d;
+}
+.notice ul li.active h2::before {
+    position: absolute;
+    left: -6px;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    background-color: #F58345;
+    border-radius: 4px;
+    content: "";
+}
+.notice ul li .detail {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 116px;
+    width: 100%;
+}
+.notice ul li.active .detail {
+    display: block;
+}
+.notice ul li .detail::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: 1px solid #F58345;
+    content: "";
+}
+.notice ul li .detail ul.news1 {
+    float: left;
+    width: 618px;
+    margin-right: 40px;
+}
+.notice ul li .detail ul.news2 {
+    float: right;
+    width: 618px;
+}
+.notice ul li .detail ul li {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+.notice ul li .detail ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+}
+.notice ul li .detail ul li a:hover {
+    font-weight: 700;
+}
+.notice ul li .detail ul li a::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    content: "";
+}
+.notice .more_detail {
+    position: absolute;
+    right: 0;
+    top: 113px;
+}
+.notice .more_detail a {
+    display: inline-block;
+    padding: 5px 27px;
+    width: 139px;
+    height: 36px;
+    border: 1px solid #AC8E63;
+    border-radius: 20px;
+}
+.notice .more_detail a:hover {
+    border: 2px solid #AC8E63;
+}
+@media screen and (max-width:640px){
+    .notice {
+        height: 408px;
+    }
+    .notice .tit {
+        font-size: 25px;
+    }
+    .notice ul.notice_wrap > li {
+        margin: 0 23px 0 0;
+    }
+    .notice ul li h2 {
+        margin: 33px 0 23px 0;
+        font-size: 18px;
+    }
+    .notice ul li.active h2::before {
+        left: -5px;
+        top: -6px;
+    }
+    .notice ul li .detail {
+        top: 86px;
+    }
+    .notice ul li .detail ul.news1 {
+        width: auto;
+        margin-right: 0;
+    }
+    .notice ul li .detail ul.news2 {
+        display: none;
+    }
+    .notice .more_detail {
+        display: none;
+    }
 }

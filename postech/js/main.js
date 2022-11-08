@@ -17,5 +17,26 @@ $(document).ready(function(){
 
     });//visual swiper
 
+
+    const swiper_research = new Swiper('.research .list', {
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        breakpoints: {
+            640: {    
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            320: {    
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+        },
+    });
+
+    $('.notice ul li').on('click', function(){
+        $('.notice ul li').removeClass('active');
+        $(this).addClass('active');
+    });
+
 });//document
 

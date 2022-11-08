@@ -58,7 +58,9 @@ html, body {/*고정적이고 기본적인거 주기*/
     /* overflow: hidden; */
     min-width: 1280px; /*브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 최소 넓이를 줌*/
 }
-
+.cnt_wrap {
+    position: relative;
+}
 .wrapper {/*콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치*/
     width: 1280px;
     margin: 0 auto;
