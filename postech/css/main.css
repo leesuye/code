@@ -153,6 +153,7 @@
 .header .botton .gnb ul li a:hover {
     color: #C61065;
 }
+
 @media screen and (max-width:640px){
     .header {
         height: 60px;
@@ -589,27 +590,20 @@
     width: 680px;
 }
 .notice ul li .detail ul li {
-    position: relative;
     float: left;
     width: 100%;
+    border-bottom: 1px solid #ccc;
 }
 .notice ul li .detail ul li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 12px 0;
+    margin: 19px 0;
 }
 .notice ul li .detail ul li a:hover {
     font-weight: 700;
 }
-.notice ul li .detail ul li a::after {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    content: "";
-}
+
 .notice .more_detail {
     position: absolute;
     right: 0;
@@ -664,7 +658,7 @@
 }
 .event {
     position: relative;
-    padding: 87px 0 79px 0;
+    padding: 113px 0 142px 0;
     background-color:  #FFFAF2;
 }
 .event .tit {
@@ -704,30 +698,21 @@
     overflow: hidden;
 } 
 .event .promotion ul li .cnt .date {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.event .promotion ul li .cnt .note {
+.event .promotion ul li .cnt .date .note {
     padding: 4px 0 0 0;
     width: 80px;
     height: 31px;
+    background-color: #F58345;
+    content: "";
     color: #fff;
     text-align: center;
 }
-.event .promotion ul li .cnt .note::after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 80px;
-    height: 31px;
-    z-index: -1;
-    background-color: #F58345;
-    content: "";
-}
-.event .promotion ul li:nth-child(3) .cnt .note::after,
-.event .promotion ul li:nth-child(4) .cnt .note::after {
+.event .promotion ul li:nth-child(3) .cnt .date .note,
+.event .promotion ul li:nth-child(4) .cnt .date .note {
     background-color: #C51065;
 }
 .event .promotion ul li:hover a .pic{
@@ -769,26 +754,16 @@
         justify-content: space-between;
         align-items: center;
     }
-    .event .promotion ul li .cnt .note {
-        padding: 4px 0 0 0;
-        width: 80px;
-        height: 31px;
-        color: #fff;
-        text-align: center;
+    .event .promotion ul li .cnt .date span {
+        display: none;
     }
-    .event .promotion ul li .cnt .note::after {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 80px;
-        height: 31px;
-        z-index: -1;
-        background-color: #F58345;
-        content: "";
+    .event .promotion ul li .cnt .date {
+        justify-content: flex-end;
     }
-    .event .promotion ul li:nth-child(3) .cnt .note::after,
-    .event .promotion ul li:nth-child(4) .cnt .note::after {
-        background-color: #C51065;
+    .event .promotion ul li .cnt .date .note {
+        display: block;
+        width: 55px;
+        height: 28px;
     }
     .event .more_detail {
         position: relative;
@@ -811,10 +786,10 @@
     }
 }
 .quick {
-    padding: 100px 0 145px 0;
+    padding: 158px 0 220px 0;
 }
 .quick .tit {
-    margin: 0 0 70px 0;
+    margin: 0 0 80px 0;
     line-height: 1.12;
     font-size: 50px;
     font-weight: 700;
@@ -832,8 +807,8 @@
 .quick .link ul li a {
     display: block;
     padding: 39px 0 0 0;
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     border: 1px solid #AC8E63;
     border-radius: 80px;
     line-height: 4.5;
@@ -845,11 +820,12 @@
     margin-right: 0;
 }
 .quick .link ul li i {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 200;
 }
 .quick .link ul li span {
     display: block;
+    font-weight: 400;
     font-size: 21px;
 }
 .quick .link ul li strong {
@@ -857,7 +833,7 @@
 }
 @media screen and (max-width:640px){
     .quick {
-        padding: 0 0 77px 0;
+        padding: 50px 0 85px 0;
     }
     .quick .tit {
         margin: 0 0 34px 0;
@@ -886,5 +862,248 @@
     }
     .quick .link ul li strong {
         display: none;
+    }
+}
+.history {
+    position: relative;
+    padding: 129px 0 83px 0;
+    height: 630px;
+    background: url(../images/history.png) no-repeat center center / cover;
+    color: #fff;
+}
+.history .tit {
+    margin: 0 0 107px 0;
+    line-height: 1.12;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+.history .story ul li {
+    float: left;
+}
+.history .story ul li::after {
+    position: absolute;
+    right: 0;
+    top: 28px;
+    width: 1px;
+    height: 55px;
+    background-color: rgba(255,255,255,0.4);
+    content: "";
+}
+.history .story ul li.last {
+    margin-right: 0;
+}
+.history .story ul li.last::after {
+    display: none;
+}
+.history .story ul li a p {
+    font-size: 24px;
+}
+.history .story ul li a p.bold {
+    font-size: 40px;
+    font-weight: 700;
+}
+.history .story ul li a span {
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: 400;
+}
+.history .button-prev {
+    position: absolute;
+    left: 180px;
+    top: 50%;
+    color: rgba(255,255,255,0.8);
+}
+.history .button-prev span {
+    display: none;
+}
+.history .button-prev i {
+    font-size: 60px;
+}
+.history .button-next {
+    position: absolute;
+    right: 180px;
+    top: 50%;
+    color: rgba(255,255,255,0.8);
+}
+.history .button-next span {
+    display: none;
+}
+.history .button-next i {
+    font-size: 60px;
+}
+.history .pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 85px;
+    text-align: center;
+    transform: translateX(-50%);
+}
+.history .pagination .swiper-pagination-bullet {
+    background: #fff ;
+    opacity: 1;
+}
+.history .pagination .swiper-pagination-bullet-active {
+    background: #F58345;
+}
+@media screen and (max-width:640px){
+   .history {
+        height: auto;
+        padding: 59px 0 73px 0;
+    }
+    .history .tit {
+        margin: 0 0 54px 0;
+        font-size: 25px;
+    }
+    .history .story {
+        height: 261px;
+    }
+    .history .story ul li::after {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+    }
+    .history .story ul li.last::after {
+        display: block;
+    }
+    .history .story ul li a {
+        display:block;
+        padding: 13px 0 0 0;        
+    }
+    .history .story ul li a p {
+        font-size: 13px;
+    }
+    .history .story ul li a p.bold {
+        font-size: 27px;
+    }
+    .history .story ul li a span {
+        font-size: 13px;
+    }
+    .history .button-prev {
+        display: none;
+    }
+    .history .button-prev i {
+        font-size: 0;
+    }
+    .history .button-next {
+        display: none;
+    }
+    .history .button-next i {
+        font-size: 0;
+    }
+    .history .pagination {
+        display: flex;
+        bottom: 36px;
+        top: auto;
+        right: auto;
+        width: auto;
+    }
+    .history .pagination .swiper-pagination-bullet {
+        margin: 0 3px;
+    }
+}
+ 
+.footer {
+    position: relative;
+    background-color: #C61065;
+}
+.footer .ftop {
+    height: 60px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.footer .ftop .fnav li {
+    position: relative;
+    float: left;
+    margin-right: 36px;
+    color: rgba(255,255,255,0.7);
+}
+.footer .ftop .fnav li:hover {
+    color: #FFF;
+}
+.footer .ftop .fnav li::after {
+    position: absolute;
+    right: -18px;
+    top: 29px;
+    width: 1px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.7);
+    content: "";
+}
+.footer .ftop .fnav li:last-child:after {
+    display: none;
+}
+.footer .ftop .fnav li.privacy a {
+    font-weight: 700;
+}
+.footer .ftop .fnav li a {
+    display: block;
+    line-height: 60px;
+}
+.footer .fsub .flogo {
+    float: left;
+    margin-top: 40px;
+}
+.footer .fsub .flogo img {
+    width: 147px;
+}
+.footer .fsub .inner {
+    padding: 33px 0 80px 175px;
+}
+.footer .fsub .finfo span {
+    display: inline-block;
+    margin-right: 32px;
+    line-height: 30px;
+    color: rgba(255,255,255,0.7);
+}
+.footer .fsub .copyright {
+    margin-top: 10px;
+    color: rgba(255,255,255,0.7);
+}
+@media screen and (max-width:640px){
+    .footer {
+        padding: 0 0 0 20px;
+    }
+    .footer .ftop {
+        height: auto;
+        padding: 83px 0 0 0;
+        border-bottom: 0;
+    }
+    .footer .ftop .fnav li {
+        margin-right: 17px;
+    }
+    .footer .ftop .fnav li::after {
+        right: -11px;
+        top: 10px;
+        height: 8px;
+    }
+    .footer .ftop .fnav li a {
+        line-height: 28px;
+    }
+    .footer .fsub .flogo {
+        float: none;
+        margin-top: 40px;
+        position: absolute;
+        left: 20px;
+        top: 0;
+        width: 105px;
+    }
+    .footer .fsub .flogo img {
+        margin: 0 0 0 20px;
+        width: 105px;
+    }
+    .footer .fsub .inner {
+        padding: 80px 0 49px 0;
+    }
+    .footer .fsub .finfo span {
+        display: block;
+        margin-right: 32px;
+        line-height: 25px;
+        color: rgba(255,255,255,0.7);
+    }
+    .footer .fsub .copyright {
+        margin-top: 15px;
+        color: rgba(255,255,255,0.7);
     }
 }

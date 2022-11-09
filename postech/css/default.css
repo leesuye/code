@@ -56,16 +56,18 @@ html, body {/*고정적이고 기본적인거 주기*/
 }
 #wrap {/*id=wrap*/
     /* overflow: hidden; */
-    min-width: 1280px; /*브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 최소 넓이를 줌*/
+    min-width: 1440px; /*브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 최소 넓이를 줌*/
 }
+
+.wrapper {/*콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치*/
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .cnt_wrap {
     position: relative;
 }
-.wrapper {/*콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치*/
-    width: 1400px;
-    margin: 0 auto;
-}
-
 /*media (모바일) 시작*/
 @media screen and (max-width:640px){
     /*640px 이하의 디바이스에서만 아래 css 가 적용
@@ -82,7 +84,6 @@ html, body {/*고정적이고 기본적인거 주기*/
     }
     .wrapper {
         width: auto;
-        margin: 0 20px;
     }
 }/*media 종결*/
 
