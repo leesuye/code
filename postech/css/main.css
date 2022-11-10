@@ -233,12 +233,12 @@
 .research .list a:hover .cnt .more {
     transform: rotate(180deg);
 }
-.research .detail {
+.research .more_detail {
     position: absolute;
     left: 20px;
     bottom: 21px;
 }
-.research .detail a {
+.research .more_detail a {
     display: inline-block;
     padding: 5px 27px;
     width: 139px;
@@ -246,7 +246,7 @@
     border: 1px solid #AC8E63;
     border-radius: 20px;
 }
-.research .detail a:hover {
+.research .more_detail a:hover {
     border: 2px solid #AC8E63;
 }
 @media screen and (max-width:640px){
@@ -298,24 +298,14 @@
     .research .list ul li a .subject::after {
         bottom: -12px;
     }
-    .research .detail {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        margin: 41px 0 60px 0;
-        text-align: center;
+    .research .more_detail {
+        right: 20px;
+        bottom: 21px;
     }
-    .research .detail a {
-        padding: 5px 0;
+    .research .more_detail a {
+        padding: 3px 17px;
         width: 107px;
-        height: 32px;
-        border: 0;
-        background-color: #C61065;
-        color: #fff;
-    }
-    .research .detail a:hover {
-        border: 0;
-        background-color: rgba(197,16,101,0.8);
+        height: 28px;
     }
     .research .bg {
         display: none;
@@ -538,6 +528,7 @@
         padding: 53px 0 34px 0;
     }
     .event h2 {
+        position: relative;
         margin: 0 0 27px 0;
         font-size: 25px;
     }
@@ -565,24 +556,14 @@
         height: 28px;
     }
     .event .more_detail {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        margin: 41px 0 60px 0;
-        text-align: center;
+        top: 4px;
     }
     .event .more_detail a {
-        padding: 5px 0;
+        padding: 3px 17px;
         width: 107px;
-        height: 32px;
-        border: 0;
-        background-color: #C61065;
-        color: #fff;
+        height: 28px;
     }
-    .event .more_detail a:hover {
-        border: 0;
-        background-color: rgba(197,16,101,0.8);
-    }
+
 }
 .quick {
     padding: 158px 0 220px 0;
