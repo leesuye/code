@@ -12,7 +12,7 @@ html, body {
     word-break: keep-all;
 }
 #wrap {/*id=wrap*/
-    /* overflow: hidden; */
+    overflow: hidden;
     min-width: 1440px; 
 }
 
@@ -177,17 +177,15 @@ html, body {
 .header .botton .logo_m {
     display: none;
 }
-.header .botton .gnb {
+.header .botton .gnb button {
+    display: none;
+}
+.header .botton .gnb ul {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.header .botton .gnb button {
-    display: none;
-}
-.header .botton .gnb ul li {
-    float: left;   
-}
+
 .header .botton .gnb ul li a {
     display: block;
     padding: 0 21px 0 21px;
@@ -311,7 +309,7 @@ html, body {
 }
 @media screen and (max-width:640px){
     .footer {
-        padding: 0 0 0 20px;
+        padding: 0;
     }
     .footer .ftop {
         height: auto;
@@ -338,11 +336,11 @@ html, body {
         width: 105px;
     }
     .footer .fsub .flogo img {
-        margin: 0 0 0 20px;
+        margin: 0;
         width: 105px;
     }
     .footer .fsub .inner {
-        padding: 80px 0 49px 0;
+        padding: 0 0 49px 0;
     }
     .footer .fsub .finfo span {
         display: block;

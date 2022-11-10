@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
@@ -171,10 +170,10 @@
         </section>
         <section class="notice">
             <div class="wrapper cnt_wrap">
-                <h2 class="tit">News & Notice</h2>
+                <h2>News & Notice</h2>
                 <ul class="notice_wrap">
                     <li class="active">
-                        <h2><button>공지사항</button></h2>
+                        <div class="tit"><button>공지사항</button></div>
                         <div class="detail">
                             <ul class="news1">
                                 <li>
@@ -229,9 +228,12 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="more_detail">
+                            <a href="#n"><span>more detail</span></a>
+                        </div>
                     </li>
                     <li>
-                        <h2><button>대학소식</button></h2>
+                        <div class="tit"><button>대학소식</button></div>
                         <div class="detail">
                             <ul class="news1">
                                 <li>
@@ -286,9 +288,12 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="more_detail">
+                            <a href="#n"><span>more detail</span></a>
+                        </div>
                     </li>
                     <li>
-                        <h2><button>포스테키안</button></h2>
+                        <div class="tit"><button>포스테키안</button></div>
                         <div class="detail">
                             <ul class="news1">
                                 <li>
@@ -343,16 +348,16 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="more_detail">
+                            <a href="#n"><span>more detail</span></a>
+                        </div>
                     </li>
                 </ul>
-                <div class="more_detail">
-                    <a href="#n"><span>more detail</span></a>
-                </div>
             </div>
         </section>
         <section class="event">
             <div class="wrapper cnt_wrap">
-                <h2 class="tit">POSTECH Event</h2>
+                <h2>POSTECH Event</h2>
                 <div class="promotion swiper">
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide">
@@ -412,7 +417,7 @@
         </section>
         <section class="quick">
             <div class="wrapper">
-                <h2 class="tit">Quick Links</h2>
+                <h2>Quick Links</h2>
                 <div class="link">
                     <ul>
                         <li>
@@ -450,7 +455,7 @@
         </section>
         <section class="history">
             <div class="wrapper">
-                <h2 class="tit">History of POSTECH</h2>
+                <h2>History of POSTECH</h2>
                 <div class="story swiper">
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide">
@@ -523,7 +528,7 @@
         <footer class="footer">
             <div class="ftop">
                 <div class="wrapper">
-                    <ul class="fnav">
+                    <ul class="fnav clearfix">
                         <li class="privacy"><a href="#">개인정보처리방침</a></li>
                         <li><a href="#">이메일무단수집거부</a></li>
                         <li><a href="#">저작권정책</a></li>

@@ -235,7 +235,7 @@
 }
 .research .detail {
     position: absolute;
-    left: 0;
+    left: 20px;
     bottom: 21px;
 }
 .research .detail a {
@@ -324,7 +324,7 @@
 .notice {
     height: 614px;
 }
-.notice .tit {
+.notice h2 {
     line-height: 1.12;
     font-size: 50px;
     font-weight: 700;
@@ -337,17 +337,17 @@
     float: left;
     margin: 0 40px 0 0;
 }
-.notice ul li h2 {
+.notice ul li .tit {
     margin: 52px 0 25px 0;
     color: #999999;
     font-size: 28px;
     font-weight: 700;
 }
-.notice ul li.active h2 {
+.notice ul li.active .tit {
     position: relative;
     color: #3d3d3d;
 }
-.notice ul li.active h2::before {
+.notice ul li.active .tit::before {
     position: absolute;
     left: -6px;
     top: -3px;
@@ -399,12 +399,16 @@
     font-weight: 700;
 }
 
-.notice .more_detail {
+.notice ul li .more_detail {
+    display: none;
     position: absolute;
     right: 0;
-    top: 113px;
+    top: 59px;
 }
-.notice .more_detail a {
+.notice ul li.active .more_detail {
+    display: block;
+}
+.notice ul li .more_detail a {
     display: inline-block;
     padding: 5px 27px;
     width: 139px;
@@ -412,7 +416,7 @@
     border: 1px solid #AC8E63;
     border-radius: 20px;
 }
-.notice .more_detail a:hover {
+.notice ul li .more_detail a:hover {
     border: 2px solid #AC8E63;
 }
 @media screen and (max-width:640px){
@@ -420,17 +424,17 @@
         margin: 0;
         height: 408px;
     }
-    .notice .tit {
+    .notice h2 {
         font-size: 25px;
     }
     .notice ul.notice_wrap > li {
         margin: 0 23px 0 0;
     }
-    .notice ul li h2 {
+    .notice ul li .tit {
         margin: 33px 0 23px 0;
         font-size: 18px;
     }
-    .notice ul li.active h2::before {
+    .notice ul li.active .tit::before {
         left: -5px;
         top: -6px;
     }
@@ -444,7 +448,7 @@
     .notice ul li .detail ul.news2 {
         display: none;
     }
-    .notice .more_detail {
+    .notice ul li.active .more_detail {
         display: none;
     }
     .notice ul li span {
@@ -456,7 +460,7 @@
     padding: 113px 0 142px 0;
     background-color:  #FFFAF2;
 }
-.event .tit {
+.event h2 {
     margin: 0 0 52px 0;
     font-size: 50px;
     font-weight: 700;
@@ -515,7 +519,7 @@
 }
 .event .more_detail {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 22px;
 }
 .event .more_detail a {
@@ -533,7 +537,7 @@
     .event {
         padding: 53px 0 34px 0;
     }
-    .event .tit {
+    .event h2 {
         margin: 0 0 27px 0;
         font-size: 25px;
     }
@@ -583,7 +587,7 @@
 .quick {
     padding: 158px 0 220px 0;
 }
-.quick .tit {
+.quick h2 {
     margin: 0 0 80px 0;
     line-height: 1.12;
     font-size: 50px;
@@ -630,7 +634,7 @@
     .quick {
         padding: 50px 0 85px 0;
     }
-    .quick .tit {
+    .quick h2 {
         margin: 0 0 34px 0;
         font-size: 25px;
     }
@@ -666,7 +670,7 @@
     background: url(../images/history.png) no-repeat center center / cover;
     color: #fff;
 }
-.history .tit {
+.history h2 {
     margin: 0 0 107px 0;
     line-height: 1.12;
     font-size: 50px;
@@ -717,7 +721,7 @@
 }
 .history .button-next {
     position: absolute;
-    right: calc(50% - 760px);
+    right: calc(50% - 767px);
     top: 50%;
     color: rgba(255,255,255,0.8);
 }
@@ -746,7 +750,7 @@
         height: auto;
         padding: 59px 0 73px 0;
     }
-    .history .tit {
+    .history h2 {
         margin: 0 0 54px 0;
         font-size: 25px;
     }
