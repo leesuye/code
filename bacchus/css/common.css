@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'Tenada';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+/*지정*/
+html, body {
+    color: #3d3d3d;
+    line-height: 1.5;
+    font-family: 'BMJUA', 'Tenada', 'Noto Sans KR','NanumGothic','Malgun Gothic','Apple SD Gothic','Apple SD Gothic Neo','Dotum', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    /* letter-spacing: -0.05em; */
+    word-break: keep-all;
+}
+
+#wrap {/*id=wrap*/
+    overflow: hidden;
+    min-width: 1280px; 
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cnt_wrap {
+    position: relative;
+}
+
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px;
+    }
+    #wrap {
+        min-width: auto;
+    }
+    .wrapper {
+        width: auto;
+    }
+}
+
+
+
+.clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;}
+
+
+
+.header {
+    position: relative;
+    height: 100px;
+    border-bottom: 1px solid #142247;
+}
+.header h1 {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    width: 82px;
+    height: 53px;
+    overflow: hidden;
+    background: url(../images/logo.svg) no-repeat center top;
+    z-index: 50;
+}
+.header h1 a {
+    display: block;
+    height: 100%;
+}
+.header .nav {
+    float: right;
+}
+.header .nav ul li {
+    float: left;
+}
+.header .nav ul li a {
+    display: block;
+    padding: 30px 33px;
+    font-size: 25px;
+}
+.visual {
+    height: 800px;
+    border-bottom: 1px solid #142247;
+}
+.visual h2 {
+    padding: 84px 0 0 0;
+    font-size: 84px;
+    font-family: 'Tenada';
+    text-align: center;
+    
+}
+.visual .bg {
+    display: flex;
+    justify-content: center;
+}
+.visual .bg img {
+    width: 698px;
+    height: 383px;
+}
+
+
