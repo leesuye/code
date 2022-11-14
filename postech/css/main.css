@@ -299,8 +299,11 @@
         bottom: -12px;
     }
     .research .more_detail {
+        position: absolute;
+        top: 83px;
+        left: auto;
         right: 20px;
-        bottom: 21px;
+        bottom: 0;
     }
     .research .more_detail a {
         padding: 3px 17px;
