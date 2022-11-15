@@ -1,5 +1,253 @@
 @import url('default.css');
 @import url('common.css');
 
+.visual {
+    height: 850px;
+    border-bottom: 1px solid #142247;
+}
+.visual h2 {
+    padding: 84px 0 0 0;
+    font-size: 84px;
+    font-family: 'Tenada';
+    text-align: center;
+    color: #fff;
+    text-shadow: -2px 0 #142247, 0 2px #142247, 2px 0 #142247, 0 -2px #142247;
+}
+.visual .txt ul li {
+    display: inline-block;
+    width: 755px;
+    text-align: center;
+    font-family: 'Tenada';
+    font-size: 62px;
+    color: #142247;
+}
+.visual .txt {
+    margin-bottom: 40px;
+}
+
+.visual .bg {
+    display: flex;
+    justify-content: center;
+}
+.visual .bg img {
+    width: 698px;
+    height: 383px;
+}
+.product {
+    padding: 120px 0 130px 0;
+    text-align: center;
+}
+.product h2 {
+    position: relative;
+    margin: 0 0 117px 0;
+    font-family: 'Tenada'; 
+    font-size: 45px;
+    color: #142247;
+}
+.product h2 .bg {
+    position: absolute;
+    left: 0;
+    top: 23px;
+    width: 1280px;
+    height: 505px;
+    z-index: -10;
+    background-color: #FFC555;
+}
+.product ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 0 224px 0;
+}
+.product ul li {
+    float: left;
+}
+.product ul li a {
+    display: block;
+    padding: 13px 0 0 0;
+    width: 205px;
+    height: 205px;
+    line-height: 2.5;
+    border-radius: 105px;
+    background-color: #fff;
+}
+.product ul li a:hover {
+    border: 4px solid #F01E17;
+}
+.product ul li a img {
+    height: 180px;
+}
+.product ul li a p {
+    font-size: 20px;
+}
+.history {
+    padding: 130px 0;
+    background-color: #142247;
+    color: #fff;
+}
+.history h2 {
+    position: relative;
+    font-family: 'Tenada';
+    font-size: 45px;
+}
+.history h2:after {
+    position: absolute;
+    left: 264px;
+    top: 22px;
+    width: 976px;
+    height: 6px;
+    background-color: #fff;
+    content: "";
+}
+.history .cnt ul li .inner {
+    float: left;
+    margin: 49px 0 0 0;
+}
+.history .cnt ul li .inner ul li {
+    margin-bottom: 47px;
+}
+.history .cnt ul li .inner strong {
+    font-size: 18px;
+}
+.history .cnt ul li .inner strong span {
+    margin-right: 16px;
+    font-size: 30px;
+    font-weight: 400;
+}
+.history .cnt ul li .pic {
+    position: relative;
+    float: right;
+    line-height: 0;
+    font-size: 0;
+}
+.history .cnt ul li .pic .more span {
+    display: none;
+}
+.history .cnt ul li .pic .more i {
+    position: absolute;
+    line-height: 50px;
+    padding: 0 0 0 6px;
+    right: 0;
+    top: 0;
+    font-size: 40px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    background-color: #FFC555;
+}
+.movie {
+    position: relative;
+    margin: 145px 0;
+}
+.movie h2 {
+    position: relative;
+    font-family: 'Tenada';
+    font-size: 45px;
+    color: #142247;
+}
+.movie h2:after {
+    position: absolute;
+    left: 235px;
+    top: 37px;
+    width: 1004px;
+    height: 6px;
+    background-color: #80C76D;
+    content: "";
+}
+.movie .top {
+    position: relative;
+}
+.movie .top strong {
+    position: absolute;
+    left: 20px;
+    top: 51px;
+    font-weight: 400;
+}
+.movie .top p {
+    position: absolute;
+    left: 40%;
+    top: 0;
+    font-size: 25px;
+}
+.movie .top span {
+    margin-right: 20px;
+}
+.movie .top .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.movie .top .more span {
+    display: none;
+}
+.movie .top .more i {
+    position: absolute;
+    line-height: 50px;
+    padding: 0 0 0 6px;
+    right: 0;
+    top: -7px;
+    font-size: 40px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    background-color: #80C76D;
+}
+.movie .list {
+    position: relative;
+}
+.movie .list ul {
+    margin: 154px 0 0 0;
+}
+.movie .list ul li {
+    margin-right: 137px;
+    display: inline-block;
+    margin-right: 137px;
+    width: auto;
+    text-align: center;
+}
+.movie .list ul li .bg {
+    position: relative;
+}
+.movie .list ul li .bg::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    background-color: rgba(0,0,0,0.4);
+    content: "";
+}
+.movie .list ul li.swiper-slide-active .bg::before {
+    opacity: 0;
+}
+.movie .list .button-prev {
+    position: absolute;
+    left: 500px;
+    top: 50%;
+    z-index: 10;
+    color: #9d9d9d;
+}
+.movie .list .button-prev span {
+    display: none;
+}
+.movie .list .button-prev i {
+    font-size: 60px;
+}
+.movie .list .button-next {
+    position: absolute;
+    right: 500px;
+    top: 50%;
+    z-index: 10;
+    color: #9d9d9d;
+}
+.movie .list .button-next span {
+    display: none;
+}
+.movie .list .button-next i {
+    font-size: 60px;
+}
+
+
 
 

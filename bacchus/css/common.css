@@ -83,27 +83,14 @@ html, body {
 }
 .header .nav ul li a {
     display: block;
-    padding: 30px 33px;
+    padding: 30px 35px;
     font-size: 25px;
+    color: #142247;
 }
-.visual {
-    height: 800px;
-    border-bottom: 1px solid #142247;
+.header .nav ul li a:hover {
+    color: #fff;
+    background-color: #142247;
 }
-.visual h2 {
-    padding: 84px 0 0 0;
-    font-size: 84px;
-    font-family: 'Tenada';
-    text-align: center;
-    
-}
-.visual .bg {
-    display: flex;
-    justify-content: center;
-}
-.visual .bg img {
-    width: 698px;
-    height: 383px;
-}
+
 
 
