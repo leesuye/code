@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    var swiper = new Swiper(".visual .txt", {
+    const swiper = new Swiper(".visual .txt", {
         slidesPerView: "auto",
         centeredSlides: true,
         spaceBetween: 120,
@@ -8,16 +8,33 @@ $(document).ready(function(){
           el: ".swiper-pagination",
           clickable: true,
         },
-        autoplay: {  /* 팝업 자동 실행 */
-		delay: 4000,
-		disableOnInteraction: true,
-	    },
+        autoplay: {  
+          delay: 4000,
+          disableOnInteraction: true,
+	      },
         loop: true, 
       });
 
+      let history_txt = ['1960','2000','2011','2013']
+      const swiper_history = new Swiper(".history .cnt", {
+        pagination: {
+          el: ".history .pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="swiper-pagination-bullet '+className+'">' + history_txt[index] + "</span>";
+          },
+        },
+        autoplay: {  
+          delay: 4000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+        
+      });
       
-    
-      var swiper = new Swiper(".movie .list", {
+
+
+      const swiper_movie = new Swiper(".movie .list", {
         slidesPerView: 2,
         spaceBetween: 137,
         centeredSlides: true,
