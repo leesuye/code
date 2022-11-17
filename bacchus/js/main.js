@@ -32,17 +32,20 @@ $(document).ready(function(){
         
       });
       
-
-
       const swiper_movie = new Swiper(".movie .list", {
-        slidesPerView: 2,
-        spaceBetween: 137,
+        slidesPerView: 1,
+        spaceBetween: 0,
         centeredSlides: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
-
+        breakpoints: {
+          640: {   
+            slidesPerView: 2,
+            spaceBetween: 137,
+          },
+        },
         navigation: {       
             nextEl: '.movie .list .button-next',
             prevEl: '.movie .list .button-prev',
@@ -53,3 +56,4 @@ $(document).ready(function(){
 
 
 });
+
