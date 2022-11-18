@@ -70,6 +70,8 @@ html, body {
     overflow: hidden;
     background: url(../images/logo.svg) no-repeat center top / 100% auto;
     z-index: 50;
+    font-size: 0;
+    line-height: 0;
 }
 .header h1 a {
     display: block;
@@ -143,17 +145,16 @@ html, body {
 }
 .footer .flogo {
     float: left;
-    margin-right: 57px;
 }
-.footer .finfo {
-    float: left;
+.footer .inner {
+    margin: 20px 0 20px 220px;
 }
-.footer .finfo ul li {
+.footer .finfo span {
     position: relative;
-    float: left;
+    display: inline-block;
     margin: 0 27px 17px 0;
 }
-.footer .finfo ul li.after:after {
+.footer .finfo span:after {
     position: absolute;
     right: -15px;
     top: 8px;
@@ -162,28 +163,32 @@ html, body {
     background-color: #ccc;
     content: "";
 }
+.footer .finfo span:nth-child(3)::after,
+.footer .finfo span:last-child::after {
+    display: none;
+}
 @media screen and (max-width:640px){
     .footer {
-        padding: 52px 0 50px 0;
+        padding: 52px 0 86px 0;
     }
     .footer .flogo {
-        float: left;
-        margin: 0 0 28px 0;
-        width: 112px;
-        margin-right: 0;
+        float: none;
     }
     .footer .flogo img {
-        width: 100%;
+        width: 162px;
     }
-    .footer .finfo {
-        float: left;
+    .footer .inner {
+        margin: 30px 0 0 0;
     }
-    .footer .finfo ul li {
-        float: left;
-        margin: 0 27px 17px 0;
+    .footer .finfo span {
+        margin: 0 14px 8px 0;
     }
-    .footer .finfo ul li.after:after {
-        display: none;
+    .footer .finfo span:after {
+        right: -10px;
+        top: 6px;
+    }
+    .footer .copy {
+        margin-top: 20px;
     }
 }
 
