@@ -59,12 +59,12 @@
 }
 
 .product {
-    padding: 120px 0 130px 0;
+    padding: 141px 0 116px 0;
     text-align: center;
 }
 .product h2 {
     position: relative;
-    margin: 0 0 117px 0;
+    margin: 0 0 98px 0;
     font-family: 'Tenada'; 
     font-size: 45px;
     color: #142247;
@@ -89,20 +89,22 @@
 }
 .product ul li a {
     display: block;
+}
+.product ul li a .pic {
     padding: 13px 0 0 0;
     width: 205px;
     height: 205px;
-    line-height: 2.5;
     border-radius: 105px;
     background-color: #fff;
 }
-.product ul li a:hover {
+.product ul li a:hover .pic {
     border: 4px solid #F01E17;
 }
 .product ul li a img {
     height: 180px;
 }
 .product ul li a p {
+    margin: 11px 0 0;
     font-size: 20px;
 }
 @media screen and (max-width:640px){
@@ -140,28 +142,35 @@
     }
     .product ul {
         display: block;
-        padding: 0 20px;
-        margin: 0 0 101px 0;
+        padding: 48px 20px 0 20px;
+        margin: 0 0 93px 0;
     }
     .product ul li {
-        display: flex;
-        justify-content: center;
+        margin: 0 0 18px 0;
         width: 50%;
-        padding: 54px 0 16px 0;
+        text-align: center;
+    }
+    .product ul li:nth-child(3),.product ul li:nth-child(4) {
+        margin: 0;
     }
     .product ul li a {
-        padding: 9px 0 0 0;
+        display: block;
+    }
+    .product ul li a .pic {
+        display: inline-block;
+        padding: 27px 0 0 0;
         width: 152px;
         height: 152px;
     }
-    .product ul li a:hover {
+    .product ul li a:hover .pic {
         border: 2px solid #F01E17;
     }
     .product ul li a img {
-        height: 130px;
+        height: 100px;
     }
     .product ul li a p {
-        font-size: 16px;
+        margin: 11px 0 0;
+        font-size: 20px;
     }
 }
 
@@ -610,11 +619,10 @@
     font-family: 'Tenada';
     font-size: 45px;
     color: #FFF;
+    line-height: 1;
 }
 .faq .sub strong {
-    position: absolute;
-    left: 0;
-    top: 59px;
+    display: block;
     font-size: 18px;
     font-weight: 400;
     color: #FFF;
@@ -722,9 +730,11 @@
     margin: 0 0 97px 0;
 }
 .sns .sub h2 {
+    position: relative;
     font-family: 'Tenada';
     font-size: 45px;
     color: #142247;
+    line-height: 1;
 }
 .sns .sub h2::after {
     position: absolute;
@@ -736,9 +746,7 @@
     content: "";
 }
 .sns .sub strong {
-    position: absolute;
-    left: 0;
-    top: 61px;
+    display: block;
     font-size: 18px;
     font-weight: 400;
 }
@@ -842,8 +850,7 @@
         height: 3px;
     }
     .sns .sub strong {
-        left: calc(50% - 140px);
-        top: 43px;
+        text-align: center;
         font-size: 16px;
     }
     .sns .sns_link {
