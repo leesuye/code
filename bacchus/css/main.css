@@ -62,14 +62,18 @@
     padding: 141px 0 116px 0;
     text-align: center;
 }
-.product .sub h2 {
+.product h2 {
+    font-size: 0;
+    line-height: 0;
+}
+.product .cnt {
     position: relative;
     margin: 0 0 98px 0;
     font-family: 'Tenada'; 
     font-size: 45px;
     color: #142247;
 }
-.product .sub h2 .bg {
+.product .cnt .bg {
     position: absolute;
     left: 0;
     top: 23px;
@@ -114,11 +118,11 @@
     .product .wrapper {
         padding: 0;
     }
-    .product h2 {
+    .product .cnt {
         margin: 0;
         font-size: 25px;
     }
-    .product h2::before {
+    .product .cnt::before {
         position: absolute;
         left: 0;
         top: 31%;
@@ -127,7 +131,7 @@
         background-color: #142247;
         content: "";
     }
-    .product h2::after {
+    .product .cnt::after {
         position: absolute;
         right: 0;
         top: 31%;
@@ -136,7 +140,7 @@
         background-color: #142247;
         content: "";
     }
-    .product h2 .bg {
+    .product .cnt .bg {
         top: 12px;
         height: 570px;
     }
