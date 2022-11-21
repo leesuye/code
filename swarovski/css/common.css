@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Chosunilbo_myungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    src: url('https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+/*지정*/
+html, body {
+    color: #fff;
+    line-height: 1.5;
+    font-family: 'Nanum Myeongjo', 'Chosunilbo_myungjo', 'Noto Sans KR','NanumGothic','Malgun Gothic','Apple SD Gothic','Apple SD Gothic Neo','Dotum', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    /* letter-spacing: -0.05em; */
+    word-break: keep-all;
+}
+
+#wrap {/*id=wrap*/
+    overflow: hidden;
+    min-width: 1280px; 
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cnt_wrap {
+    position: relative;
+}
+
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px;
+    }
+    #wrap {
+        min-width: auto;
+    }
+    .wrapper {
+        width: auto;
+    }
+}
+
+
+
+.clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;}
+
+
+body {
+    width: 1920px;
+    background-image: url(../images/bg.png);
+    background-repeat: repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.header {
+    height: 180px;
+    background-color: #000;
+}
+.header .top {
+    position: relative;
+    height: 92px;
+    border-bottom: 1px solid #fff;
+    line-height: 92px;
+    font-size: 16px;
+}
+.header .top .eng {
+    float: left;
+}
+.header .top .eng ul {
+    margin: 0 0 0 40px;
+}
+.header .top .eng ul li {
+    float: left;
+}
+.header .top .eng ul li a {
+     padding: 20px;
+}
+.header .top .eng ul li a:hover{
+    font-weight: 700;
+}
+.header .top .logo {
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    width: 304px;
+}
+.header .top .login {
+    float: right;
+}
+.header .top .login ul {
+    margin: 0 40px 0 0;
+}
+.header .top .login ul li {
+    float: left;
+}
+.header .top .login ul li a {
+    padding: 0 20px;
+}
+.header .top .login ul li a:hover {
+    font-weight: 700;
+}
+.header .bottom {
+    height: 88px;
+    font-size: 18px;
+}
+.header .bottom ul {
+    display: flex;
+    justify-content: center;
+}
+.header .bottom ul li a {
+    line-height: 88px;
+    padding: 18px;
+}
+.header .bottom ul li a:hover {
+    font-weight: 700;
+}

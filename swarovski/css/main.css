@@ -1,0 +1,65 @@
+@import url('default.css');
+@import url('common.css');
+
+
+.visual {
+    position: relative;
+    width: 1920px;
+    height: 900px;
+}
+.visual ul li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    z-index: 1;
+    transition: 0.5s;
+}
+.visual ul li.active {
+    opacity: 1;
+    z-index: 2;
+}
+.open {
+    position: relative;
+    padding: 210px 0 250px 0;
+}
+.open h2 {
+    font-family: 'Chosunilbo_myungjo';
+    font-size: 140px;
+    font-weight: 400;
+    line-height: 185px;
+}
+.open p {
+    position: absolute;
+    left: 720px;
+    top: 282px;
+    font-size: 60px;
+}
+.open .inner {
+    position: relative;
+}
+.open .inner .item1 {
+    position: absolute;
+    left: calc(50% - 175px);
+    top: 193px;
+    z-index: 1;
+}
+.open .inner .item2 {
+    position: absolute;
+    right: calc(50%- 94px);
+    top: 981px;
+    z-index: 0;
+}
+.open .inner .item3 {
+    position: absolute;
+    padding: 0 0 250px 0;
+    left: calc(50% - 193px);
+    top: 1498px;
+    z-index: -1;
+}
+.open .inner .line {
+    position: absolute;
+    left: 0;
+    top: 639px;
+    z-index: -2;
+}
