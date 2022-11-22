@@ -4,7 +4,6 @@
 
 .visual {
     position: relative;
-    width: 1920px;
     height: 900px;
 }
 .visual ul li {
@@ -14,6 +13,13 @@
     opacity: 0.5;
     z-index: 1;
     transition: 0.5s;
+    height: 900px;
+}
+.visual ul li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .visual ul li.active {
     opacity: 1;
@@ -21,7 +27,10 @@
 }
 .open {
     position: relative;
-    padding: 210px 0 250px 0;
+    padding: 210px 0 0 0;
+}
+.open .tit {
+    position: relative;
 }
 .open h2 {
     font-family: 'Chosunilbo_myungjo';
@@ -31,31 +40,39 @@
 }
 .open p {
     position: absolute;
-    left: 720px;
-    top: 282px;
+    left: 382px;
+    top: 73px;
     font-size: 60px;
+    white-space: nowrap;
 }
 .open .inner {
     position: relative;
+    height: 2744px;
+    line-height: 0;
+    font-size: 0;
 }
 .open .inner .item1 {
     position: absolute;
     left: calc(50% - 175px);
     top: 193px;
     z-index: 1;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    transition: 0.5s;
 }
 .open .inner .item2 {
     position: absolute;
     right: calc(50%- 94px);
     top: 981px;
     z-index: 0;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    transition: 0.5s;
 }
 .open .inner .item3 {
     position: absolute;
-    padding: 0 0 250px 0;
     left: calc(50% - 193px);
     top: 1498px;
     z-index: -1;
+    transition: 0.5s;
 }
 .open .inner .line {
     position: absolute;
@@ -63,3 +80,354 @@
     top: 639px;
     z-index: -2;
 }
+
+
+.new {
+    position: relative;
+    padding: 174px 0 168px 0;
+    background-color: rgba(1,41,17,0.8);
+    height: 912px;
+}
+.new .side {
+    position: absolute;
+    left: 0;
+    top: 411px;
+    font-family: 'Chosunilbo_myungjo';
+    font-weight: 400;
+    font-size: 50px;
+    transform: rotate(90deg);
+}
+.new .tit {
+    position: absolute;
+    left: calc(50% - 200px);
+    top: 174px;
+}
+.new .tit h2 {
+    font-family: 'Chosunilbo_myungjo';
+    font-weight: 400;
+    font-size: 140px;
+    line-height: 1;
+}
+.new .tit p {
+    font-size: 20px;
+}
+.new .cnt ul li {
+    float: left;
+    margin: 192px 20px 0 0 ;
+    width: 264px;
+}
+.new .cnt ul li:last-child {
+    margin-right: 0;
+}
+.new .cnt ul li.new1 {
+    margin: 22px 33px 0 0;
+    width: 374px;
+}
+.new .cnt ul li a {
+    display: block;
+}
+.new .cnt ul li a .pic {
+    overflow: hidden;
+    position: relative;
+    height: 310px;
+    font-size: 0;
+    line-height: 0;
+}
+.new .cnt ul li.new1 a .pic {
+    height: 480px;
+}
+.new .cnt ul li a .pic .inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: 0.5s;
+}
+.new .cnt ul li a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.new .cnt ul li .txt {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.new .cnt ul li a:hover .pic .inner {
+    top: -100%;
+}
+
+
+.gift {
+    margin: 240px 0 0 0;
+}
+.gift .tit {
+    margin-bottom: 200px;
+    text-align: right;
+}  
+.gift .tit h2 {
+    font-family: 'Chosunilbo_myungjo';
+    font-weight: 400;
+    font-size: 180px;
+    line-height: 1;
+}
+.gift .tit p {
+    font-size: 47px;
+}
+.gift .cnt ul li {
+    margin-bottom: 230px;
+}
+.gift .cnt ul li a {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.gift .cnt ul li a .pic {
+    font-size: 0;
+    line-height: 0;
+    width: 620px;
+}
+.gift .cnt ul li:first-child a .pic {
+    position: relative;
+}
+.gift .cnt ul li:first-child a .pic .bg {
+    position: absolute;
+    left: -320px;
+    top: 533px;
+    z-index: -1;
+}
+.gift .cnt ul li:nth-child(2) a .pic {
+    position: relative;
+}
+.gift .cnt ul li:nth-child(2) a .pic .bg {
+    position: absolute;
+    right: -320px;
+    top: 533px;
+    z-index: -1;
+}
+.gift .cnt ul li a .txt {
+    width: 620px;
+    word-break: break-all;
+} 
+.gift .cnt ul li a .txt p {
+    margin: 0 0 34px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+.gift .cnt ul li:first-child a .txt p,
+.gift .cnt ul li:last-child a .txt p {
+    text-align: right;
+}
+.gift .cnt ul li a .txt span {
+    position: relative;
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
+.gift .cnt ul li a .txt span::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 620px;
+    border: 1px solid #ccc;
+    content: "";
+}
+.gift .cnt ul li a .txt span::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 620px;
+    border: 1px solid #ccc;
+    content: "";
+}
+
+
+.decoration {
+    padding: 165px 0 210px 0;
+    background-color: rgba(0,0,0,0.7);
+}
+.decoration .wrapper {
+    position: relative;
+}
+.decoration .tit h2 {
+    font-family: 'Chosunilbo_myungjo';
+    font-weight: 400;
+    font-size: 180px;
+    line-height: 1;
+}
+.decoration .tit p {
+    position: relative;
+    font-size: 37px;
+}
+.decoration .tit p::after {
+    position: absolute;
+    left: 312px;
+    top: 26px;
+    width: 260px;
+    border: 1px solid #fff;
+    content: "";
+}
+.decoration .cnt {
+    word-break: break-all;
+}
+.decoration .cnt ul li {
+    float: left;
+    width: 400px;
+    margin-right: 40px;
+    transition: 1s;
+}
+.decoration .cnt ul li:last-child {
+    margin-right: 0;
+}
+.decoration .cnt ul li:first-child {
+    margin-top: 350px;
+}
+.decoration .cnt ul li:nth-child(2) {
+    margin-top: 100px;
+}
+.decoration .cnt ul li:last-child {
+    margin-top: -162px;
+}
+.decoration .cnt ul li p {
+    margin: 22px 0;
+    font-size: 30px;
+}
+.decoration .cnt ul li span {
+    display: block;
+    position: relative;
+    padding: 24px 0;
+    font-size: 20px;
+}
+.decoration .cnt ul li span::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    content: "";
+}
+.decoration .cnt ul li span::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    content: "";
+}
+.decoration .txt {
+    position: absolute;
+    right: 0;
+    bottom: -22px;
+    text-align: right;
+    font-family: 'Chosunilbo_myungjo';
+    font-weight: 400;
+    font-size: 180px;
+    line-height: 1;
+}
+
+
+
+.best {
+    margin: 226px 0 236px 0 ;
+}
+.best .tit h2 {
+    font-family: 'Chosunilbo_myungjo';
+    font-weight: 400;
+    font-size: 180px;
+    line-height: 1;
+}
+.best .tit p {
+    font-size: 37px;
+}
+.best .pic ul {
+    float: left;
+    margin-right: 40px;
+}
+.best .pic ul:last-child {
+    margin: -255px 0 0 0;
+}
+.best .pic ul li {
+    margin: 40px 0;
+}
+.best .pic ul li a {
+    display: block;
+    position: relative;
+    line-height: 0;
+    font-size: 0;
+}
+.best .pic ul li a .ho {
+    display: none;
+    position: absolute;
+    left: 10%;
+    top: 43%;
+    width: 332px;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    font-size: 30px;
+    line-height: 44px;
+}
+.best .pic ul li a:hover .ho {
+    display: block;
+}
+.best .pic ul li a:hover img {
+    filter: brightness(20%);
+}
+
+.stayling {
+    position: relative;
+    padding: 289px 0 523px 0;
+    z-index: -3;
+    background-color: rgba(0,0,0,0.7);
+}
+.stayling .tit {
+    position: absolute;
+    left: 142px;
+    top: 299px;
+}
+.stayling .tit h2 {
+    margin: 0 0 87px 0;
+    font-family: 'Chosunilbo_myungjo';
+    font-weight: 400;
+    font-size: 180px;
+    line-height: 1;
+}
+.stayling .tit p {
+    position: absolute;
+    left: 49%;
+    top: 111px;
+    font-size: 37px;
+}
+
+.stayling .cnt .pic {
+    float: left;
+}
+.stayling .cnt .acc {
+    float: right;
+}
+.stayling .line {
+    position: absolute;
+    left: 320px;
+    top: 213px;
+    z-index: -2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

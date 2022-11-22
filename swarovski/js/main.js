@@ -12,6 +12,8 @@ $(document).ready(function(){
         $('.visual ul li').removeClass('active')
         $('.visual ul li').eq(idx-1).addClass('active')
     },4000);
+
+    AOS.init();
     
 
 
