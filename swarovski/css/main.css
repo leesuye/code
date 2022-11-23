@@ -5,6 +5,9 @@
 .visual {
     height: 900px;
 }
+.visual h2 {
+    display: none;
+}
 .visual ul li img {
     display: block;
     width: 100%;
@@ -462,6 +465,9 @@
     background-color: #d9d9d9;
     color: #1d1d1d;
     text-align: center;
+}
+.help h2 {
+    display: none;
 }
 .help ul li {
     position: relative;
