@@ -310,6 +310,9 @@
         width: 107px;
         height: 28px;
     }
+    .research .more_detail a:hover {
+        border: 1px solid #AC8E63;
+    }
     .research .bg {
         display: none;
     }
@@ -565,6 +568,9 @@
         padding: 3px 17px;
         width: 107px;
         height: 28px;
+    }
+    .event .more_detail a:hover {
+        border: 1px solid #AC8E63;
     }
 
 }

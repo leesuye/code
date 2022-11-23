@@ -72,45 +72,6 @@ $(document).ready(function(){
         },
     });//history
 
-    // var ww = $(window).width();
-    // var mySwiper = undefined;
-
-    // function initSwiper() {
-
-    //     if (ww > 640 && mySwiper == undefined) {
-    //         mySwiper = new Swiper('.history .story', {
-    //             slidesPerView: 3, 
-    //             spaceBetween: 40, 
-    //             slidesPerGroup: 3,
-                
-    //             loop: true,  
-
-    //             navigation: {       
-    //                 nextEl: '.history .button-next',
-    //                 prevEl: '.history .button-prev',
-    //             },
-    //             pagination: {  
-    //                 el: '.history .pagination', 
-    //                 clickable: true,  
-    //                 type: 'bullets',  
-    //             },
-    //         });
-    //     } else if (ww <= 640 && mySwiper != undefined) {
-    //         mySwiper.destroy();
-    //         mySwiper = undefined;
-    //     }
-    // }
-
-    // initSwiper();
-
-    // $(window).on('resize', function () {
-    //     ww = $(window).width();
-    //     initSwiper();
-    // });
-
-
-    
-
 
 });//document
 

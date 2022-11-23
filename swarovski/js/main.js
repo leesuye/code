@@ -1,22 +1,38 @@
 $(document).ready(function(){
 
-    let idx = 1
     
-    setInterval (function(){
-        if( idx < 3){
-            idx ++
-        }else{
-            idx = 1
-        }
+    const swiper_visual = new Swiper('.visual', {
 
-        $('.visual ul li').removeClass('active')
-        $('.visual ul li').eq(idx-1).addClass('active')
-    },4000);
+        effect: "fade", 
 
-    AOS.init();
+        autoplay: {  
+            delay: 5000,
+            disableOnInteraction: true,
+        },
+
+        loop: true,  
+
+    });//visual swiper
+
+    AOS.init();//scroll
+
+    const swiper_stayling  = new Swiper(".stayling .acc .list", {
+        direction: 'vertical',
+        slidesPerView: 2, 
+        spaceBetween: 40, 
+        slidesPerGroup: 2,
+        
+        loop: true, 
+
+        navigation: {
+          nextEl: ".button-next",
+          prevEl: ".button-prev",
+        },
+      });//stayling acc
     
-
-
+    
+    
+    
 });
 
 

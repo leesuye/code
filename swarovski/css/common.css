@@ -110,3 +110,59 @@ body {
 .header .bottom ul li a:hover {
     font-weight: 700;
 }
+
+
+.footer {
+    padding: 82px 0 114px 0;
+    height: 327px;
+    background-color: #000;
+    color: rgba(204,204,204,0.8);
+}
+.footer .flogo {
+    margin: 64px 73px 0 0;
+    float: left;
+}
+.footer .flogo img {
+    width: 295px;
+}
+.footer .finfo {
+    float: left;
+    margin: 8px 0 0 0;
+    width: 70%;
+}
+.footer .finfo  .fnav {
+    margin: 0 0 11px 0;
+}
+.footer .finfo  .fnav ul li {
+    float: left;
+    margin-right: 36px;
+}
+.footer .finfo  .fnav ul li a {
+    display: block;
+}
+.footer .finfo  .fnav ul li a:hover {
+    font-weight: 700;
+}
+.footer .finfo  .fnav ul li.privacy {
+    color: #ccc;
+}
+.footer .finfo  .copyright {
+    padding: 0 0 32px 0;
+    border-bottom: 1px solid rgba(204,204,204,0.5);
+}
+.footer .finfo .fbottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 0 0 0;
+}
+.footer .finfo .fbottom span {
+    display: block;
+    padding: 8px 0 0 0;
+}
+.footer .finfo .fbottom .sns ul li {
+    float: left;
+    margin: 0 5px;
+}
+.footer .finfo .fbottom .sns ul li:last-child {
+    margin-right: 0;
+}

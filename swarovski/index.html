@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,0,0">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -50,11 +50,11 @@
                 </nav>
             </div>
         </header>
-        <section class="visual">
-            <ul>
-                <li class="active"><img src="images/visual1.png" alt="스와로브스키 모델 이미지"></li>
-                <li><img src="images/visual2.png" alt="파티 이미지"></li>
-                <li><img src="images/visual3.png" alt="크리스마스 스와로브스키 매장 이미지"></li>
+        <section class="visual swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide"><img src="images/visual1.png" alt="스와로브스키 모델 이미지"></li>
+                <li class="swiper-slide"><img src="images/visual2.png" alt="파티 이미지"></li>
+                <li class="swiper-slide"><img src="images/visual3.png" alt="크리스마스 스와로브스키 매장 이미지"></li>
             </ul>
         </section>
         <section class="open">
@@ -141,7 +141,7 @@
                             <a href="#n">
                                 <div class="pic">
                                     <img src="images/gift1.png" alt="여성 기프트 쇼핑하기 메인 이미지">
-                                    <div class="bg"><img src="images/gift1_bg.png" alt="목걸이  이미지"></div>
+                                    <div class="bg" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"><img src="images/gift1_bg.png" alt="목걸이  이미지"></div>
                                 </div>
                                 <div class="txt">
                                     <p>여성 기프트 쇼핑하기</p>
@@ -157,7 +157,7 @@
                                 </div>
                                 <div class="pic">
                                     <img src="images/gift2.png" alt="남성 기프트 쇼핑하기 메인 이미지">
-                                    <div class="bg"><img src="images/gift2_bg.png" alt="팔찌  이미지"></div>
+                                    <div class="bg" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine"><img src="images/gift2_bg.png" alt="팔찌  이미지"></div>
                                 </div>
                             </a>
                         </li>
@@ -267,7 +267,7 @@
                 </div>
             </div>
         </section> 
-        <section class="stayling">
+        <section class="stayling clearfix">
             <div class="wrapper">
                 <div class="tit">
                     <h2>Holiday<br>
@@ -275,51 +275,124 @@
                     <p>빛나는 홀리데이 주얼리</p>
                 </div>
                 <div class="cnt">
-                    <ul class="pic">
-                        <li>
-                            <a href="#n"><img src="images/stayling.png" alt="주얼리 스타일링 이미지"></a>
-                        </li>
-                    </ul>
-                    <ul class="acc">
-                        <li>
-                            <a href="#n"><img src="images/stayling1.png" alt="Attract 펜던트"></a>
-                            <div class="bg">
-                                <stron>Attract 펜던트</stron>
-                                <p>믹스 컷, 화이트, 로듐 플래팅</p>
-                                <span>155,000 ₩</span>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#n"><img src="images/stayling2.png" alt="Lucent 이어링 커프"></a>
-                            <div class="bg">
-                                <stron>Lucent 이어링 커프</stron>
-                                <p>싱글, 마그네틱 클로저, 골드 톤 플래팅</p>
-                                <span>135,000 ₩</span>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#n"><img src="images/stayling3.png" alt="Millenia 네크리스"></a>
-                            <div class="bg">
-                                <stron>Millenia 네크리스</stron>
-                                <p>피어 컷, 화이트, 로듐 플래팅</p>
-                                <span>700,000 ₩</span>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#n"><img src="images/stayling4.png" alt="Millenia 후프 이어링"></a>
-                            <div class="bg">
-                                <stron>Millenia 후프 이어링</stron>
-                                <p>옥타곤 컷, 화이트, 로듐 플래팅</p>
-                                <span>245,000 ₩</span>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="pic">
+                        <a href="#n"><img src="images/stayling.png" alt="주얼리 스타일링 이미지"></a>
+                    </div> 
+                    <div class="acc">
+                        <div class="list swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <img src="images/stayling1.png" alt="Attract 펜던트">
+                                        <div class="bg">
+                                            <strong>Attract 펜던트</strong>
+                                            <p>믹스 컷, 화이트, 로듐 플래팅</p>
+                                            <span>155,000 ₩</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <img src="images/stayling2.png" alt="Lucent 이어링 커프">
+                                        <div class="bg">
+                                            <strong>Lucent 이어링 커프</strong>
+                                            <p>싱글, 마그네틱 클로저, 골드 톤 플래팅</p>
+                                            <span>135,000 ₩</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <img src="images/stayling3.png" alt="Millenia 네크리스">
+                                        <div class="bg">
+                                            <strong>Millenia 네크리스</strong>
+                                            <p>피어 컷, 화이트, 로듐 플래팅</p>
+                                            <span>700,000 ₩</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <img src="images/stayling4.png" alt="Millenia 후프 이어링">
+                                        <div class="bg">
+                                            <strong>Millenia 후프 이어링</strong>
+                                            <p>옥타곤 컷, 화이트, 로듐 플래팅</p>
+                                            <span>245,000 ₩</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="button-prev">
+                            <span>이전</span>
+                            <i class="material-symbols-outlined">expand_less</i>
+                        </button>
+                        <button class="button-next">
+                            <span>다음</span>
+                            <i class="material-symbols-outlined">expand_more</i>
+                        </button>
+                    </div>
+                   
                 </div>
                 <div class="line"><img src="images/line2.png" alt="팔각형 모양 라인"></div>
             </div>
-            </section>
-        <section class="help"></section>
-        <footer class="footer"></footer>
+        </section>
+        <section class="help">
+            <div class="wrapper">
+                <ul>
+                    <li>
+                        <a href="#n">
+                            <p>도움이 필요하십니까?</p>
+                            <span>채팅으로 문의하기</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <p>무료배송</p>
+                            <span>15만원 이상 구매 시 무료배송</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <p>반품</p>
+                            <span>반품 기간 최대 14일</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="flogo"><a href="#n"><img src="images/logo.svg" alt="SWAROVSKI 로고"></a></div>
+                <div class="finfo">
+                    <div class="ftop">
+                        <div class="fnav clearfix">
+                            <ul>
+                                <li class="privacy"><a href="#">개인정보처리방침</a></li>
+                                <li><a href="#">회사소개</a></li>
+                                <li><a href="#">이용약관</a></li>
+                                <li><a href="#">고객센터</a></li>
+                                <li><a href="#">쿠키동의</a></li>
+                                <li><a href="#">멤버십</a></li>
+                                <li><a href="#">REACH 정보</a></li>
+                            </ul>
+                        </div>
+                        <div class="copyright">COPYRIGHT ⓒ 2022 SWAROVSKI. ALL RIGHTS RESERVER. </div>
+                    </div>
+                    <div class="fbottom">
+                        <span>SWAROVSKI 및 SWAN 로고는 SWAROVSKI AG의 등록상표입니다.</span>
+                        <div class="sns">
+                            <ul>
+                                <li><a href="#n"><img src="images/facebook.png" alt="페이스북 로고"></a></li>
+                                <li><a href="#n"><img src="images/twitter.png" alt="트위터 로고"></a></li>
+                                <li><a href="#n"><img src="images/youtube.png" alt="유튜브 로고"></a></li>
+                                <li><a href="#n"><img src="images/insta.png" alt="인스타 로고"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
