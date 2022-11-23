@@ -80,8 +80,8 @@
 }
 .new .side {
     position: absolute;
-    left: 0;
-    top: 411px;
+    left: -305px;
+    top: 234px;
     font-family: 'Chosunilbo_myungjo';
     font-weight: 400;
     font-size: 50px;
@@ -89,8 +89,8 @@
 }
 .new .tit {
     position: absolute;
-    left: calc(50% - 200px);
-    top: 174px;
+    left: 407px;
+    top: 0;
 }
 .new .tit h2 {
     font-family: 'Chosunilbo_myungjo';
