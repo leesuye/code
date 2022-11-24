@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'LeferiPoint-SpecialItalicA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-SpecialItalicA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Chosunilbo_myungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    src: url('https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css');         
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Tenada';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} 
+ 
+/*지정*/
+html, body {
+    color: #3d3d3d;
+    line-height: 1.5;
+    font-family: 'Noto Sans KR', 'LeferiPoint-SpecialItalicA', 'Nanum Myeongjo', 'Chosunilbo_myungjo', 'NanumGothic','Malgun Gothic','Apple SD Gothic','Apple SD Gothic Neo','Dotum', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    /* letter-spacing: -0.05em; */
+    word-break: keep-all; 
+}
+
+#wrap {/*id=wrap*/
+    overflow: hidden;
+    min-width: 1280px; 
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.cnt_wrap {
+    position: relative;
+}
+
+
+
+
+.clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;}
+
+

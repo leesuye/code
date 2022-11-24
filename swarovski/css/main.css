@@ -51,7 +51,7 @@
 }
 .open .inner .item2 {
     position: absolute;
-    right: calc(50%- 94px);
+    right: calc(50% - 94px);
     top: 981px;
     z-index: 0;
     box-shadow: 0 0 10px rgb(0 0 0 / 30%);
