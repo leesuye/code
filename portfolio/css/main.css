@@ -3,7 +3,6 @@
 
 
 .visual {
-    position: relative;
     padding: 105px 0;
     color: #fff;
     height: 1032px;
@@ -18,15 +17,18 @@
     text-align: center;
     font-size: 36px;
 }
-.visual img {
-    position: absolute;
-    right: 333px;
-    bottom: 105px;
+.visual .sign {
+    margin: 77px 0 0 0;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: right;
+    text-shadow: 5px 5px 10px rgba(255,255,255,0.3) ;
 }
 
 
 .intro {
     margin: 130px  0 0 0;
+    font-size: 20px;
 }
 .intro h2 {
     display: none;
@@ -34,66 +36,71 @@
 .intro .inner {
     margin: 0 0 143px 0;
 }
-.intro .inner ul {
-    margin-top: 76px;
-}
-.intro .inner ul li p {
-    font-size: 20px;
-}
-.intro .inner ul li .tit {
-    margin: 0 0 6px 0;
+.intro h3 {
+    margin: 105px 0 6px 0;
     font-family: 'LeferiPoint-SpecialItalicA';
     font-size: 25px;
     color: #1d1d1d;
 }
-.intro .inner ul.pic {
+.intro h3.mar {
+    margin: 0 0 6px 0;
+}
+.intro .pic {
     float: left;
     width: 50%;
 }
-.intro .inner ul.pic li .profile img {
+.intro .pic .profile img {
     margin: 0 0 0 154px;
 }
-.intro .inner ul.pic li .profile p {
+.intro .pic  .profile p {
     text-align: center;
 }
-.intro .inner ul.pic li .about p {
+.intro .pic  .about p {
     width: 572px;
 }
-.intro .inner ul li {
-    margin: 0 0 87px 0;
-}
-
-
-.intro .inner ul.info {
+.intro .info {
     position: relative;
     float: right;
     width: 50%;
-    padding-left: 78px;
+    padding:20px 0 0 78px;
 }
-.intro .inner ul.info::before {
+.intro .info::before {
     position: absolute;
     left: 0;
-    top: -77px;
+    top: -24px;
     width: 1px;
-    height: 802px;
+    height: 700px;
     background-color: #ccc;
     content: "";
 }
-.intro .inner ul.info li:first-child {
-    margin-top: 20px;
-}
-.intro .inner ul.info li p {
-    display: block;
+.intro .info ul {
     margin: 0 0 23px 0;
 }
-.intro .inner ul.info li p span {
-    margin-right: 33px;
+.intro .info .list li strong {
+    float: left;
 }
-.intro .inner ul.info li p span.tit1 {
-    margin: 0 0 0 75px;
+.intro .info .list li span {
+    display: block;
+    margin: 0 0 10px 88px;
+}
+.intro .info .item li {
+    float: left;
+    width: 20%;
+}
+.intro .info .item li:nth-child(4) {
+    clear: left;
 }
 
+.index_wrap {
+    position: relative;
+    height: 112px;
+}
 .index {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 300;
     padding: 35px 0 0 54px;
     height: 112px;
     background-color: #000;
@@ -122,66 +129,324 @@
     font-family: 'LeferiPoint-SpecialItalicA';
     font-size: 35px;
 }
+.index.fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.index ul li.active {
+    width: 319px;
+    height: 112px;
+    background-color: #D9D9D9;
+    color: #000;
+}
 
-.main .swarovski {
-    padding: 72px 165px 0 165px;
-    height: 186px;
+.main .tab_content.swarovski .top {
     background: url(../images/no.1_bg.png) no-repeat center center /cover;
 }
-.main .swarovski .top {
+.main .tab_content .top {
+    padding: 72px 165px 0 165px;
+    height: 186px;
     display: flex;
     justify-content: space-between;
 }
-.main .swarovski .top h2 {
+.main .tab_content .top h2 {
     font-family: 'LeferiPoint-SpecialItalicA';
     font-size: 50px;
     color: #fff;
 }
-.main .swarovski .top img {
+.main .tab_content .top img {
     height: 41px;
 }
-.main .swarovski .cnt {
-    padding: 91px 0 0 0;
+.main .tab_content {
+    position: relative;
 }
-.main .swarovski .cnt .tit {
-    
+.main .tab_content .tit {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 111px 0 115px 0;
+}
+.main .tab_content .tit strong {
+    color: #1d1d1d;
+    font-size: 80px;
+    font-weight: 400;
+    font-family: 'Chosunilbo_myungjo';
+    white-space: nowrap;
+}
+.main .tab_content.swarovski .tit strong {
+    margin-left: -140px;
+}
+.main .tab_content .tit p {
+    color: #1d1d1d;
+    padding-bottom: 25px;
+    font-size: 25px;
+    font-family: 'Nanum Myeongjo';
+    white-space: nowrap;
+}
+.main .tab_content .text .left {
+    position: relative;
+    float: left;
+    margin-top: 25px;
+    padding-right: 80px;
+    width: 50%;
+}
+.main .tab_content .text .left ul {
+    margin-top: 5px;
+}
+.main .tab_content .text .left:after {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    width: 1px;
+    height: 387px;
+    background-color: #ccc;
+    content: "";
+}
+.main .tab_content .text .right {
+    float: left;
+    margin-left: 20px;
+    width: 45%;
+}
+.main .tab_content .text h3 {
+    font-family: 'LeferiPoint-SpecialItalicA';
+    font-size: 20px;
+}
+.main .tab_content .text h3.mar {
+    margin-top: 34px;
+}
+.main .tab_content .text p {
+    margin-bottom: 34px;
+}
+.main .tab_content .text .color li {
+    float: left;
+    width: 60px;
+    margin-right: 17px;
+    text-align: center;
+}
+.main .tab_content .text .color li span {
+    display: block;
+    height: 60px;
+    border: 1px solid #ccc;
+}
+.main .tab_content .text .color li:nth-child(1) span {
+    background-color: #fff;
+} 
+.main .tab_content .text .color li:nth-child(2) span {
+    background-color: #D9D9D9;
+} 
+.main .tab_content .text .color li:nth-child(3) span {
+    background-color: #012911;
+} 
+.main .tab_content .text .color li:nth-child(4) span {
+    background-color: #000000;
 } 
 
 
-.finish {
+.main .tab_content .link {
+    margin: 144px 0;
+}
+.main .tab_content .link .web {
+    float: left;
+    margin: 56px 0 0 0;
+    text-align: center;
+}
+.main .tab_content .link .web strong {
+    display: block;
+    color: #1d1d1d;
+    font-family: 'LeferiPoint-SpecialItalicA';
+    font-size: 50px;
+}
+.main .tab_content .link .web p {
+    padding-bottom: 32px;
+    border-bottom: 1px solid #ccc;
+}
+.main .tab_content .link .web span {
+    display: block;
+    margin: 18px 0 57px 0;
+}
+.main .tab_content .link .web a {
+    display: inline-block;
+    padding: 23px 85px;
+    border: 1px solid #666;
+    font-size: 30px;
+}
+.main .tab_content .link .pic {
+    float: right;
+}
+
+.main .tab_content .before .pic {
+    float: left;
+    width: 60%;
+}
+.main .tab_content .before .rev {
+    position: relative;
+    float: right;
+    margin: 300px 0 0 0;
+    width: 40%;
+}
+.main .tab_content .before .rev strong {
+    margin: 0 0 0 25px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #1d1d1d;
+}
+.main .tab_content .before .rev strong::before{
+    position: absolute;
+    left: -25px;
+    top: -36px;
+    width: 100px;
+    height: 100px;
+    border-radius: 80px;
+    z-index: -1;
+    background-color: #A7B59E;
+    content: "";
+}
+.main .tab_content .before .rev span {
+    display: block;
+    margin: 28px 0 30px 0;
+    position: relative;
+    padding: 11px 0 11px 34px;
+    width: 100%;
+    font-size: 20px;
+    background-color: #000;
+    color: #fff;
+}
+.main .tab_content .before .rev span::after {
+    position: absolute;
+    right: 31px;
+    top: 27px;
+    width: 70%;
+    height: 1px;
+    background-color: #fff;
+    content: "";
+}
+.main .tab_content .before .rev ul li {
+    display: flex;
+    margin: 0 0 23px 0;
+}
+.main .tab_content .before .rev ul li i {
+    margin-right: 14px;
+    font-size: 25px;
+    color: #FF0000;
+}
+.main .tab_content .after {
+    margin: 170px -320px 0 -320px;
+}
+.main .tab_content .after .pic {
+    font-size: 0;
+    line-height: 0;
+}
+
+
+/*NO.2*/
+.main .tab_content.postech .top {
+    background-color: #c61065;
+}
+.main .tab_content.postech .top img {
+    height: 65px;
+}
+.main .tab_content.postech .tit {
+    justify-content: flex-start;
+}
+.main .tab_content.postech .tit strong {
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+}
+.main .tab_content.postech .tit p {
+    padding-left: 44px;
+    font-family: 'Noto Sans KR';
+}
+.main .tab_content.postech .text .color li:nth-child(1) span {
+    background-color: #FFF5E7;
+}
+.main .tab_content.postech .text .color li:nth-child(2) span {
+    background-color: #E47105;
+}
+.main .tab_content.postech .text .color li:nth-child(3) span {
+    background-color: #C61065;
+}
+.main .tab_content.postech .before .rev {
+    margin: 157PX 0 0 0;
+}
+.main .tab_content.postech .before .rev strong::before {
+    background-color: #FFBF83;
+}
+
+/*NO.3*/
+.main .tab_content.bacchus .top {
+    background-color: #FEC453;
+}
+.main .tab_content.bacchus .top img {
+    height: 165px;
+}
+.main .tab_content.bacchus .tit {
+    justify-content: flex-start;
+}
+.main .tab_content.bacchus .tit strong {
+    font-family: 'Tenada';
+}
+.main .tab_content.bacchus .tit p {
+    padding-left: 44px;
+    font-family: 'BMJUA';
+}
+.main .tab_content.bacchus .text .left {
+    margin-top: 43px;
+}
+.main .tab_content.bacchus .text .left:after {
+    top: -46px;
+}
+
+.main .tab_content.bacchus .text .right {
+    margin-top: 33px;
+}
+.main .tab_content.bacchus .text .color li:nth-child(1) span {
+    background-color: #F9AA12;
+}
+.main .tab_content.bacchus .text .color li:nth-child(2) span {
+    background-color: #F01E17;
+}
+.main .tab_content.bacchus .text .color li:nth-child(3) span {
+    background-color: #80C76D;
+}
+.main .tab_content.bacchus .text .color li:nth-child(4) span {
+    background-color: #142247;
+}
+.main .tab_content.bacchus .before .rev {
+    margin: 157PX 0 0 0;
+}
+.main .tab_content.bacchus .before .rev strong::before {
+    background-color: #AFBEE5;
+}
+
+.footer {
     position: relative;
     padding: 100px 0 0 0;
     background-color: #000;
     height: 708px;
     color: #fff;
+    border-top: 1px solid #fff;
 }
-.finish h2 {
+.footer h2 {
     font-family: 'LeferiPoint-SpecialItalicA';
     font-size: 60px;
 }
-.finish i {
-    font-weight: 100;
+.footer ul li {
+    display: flex;
+    margin-bottom: 5px;
 }
-.finish strong {
+.footer ul li i {
+    font-weight: 100;
+    padding-right: 20px;
+}
+.footer ul li p {
+    font-weight: 20px;
+}
+.footer strong {
     position: absolute;
     left: calc(50% - 250px);
     bottom: 100px;
     font-family: 'Tenada';
     font-size: 113px;
-}
-.finish p {
-    font-weight: 20px;
-}
-.finish .phone {
-    display: flex;
-    margin-bottom: 20px;
-}
-.finish .phone i {
-    padding-right: 20px;
-}
-.finish .mail {
-    display: flex;
-}
-.finish .mail i {
-    padding-right: 20px;
 }

@@ -437,7 +437,7 @@
 }
 .stayling .cnt .button-prev {
     position: absolute;
-    left: 50%;
+    left: 17%;
     top: -166px;
     color: rgba(255,255,255,0.6);
 }
@@ -449,7 +449,7 @@
 }
 .stayling .cnt .button-next {
     position: absolute;
-    left: 50%;
+    left: 17%;
     bottom: -166px;
     color: rgba(255,255,255,0.6);
 }
