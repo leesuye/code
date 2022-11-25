@@ -101,7 +101,6 @@
     top: 0;
     width: 100%;
     z-index: 300;
-    padding: 35px 0 0 54px;
     height: 112px;
     background-color: #000;
     color: #fff;
@@ -110,11 +109,13 @@
 .index ul li {
     position: relative;
     float: left;
+    width: 319px;
+    text-align: center;
 }
 .index ul li::after {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 29px;
     width: 1px;
     height: 47px;
     background-color: #fff;
@@ -125,7 +126,7 @@
 }
 .index ul li a {
     display: block;
-    margin: 0 54px;
+    line-height: 112px;
     font-family: 'LeferiPoint-SpecialItalicA';
     font-size: 35px;
 }
@@ -135,9 +136,8 @@
     top: 0;
     width: 100%;
 }
-.index ul li.active {
-    width: 319px;
-    height: 112px;
+.index ul li.active a {
+    line-height: 112px;
     background-color: #D9D9D9;
     color: #000;
 }
